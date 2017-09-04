@@ -3,15 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>AK网贷需要访问您的位置功能</string>
+	<string>御墅社区需要访问您的位置功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>AK网贷需要访问您的相册功能</string>
+	<string>御墅社区需要访问您的相册功能</string>
 	<key>NSCameraUsageDescription</key>
-	<string>AK网贷需要访问您的相机功能</string>
+	<string>御墅社区需要访问您的相机功能</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>china</string>
 	<key>CFBundleDisplayName</key>
-	<string>实习生管理</string>
+	<string>御墅社区</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
