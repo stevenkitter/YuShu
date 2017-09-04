@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "最专业的顶岗实习云服务平台"; ObjectID = "3HW-ac-b0E"; */
+"3HW-ac-b0E.text" = "The most professional internship cloud service platform";
+
+/* Class = "UIButton"; normalTitle = "忘记密码"; ObjectID = "5H6-ei-glE"; */
+"5H6-ei-glE.normalTitle" = "Forgot password";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "WOF-nH-7nn"; */
+"WOF-nH-7nn.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "账号提示"; ObjectID = "lKv-ln-6uh"; */
+"lKv-ln-6uh.normalTitle" = "Account prompt";

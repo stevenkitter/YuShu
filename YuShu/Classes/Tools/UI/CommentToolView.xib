@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CommentToolView" customModule="InternManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i08-VF-8ON">
+                    <rect key="frame" x="285" y="10" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="e19-6g-snz"/>
+                        <constraint firstAttribute="width" constant="35" id="hSK-bU-Qby"/>
+                    </constraints>
+                    <state key="normal" image="share"/>
+                    <connections>
+                        <action selector="buttonClickedAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="sbB-py-uaY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUs-KC-aZE">
+                    <rect key="frame" x="240" y="10" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="0rE-q5-X7t"/>
+                        <constraint firstAttribute="height" constant="35" id="I89-uX-29A"/>
+                    </constraints>
+                    <state key="normal" image="collect"/>
+                    <state key="selected" image="collect_selected"/>
+                    <connections>
+                        <action selector="buttonClickedAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="IvU-RL-0rb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dp0-Z8-ALt">
+                    <rect key="frame" x="330" y="10" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="hMn-aG-iyD"/>
+                        <constraint firstAttribute="height" constant="35" id="t1g-yk-OSc"/>
+                    </constraints>
+                    <state key="normal" image="send_normal"/>
+                    <state key="disabled" image="send"/>
+                    <connections>
+                        <action selector="buttonClickedAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="PqH-D4-A4u"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vin-Je-Eol">
+                    <rect key="frame" x="10" y="10" width="220" height="35"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="3iJ-5D-7Ml"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="EUs-KC-aZE" firstAttribute="leading" secondItem="vin-Je-Eol" secondAttribute="trailing" constant="10" id="8qR-aI-SKq"/>
+                <constraint firstItem="Dp0-Z8-ALt" firstAttribute="bottom" secondItem="i08-VF-8ON" secondAttribute="bottom" id="9a6-Va-1EV"/>
+                <constraint firstItem="vin-Je-Eol" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="BTN-3E-YAb"/>
+                <constraint firstItem="Dp0-Z8-ALt" firstAttribute="leading" secondItem="i08-VF-8ON" secondAttribute="trailing" constant="10" id="EFy-mO-Rgf"/>
+                <constraint firstItem="vin-Je-Eol" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Jz6-WB-ZmT"/>
+                <constraint firstAttribute="trailing" secondItem="Dp0-Z8-ALt" secondAttribute="trailing" constant="10" id="Lun-ky-qrD"/>
+                <constraint firstAttribute="bottom" secondItem="Dp0-Z8-ALt" secondAttribute="bottom" constant="10" id="Phq-kf-Z9X"/>
+                <constraint firstItem="i08-VF-8ON" firstAttribute="bottom" secondItem="EUs-KC-aZE" secondAttribute="bottom" id="aY2-uJ-uV4"/>
+                <constraint firstItem="i08-VF-8ON" firstAttribute="leading" secondItem="EUs-KC-aZE" secondAttribute="trailing" constant="10" id="apX-Dj-vij"/>
+                <constraint firstAttribute="bottom" secondItem="vin-Je-Eol" secondAttribute="bottom" constant="10" id="sri-hL-Qdk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="likeBtnWidth" destination="0rE-q5-X7t" id="8Ar-B9-ubo"/>
+                <outlet property="likeButton" destination="EUs-KC-aZE" id="o2d-i1-kN3"/>
+                <outlet property="sendButton" destination="Dp0-Z8-ALt" id="PeT-57-hBu"/>
+                <outlet property="shareBtnWidth" destination="hSK-bU-Qby" id="DwP-Gu-bk2"/>
+                <outlet property="textField" destination="vin-Je-Eol" id="IR6-3g-btZ"/>
+                <outlet property="textFieldHeight" destination="3iJ-5D-7Ml" id="UXo-1H-79m"/>
+            </connections>
+            <point key="canvasLocation" x="36.5" y="425.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="collect" width="30" height="30"/>
+        <image name="collect_selected" width="30" height="30"/>
+        <image name="send" width="30" height="30"/>
+        <image name="send_normal" width="30" height="30"/>
+        <image name="share" width="30" height="30"/>
+    </resources>
+</document>
