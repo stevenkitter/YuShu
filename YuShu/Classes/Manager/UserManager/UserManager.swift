@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 import Haneke
-import SwiftyJSON
+
 class UserManager: NSObject {
     static let shareUserManager = UserManager()
     
