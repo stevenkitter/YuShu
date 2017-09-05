@@ -11,11 +11,11 @@ import UIKit
 
 class RootTabBarController: UITabBarController {
     //控制器的4个自控制器
-    public let homeVc = HomeViewController()
-    public let interactVc = InteractViewController()
-    public let meVc = MeViewController()
+    public let homeVc = YSHomeViewController()
+    public let interactVc = YSInterViewController()
+    public let meVc = YSMeViewController()
     //title image 
-    let titles = ["AK网贷","交流","我的"]
+    let titles = ["御墅","交流","我的"]
     let unSelectedImageStrs = ["home","circle","me"]
     
     

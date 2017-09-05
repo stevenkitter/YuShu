@@ -27,18 +27,6 @@
 		1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351BA1F5CF54200BB86CA /* UserProfileManager.swift */; };
 		1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351BD1F5CF54200BB86CA /* UnRead.swift */; };
 		1843522C1F5CF54200BB86CA /* WXMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351BE1F5CF54200BB86CA /* WXMessage.swift */; };
-		1843523C1F5CF54200BB86CA /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D11F5CF54200BB86CA /* Circle.swift */; };
-		1843523D1F5CF54200BB86CA /* CircleXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D21F5CF54200BB86CA /* CircleXViewController.swift */; };
-		1843523E1F5CF54200BB86CA /* InteractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D31F5CF54200BB86CA /* InteractViewController.swift */; };
-		1843523F1F5CF54200BB86CA /* WXCancelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D41F5CF54200BB86CA /* WXCancelCollectionViewCell.swift */; };
-		184352401F5CF54200BB86CA /* WXCancelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351D51F5CF54200BB86CA /* WXCancelCollectionViewCell.xib */; };
-		184352411F5CF54200BB86CA /* WXCircleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D61F5CF54200BB86CA /* WXCircleTableViewCell.swift */; };
-		184352421F5CF54200BB86CA /* WXCircleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351D71F5CF54200BB86CA /* WXCircleTableViewCell.xib */; };
-		184352431F5CF54200BB86CA /* WXImageViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351D81F5CF54200BB86CA /* WXImageViewCollectionViewCell.swift */; };
-		184352441F5CF54200BB86CA /* WXImageViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351D91F5CF54200BB86CA /* WXImageViewCollectionViewCell.xib */; };
-		184352451F5CF54200BB86CA /* WXPostCircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351DA1F5CF54200BB86CA /* WXPostCircleViewController.swift */; };
-		184352461F5CF54200BB86CA /* WXPostCircleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351DB1F5CF54200BB86CA /* WXPostCircleViewController.xib */; };
-		184352471F5CF54200BB86CA /* WXPostImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351DC1F5CF54200BB86CA /* WXPostImage.swift */; };
 		184352481F5CF54200BB86CA /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351DE1F5CF54200BB86CA /* LoadingViewController.swift */; };
 		184352491F5CF54200BB86CA /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351DF1F5CF54200BB86CA /* LoadingViewController.xib */; };
 		1843524A1F5CF54200BB86CA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351E11F5CF54200BB86CA /* LoginViewController.xib */; };
@@ -46,24 +34,6 @@
 		1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351E51F5CF54200BB86CA /* LoginViewController.swift */; };
 		1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351E61F5CF54200BB86CA /* RegisterXViewController.swift */; };
 		1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351E71F5CF54200BB86CA /* RegisterXViewController.xib */; };
-		1843524F1F5CF54200BB86CA /* MeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351EA1F5CF54200BB86CA /* MeCell.swift */; };
-		184352501F5CF54200BB86CA /* MeHeadImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351EB1F5CF54200BB86CA /* MeHeadImageTableViewCell.swift */; };
-		184352511F5CF54200BB86CA /* MeHeadImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351EC1F5CF54200BB86CA /* MeHeadImageTableViewCell.xib */; };
-		184352521F5CF54200BB86CA /* MeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351ED1F5CF54200BB86CA /* MeInfoTableViewCell.swift */; };
-		184352531F5CF54200BB86CA /* MeInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351EE1F5CF54200BB86CA /* MeInfoTableViewCell.xib */; };
-		184352541F5CF54200BB86CA /* MeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351EF1F5CF54200BB86CA /* MeTableViewCell.swift */; };
-		184352551F5CF54200BB86CA /* MeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351F01F5CF54200BB86CA /* MeTableViewCell.xib */; };
-		184352561F5CF54200BB86CA /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F11F5CF54200BB86CA /* MeViewController.swift */; };
-		184352571F5CF54200BB86CA /* MeXHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F21F5CF54200BB86CA /* MeXHeaderView.swift */; };
-		184352581F5CF54200BB86CA /* MeXHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351F31F5CF54200BB86CA /* MeXHeaderView.xib */; };
-		184352591F5CF54200BB86CA /* WXCollectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F41F5CF54200BB86CA /* WXCollectsViewController.swift */; };
-		1843525A1F5CF54200BB86CA /* WXEditMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F51F5CF54200BB86CA /* WXEditMeViewController.swift */; };
-		1843525B1F5CF54200BB86CA /* WXEditTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F61F5CF54200BB86CA /* WXEditTextFieldViewController.swift */; };
-		1843525C1F5CF54200BB86CA /* WXMessageListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F71F5CF54200BB86CA /* WXMessageListTableViewCell.swift */; };
-		1843525D1F5CF54200BB86CA /* WXMessageListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 184351F81F5CF54200BB86CA /* WXMessageListTableViewCell.xib */; };
-		1843525E1F5CF54200BB86CA /* WXMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351F91F5CF54200BB86CA /* WXMessageListViewController.swift */; };
-		1843525F1F5CF54200BB86CA /* WXMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351FA1F5CF54200BB86CA /* WXMessagesViewController.swift */; };
-		184352601F5CF54200BB86CA /* WXPushedArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184351FB1F5CF54200BB86CA /* WXPushedArticleViewController.swift */; };
 		184352611F5CF54200BB86CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184351FD1F5CF54200BB86CA /* Assets.xcassets */; };
 		184352621F5CF54200BB86CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 184351FE1F5CF54200BB86CA /* Localizable.strings */; };
 		184352631F5CF54200BB86CA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 184352011F5CF54200BB86CA /* Info.plist */; };
@@ -85,6 +55,10 @@
 		184352731F5CF54200BB86CA /* WXActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */; };
 		184352741F5CF54200BB86CA /* WXAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184352191F5CF54200BB86CA /* WXAlertController.swift */; };
 		184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843521A1F5CF54200BB86CA /* WXProgressView.swift */; };
+		18D788371F5D33FE00312DF4 /* YSMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D788361F5D33FE00312DF4 /* YSMeViewController.swift */; };
+		18D7883C1F5D359D00312DF4 /* YSInterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */; };
+		18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7883D1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift */; };
+		18D788401F5D36B600312DF4 /* YSHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D7883E1F5D36B600312DF4 /* YSHomeCollectionViewCell.xib */; };
 		18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF42761F5CFBC4008280F3 /* YSHomeViewController.swift */; };
 		18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EF42781F5CFC08008280F3 /* YSHomeTableViewCell.swift */; };
 		18EF427B1F5CFC08008280F3 /* YSHomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EF42791F5CFC08008280F3 /* YSHomeTableViewCell.xib */; };
@@ -138,18 +112,6 @@
 		184351BA1F5CF54200BB86CA /* UserProfileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileManager.swift; sourceTree = "<group>"; };
 		184351BD1F5CF54200BB86CA /* UnRead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnRead.swift; sourceTree = "<group>"; };
 		184351BE1F5CF54200BB86CA /* WXMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMessage.swift; sourceTree = "<group>"; };
-		184351D11F5CF54200BB86CA /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
-		184351D21F5CF54200BB86CA /* CircleXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleXViewController.swift; sourceTree = "<group>"; };
-		184351D31F5CF54200BB86CA /* InteractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractViewController.swift; sourceTree = "<group>"; };
-		184351D41F5CF54200BB86CA /* WXCancelCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXCancelCollectionViewCell.swift; sourceTree = "<group>"; };
-		184351D51F5CF54200BB86CA /* WXCancelCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXCancelCollectionViewCell.xib; sourceTree = "<group>"; };
-		184351D61F5CF54200BB86CA /* WXCircleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXCircleTableViewCell.swift; sourceTree = "<group>"; };
-		184351D71F5CF54200BB86CA /* WXCircleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXCircleTableViewCell.xib; sourceTree = "<group>"; };
-		184351D81F5CF54200BB86CA /* WXImageViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXImageViewCollectionViewCell.swift; sourceTree = "<group>"; };
-		184351D91F5CF54200BB86CA /* WXImageViewCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXImageViewCollectionViewCell.xib; sourceTree = "<group>"; };
-		184351DA1F5CF54200BB86CA /* WXPostCircleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPostCircleViewController.swift; sourceTree = "<group>"; };
-		184351DB1F5CF54200BB86CA /* WXPostCircleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXPostCircleViewController.xib; sourceTree = "<group>"; };
-		184351DC1F5CF54200BB86CA /* WXPostImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPostImage.swift; sourceTree = "<group>"; };
 		184351DE1F5CF54200BB86CA /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		184351DF1F5CF54200BB86CA /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
 		184351E21F5CF54200BB86CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
@@ -158,24 +120,6 @@
 		184351E61F5CF54200BB86CA /* RegisterXViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterXViewController.swift; sourceTree = "<group>"; };
 		184351E71F5CF54200BB86CA /* RegisterXViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterXViewController.xib; sourceTree = "<group>"; };
 		184351E81F5CF54200BB86CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
-		184351EA1F5CF54200BB86CA /* MeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeCell.swift; sourceTree = "<group>"; };
-		184351EB1F5CF54200BB86CA /* MeHeadImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeHeadImageTableViewCell.swift; sourceTree = "<group>"; };
-		184351EC1F5CF54200BB86CA /* MeHeadImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeHeadImageTableViewCell.xib; sourceTree = "<group>"; };
-		184351ED1F5CF54200BB86CA /* MeInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeInfoTableViewCell.swift; sourceTree = "<group>"; };
-		184351EE1F5CF54200BB86CA /* MeInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeInfoTableViewCell.xib; sourceTree = "<group>"; };
-		184351EF1F5CF54200BB86CA /* MeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewCell.swift; sourceTree = "<group>"; };
-		184351F01F5CF54200BB86CA /* MeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeTableViewCell.xib; sourceTree = "<group>"; };
-		184351F11F5CF54200BB86CA /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		184351F21F5CF54200BB86CA /* MeXHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeXHeaderView.swift; sourceTree = "<group>"; };
-		184351F31F5CF54200BB86CA /* MeXHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeXHeaderView.xib; sourceTree = "<group>"; };
-		184351F41F5CF54200BB86CA /* WXCollectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXCollectsViewController.swift; sourceTree = "<group>"; };
-		184351F51F5CF54200BB86CA /* WXEditMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXEditMeViewController.swift; sourceTree = "<group>"; };
-		184351F61F5CF54200BB86CA /* WXEditTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXEditTextFieldViewController.swift; sourceTree = "<group>"; };
-		184351F71F5CF54200BB86CA /* WXMessageListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMessageListTableViewCell.swift; sourceTree = "<group>"; };
-		184351F81F5CF54200BB86CA /* WXMessageListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXMessageListTableViewCell.xib; sourceTree = "<group>"; };
-		184351F91F5CF54200BB86CA /* WXMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMessageListViewController.swift; sourceTree = "<group>"; };
-		184351FA1F5CF54200BB86CA /* WXMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXMessagesViewController.swift; sourceTree = "<group>"; };
-		184351FB1F5CF54200BB86CA /* WXPushedArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXPushedArticleViewController.swift; sourceTree = "<group>"; };
 		184351FD1F5CF54200BB86CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184351FF1F5CF54200BB86CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		184352001F5CF54200BB86CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -200,6 +144,10 @@
 		184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXActivityIndicatorView.swift; sourceTree = "<group>"; };
 		184352191F5CF54200BB86CA /* WXAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXAlertController.swift; sourceTree = "<group>"; };
 		1843521A1F5CF54200BB86CA /* WXProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXProgressView.swift; sourceTree = "<group>"; };
+		18D788361F5D33FE00312DF4 /* YSMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeViewController.swift; sourceTree = "<group>"; };
+		18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSInterViewController.swift; sourceTree = "<group>"; };
+		18D7883D1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		18D7883E1F5D36B600312DF4 /* YSHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		18EF42761F5CFBC4008280F3 /* YSHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeViewController.swift; sourceTree = "<group>"; };
 		18EF42781F5CFC08008280F3 /* YSHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeTableViewCell.swift; sourceTree = "<group>"; };
 		18EF42791F5CFC08008280F3 /* YSHomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeTableViewCell.xib; sourceTree = "<group>"; };
@@ -403,18 +351,9 @@
 		184351D01F5CF54200BB86CA /* Interact */ = {
 			isa = PBXGroup;
 			children = (
-				184351D11F5CF54200BB86CA /* Circle.swift */,
-				184351D21F5CF54200BB86CA /* CircleXViewController.swift */,
-				184351D31F5CF54200BB86CA /* InteractViewController.swift */,
-				184351D41F5CF54200BB86CA /* WXCancelCollectionViewCell.swift */,
-				184351D51F5CF54200BB86CA /* WXCancelCollectionViewCell.xib */,
-				184351D61F5CF54200BB86CA /* WXCircleTableViewCell.swift */,
-				184351D71F5CF54200BB86CA /* WXCircleTableViewCell.xib */,
-				184351D81F5CF54200BB86CA /* WXImageViewCollectionViewCell.swift */,
-				184351D91F5CF54200BB86CA /* WXImageViewCollectionViewCell.xib */,
-				184351DA1F5CF54200BB86CA /* WXPostCircleViewController.swift */,
-				184351DB1F5CF54200BB86CA /* WXPostCircleViewController.xib */,
-				184351DC1F5CF54200BB86CA /* WXPostImage.swift */,
+				18D788381F5D357900312DF4 /* controller */,
+				18D788391F5D357900312DF4 /* model */,
+				18D7883A1F5D357900312DF4 /* view */,
 			);
 			path = Interact;
 			sourceTree = "<group>";
@@ -443,24 +382,9 @@
 		184351E91F5CF54200BB86CA /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				184351EA1F5CF54200BB86CA /* MeCell.swift */,
-				184351EB1F5CF54200BB86CA /* MeHeadImageTableViewCell.swift */,
-				184351EC1F5CF54200BB86CA /* MeHeadImageTableViewCell.xib */,
-				184351ED1F5CF54200BB86CA /* MeInfoTableViewCell.swift */,
-				184351EE1F5CF54200BB86CA /* MeInfoTableViewCell.xib */,
-				184351EF1F5CF54200BB86CA /* MeTableViewCell.swift */,
-				184351F01F5CF54200BB86CA /* MeTableViewCell.xib */,
-				184351F11F5CF54200BB86CA /* MeViewController.swift */,
-				184351F21F5CF54200BB86CA /* MeXHeaderView.swift */,
-				184351F31F5CF54200BB86CA /* MeXHeaderView.xib */,
-				184351F41F5CF54200BB86CA /* WXCollectsViewController.swift */,
-				184351F51F5CF54200BB86CA /* WXEditMeViewController.swift */,
-				184351F61F5CF54200BB86CA /* WXEditTextFieldViewController.swift */,
-				184351F71F5CF54200BB86CA /* WXMessageListTableViewCell.swift */,
-				184351F81F5CF54200BB86CA /* WXMessageListTableViewCell.xib */,
-				184351F91F5CF54200BB86CA /* WXMessageListViewController.swift */,
-				184351FA1F5CF54200BB86CA /* WXMessagesViewController.swift */,
-				184351FB1F5CF54200BB86CA /* WXPushedArticleViewController.swift */,
+				18D788331F5D33E700312DF4 /* controller */,
+				18D788341F5D33E700312DF4 /* model */,
+				18D788351F5D33E700312DF4 /* view */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -531,6 +455,50 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		18D788331F5D33E700312DF4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18D788361F5D33FE00312DF4 /* YSMeViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18D788341F5D33E700312DF4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		18D788351F5D33E700312DF4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		18D788381F5D357900312DF4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18D788391F5D357900312DF4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		18D7883A1F5D357900312DF4 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		18EF42731F5CFB8B008280F3 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +521,8 @@
 				18EF42791F5CFC08008280F3 /* YSHomeTableViewCell.xib */,
 				18EF427C1F5CFC33008280F3 /* YSHomeHeadView.swift */,
 				18EF427E1F5CFC42008280F3 /* YSHomeHeadView.xib */,
+				18D7883D1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift */,
+				18D7883E1F5D36B600312DF4 /* YSHomeCollectionViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -702,24 +672,16 @@
 			files = (
 				18EF427B1F5CFC08008280F3 /* YSHomeTableViewCell.xib in Resources */,
 				18EF427F1F5CFC42008280F3 /* YSHomeHeadView.xib in Resources */,
-				184352581F5CF54200BB86CA /* MeXHeaderView.xib in Resources */,
 				1843524A1F5CF54200BB86CA /* LoginViewController.xib in Resources */,
 				184352491F5CF54200BB86CA /* LoadingViewController.xib in Resources */,
-				184352421F5CF54200BB86CA /* WXCircleTableViewCell.xib in Resources */,
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
-				184352551F5CF54200BB86CA /* MeTableViewCell.xib in Resources */,
-				184352401F5CF54200BB86CA /* WXCancelCollectionViewCell.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
-				184352441F5CF54200BB86CA /* WXImageViewCollectionViewCell.xib in Resources */,
-				184352461F5CF54200BB86CA /* WXPostCircleViewController.xib in Resources */,
-				184352531F5CF54200BB86CA /* MeInfoTableViewCell.xib in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
-				1843525D1F5CF54200BB86CA /* WXMessageListTableViewCell.xib in Resources */,
 				1843526F1F5CF54200BB86CA /* CommentToolView.xib in Resources */,
 				184352621F5CF54200BB86CA /* Localizable.strings in Resources */,
+				18D788401F5D36B600312DF4 /* YSHomeCollectionViewCell.xib in Resources */,
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
 				184352611F5CF54200BB86CA /* Assets.xcassets in Resources */,
-				184352511F5CF54200BB86CA /* MeHeadImageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,34 +902,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				184352561F5CF54200BB86CA /* MeViewController.swift in Sources */,
 				1843522C1F5CF54200BB86CA /* WXMessage.swift in Sources */,
 				184352691F5CF54200BB86CA /* RootViewController+Ex.swift in Sources */,
 				184352261F5CF54200BB86CA /* Observable+ObjectMapper.swift in Sources */,
 				1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */,
-				1843523C1F5CF54200BB86CA /* Circle.swift in Sources */,
-				1843523D1F5CF54200BB86CA /* CircleXViewController.swift in Sources */,
 				184352701F5CF54200BB86CA /* RSKPlaceholderTextView.swift in Sources */,
 				1843526C1F5CF54200BB86CA /* UITextField+LeftView.swift in Sources */,
 				1843521C1F5CF54200BB86CA /* AppDelegate.swift in Sources */,
 				1843526B1F5CF54200BB86CA /* UIColor+Ex.swift in Sources */,
-				184352471F5CF54200BB86CA /* WXPostImage.swift in Sources */,
 				184352481F5CF54200BB86CA /* LoadingViewController.swift in Sources */,
-				1843525A1F5CF54200BB86CA /* WXEditMeViewController.swift in Sources */,
 				184352681F5CF54200BB86CA /* Date+Ex.swift in Sources */,
 				184352241F5CF54200BB86CA /* UserApi.swift in Sources */,
 				184352291F5CF54200BB86CA /* UserManager.swift in Sources */,
-				184352451F5CF54200BB86CA /* WXPostCircleViewController.swift in Sources */,
-				184352571F5CF54200BB86CA /* MeXHeaderView.swift in Sources */,
-				184352501F5CF54200BB86CA /* MeHeadImageTableViewCell.swift in Sources */,
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
 				1843521F1F5CF54200BB86CA /* UrlsConstant.swift in Sources */,
 				184352231F5CF54200BB86CA /* HomeApi.swift in Sources */,
-				1843524F1F5CF54200BB86CA /* MeCell.swift in Sources */,
 				184352731F5CF54200BB86CA /* WXActivityIndicatorView.swift in Sources */,
-				1843523E1F5CF54200BB86CA /* InteractViewController.swift in Sources */,
-				1843525C1F5CF54200BB86CA /* WXMessageListTableViewCell.swift in Sources */,
 				1843526E1F5CF54200BB86CA /* CommentToolView.swift in Sources */,
+				18D7883C1F5D359D00312DF4 /* YSInterViewController.swift in Sources */,
 				18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
@@ -975,31 +927,23 @@
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,
 				184352201F5CF54200BB86CA /* UtilsConstant.swift in Sources */,
 				184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */,
-				1843525E1F5CF54200BB86CA /* WXMessageListViewController.swift in Sources */,
-				184352521F5CF54200BB86CA /* MeInfoTableViewCell.swift in Sources */,
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
-				184352601F5CF54200BB86CA /* WXPushedArticleViewController.swift in Sources */,
 				184352671F5CF54200BB86CA /* RootViewController.swift in Sources */,
-				1843525F1F5CF54200BB86CA /* WXMessagesViewController.swift in Sources */,
 				184352211F5CF54200BB86CA /* BaseApiModel.swift in Sources */,
 				1843526D1F5CF54200BB86CA /* UIView+Ex.swift in Sources */,
-				184352431F5CF54200BB86CA /* WXImageViewCollectionViewCell.swift in Sources */,
-				184352411F5CF54200BB86CA /* WXCircleTableViewCell.swift in Sources */,
 				184352221F5CF54200BB86CA /* CircleApi.swift in Sources */,
 				1843521E1F5CF54200BB86CA /* NotificationNameConstant.swift in Sources */,
 				184352721F5CF54200BB86CA /* RefreshHeader.swift in Sources */,
 				184352281F5CF54200BB86CA /* UserInfo.swift in Sources */,
-				184352541F5CF54200BB86CA /* MeTableViewCell.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
-				1843525B1F5CF54200BB86CA /* WXEditTextFieldViewController.swift in Sources */,
 				18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */,
+				18D788371F5D33FE00312DF4 /* YSMeViewController.swift in Sources */,
 				18EF427D1F5CFC33008280F3 /* YSHomeHeadView.swift in Sources */,
 				184352741F5CF54200BB86CA /* WXAlertController.swift in Sources */,
 				1843526A1F5CF54200BB86CA /* String+Ex.swift in Sources */,
-				184352591F5CF54200BB86CA /* WXCollectsViewController.swift in Sources */,
+				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,
-				1843523F1F5CF54200BB86CA /* WXCancelCollectionViewCell.swift in Sources */,
 				184352271F5CF54200BB86CA /* Response+ObjectMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,7 +11,7 @@ import Moya
 enum CircleApi {
     case circles(friend_id: String, user_id: String, page: Int)
     case sendComment(content: String, user_id: String, friend_id: String, about_user_id: String)
-    case newCircle(content: String, user_id: String, images: [WXPostImage])
+//    case newCircle(content: String, user_id: String, images: [WXPostImage])
 }
 
 extension CircleApi: TargetType {
@@ -20,8 +20,8 @@ extension CircleApi: TargetType {
     }
     var path: String {
         switch self {
-        case .newCircle:
-            return ServiceUrlStr + "?service=User.upload_img"
+//        case .newCircle:
+//            return ServiceUrlStr + "?service=User.upload_img"
         default:
             return ServiceUrlStr
         }
@@ -29,8 +29,8 @@ extension CircleApi: TargetType {
     }
     var method: Moya.Method {
         switch self {
-        case .newCircle:
-            return .post
+//        case .newCircle:
+//            return .post
         default:
             return .get
         }
@@ -62,11 +62,11 @@ extension CircleApi: TargetType {
             params["about_user_id"] = about_user_id
             params["service"] = "Friend.send_con"
             return params
-        case let .newCircle(content, user_id, _):
-            var params: [String: Any] = [:]
-            params["content"] = content
-            params["user_id"] = user_id
-            return params
+//        case let .newCircle(content, user_id, _):
+//            var params: [String: Any] = [:]
+//            params["content"] = content
+//            params["user_id"] = user_id
+//            return params
         }
         
     }
@@ -78,15 +78,15 @@ extension CircleApi: TargetType {
     }
     var task: Task{
         switch self {
-        case let .newCircle(_, _, images):
-            var img: [MultipartFormData] = []
-            
-            for (index,item) in images.enumerated() {
-                let imageData = UIImageJPEGRepresentation(item.image!, 0.5)
-                let formData = MultipartFormData(provider: .data(imageData!), name: "file\(index+1)", fileName: item.imageName, mimeType: "image/png")
-                img.append(formData)
-            }
-            return .upload(.multipart(img))
+//        case let .newCircle(_, _, images):
+//            var img: [MultipartFormData] = []
+//            
+//            for (index,item) in images.enumerated() {
+//                let imageData = UIImageJPEGRepresentation(item.image!, 0.5)
+//                let formData = MultipartFormData(provider: .data(imageData!), name: "file\(index+1)", fileName: item.imageName, mimeType: "image/png")
+//                img.append(formData)
+//            }
+//            return .upload(.multipart(img))
         default:
             return .request
         }

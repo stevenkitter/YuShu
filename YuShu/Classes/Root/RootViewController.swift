@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Then
 class RootViewController: UIViewController {
     let disposeBag = DisposeBag()
     let tableView = UITableView(frame: CGRect.zero, style: .plain).then {

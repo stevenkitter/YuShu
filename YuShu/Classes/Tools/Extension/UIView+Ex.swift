@@ -34,6 +34,11 @@ extension UITableView{
         self.register(UINib(nibName: str, bundle: nil), forCellReuseIdentifier: str)
     }
 }
+extension UICollectionView{
+    func register(str: String){
+        self.register(UINib(nibName: str, bundle: nil), forCellWithReuseIdentifier: str)
+    }
+}
 
 extension UIImageView{
     func kfImage(_ str: String) {
