@@ -11,50 +11,44 @@ import ObjectMapper
 import DateToolsSwift
 
 class UserInfo: Mappable {
-    var id: String?
-    var user_nickname: String?
-    var user_password: String?
+    var user_id: String?
+    var user_pwd: String?
+    var user_salt: String?
     var user_name: String?
-    var role_id: String?
-    var user_phone: String?
-    var source_type: String?
-    var source_code: String?
-    var sex: String?
-    var invitation_code: String?
-    var points: String?
-    var money: String?
-    var user_avatar: String?
-    var register_time: String?
-    var login_time: String?
-    var login_ip: String?
-    var user_card: String?
-    var collect: String?
-    var publish: String?
+    var user_name_set: String?
+    var user_nickname: String?
+    var user_floor: String?
+    var user_room: String?
+    var user_no: String?
+    var user_sex: String?
+    var user_headpic: String?
+    var user_tel: String?
+    var user_tel_set: String?
+    var user_status: String?
+    var user_check: String?
+ 
  
     
     required init?(map: Map) {
         
     }
     func mapping(map: Map) {
-        id <- map["user_id"]
-        user_nickname <- map["user_nickname"]
-        user_password <- map["user_password"]
+        user_id <- map["user_id"]
+        user_pwd <- map["user_pwd"]
+        user_salt <- map["user_salt"]
         user_name <- map["user_name"]
-        role_id <- map["role_id"]
-        user_phone <- map["user_phone"]
-        source_type <- map["source_type"]
-        source_code <- map["source_code"]
-        sex <- map["sex"]
-        invitation_code <- map["invitation_code"]
-        points <- map["points"]
-        money <- map["money"]
-        user_avatar <- (map["user_avatar"],AvatarTransform())
-        register_time <- map["register_time"]
-        login_time <- map["login_time"]
-        login_ip <- map["login_ip"]
-        user_card <- map["user_card"]
-        collect <- map["collect"]
-        publish <- map["publish"]
+        user_name_set <- map["user_name_set"]
+        user_nickname <- map["user_nickname"]
+        user_floor <- map["user_floor"]
+        user_room <- map["user_room"]
+        user_no <- map["user_no"]
+        user_sex <- map["user_sex"]
+        user_headpic <- map["user_headpic"]
+        user_tel <- map["user_tel"]
+        user_tel_set <- map["user_tel_set"]
+        user_status <- map["user_status"]
+        user_check <- map["user_check"]
+     
     }
     
     

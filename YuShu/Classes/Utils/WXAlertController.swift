@@ -38,3 +38,12 @@ class WXAlertController {
         RootController?.present(alertC, animated: true, completion: nil)
     }
 }
+
+extension RootViewController {
+    func alertWithMessageOK(message: String, okClosure: ((_ alertAction: UIAlertAction) -> Void)?) {
+        let alertC = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "确定", style: .destructive, handler: okClosure)
+        alertC.addAction(okAction)
+        self.present(alertC, animated: true, completion: nil)
+    }
+}

@@ -28,18 +28,30 @@ extension AppDelegate {
         self.window = UIWindow(frame: KScreenBounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        self.window?.rootViewController = RootTabBarController()
+        self.window?.rootViewController = LoadingViewController()
     }
     //初始化app服务
     func initService()  {
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginStateChanged(notifi:)), name: NotificationLoginStateChange, object: nil)
     }
+    
+   
 }
 
 //notification
 extension AppDelegate {
-    
+    func loginStateChanged(notifi: Notification) {
+        if let bol = notifi.object as? Bool {
+            guard bol else {
+                let loginNav = RootNavigationController(rootViewController: LoginViewController())
+                self.window?.rootViewController = loginNav
+                return
+            }
+            let main = RootTabBarController()
+            self.window?.rootViewController = main
+        }
+    }
 }
 //localUser
 extension AppDelegate {

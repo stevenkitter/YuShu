@@ -58,7 +58,7 @@ class LoginViewController: RootViewController {
     }
     func setupRx() {
         let usernameValid = userNameTextField.rx.text.orEmpty
-            .map {$0.characters.count >= minUsernameLength && $0.characters.count < maxUsernameLength}
+            .map {$0.characters.count >= 3 }
 //        let _ = userNameTextField.rx.text.orEmpty
 //            .map {$0.characters.count >= minUsernameLength && $0.characters.count < maxUsernameLength}
 //            .subscribe(onNext: { [unowned self] (flag) in
@@ -118,14 +118,14 @@ class LoginViewController: RootViewController {
     func login(){
        
         WXActivityIndicatorView.start()
-        NetworkManager.providerUserApi.request(.login(tel: userNameTextField.text ?? "", password: passwordTextField.text ?? ""))
+        NetworkManager.providerUserApi.request(.login(account: userNameTextField.text ?? "", pwd: passwordTextField.text ?? ""))
             .mapObject(UserInfo.self)
-            .subscribe(onNext: { [unowned self] (userInfo) in
+            .subscribe(onNext: { (userInfo) in
                 WXActivityIndicatorView.stop()
                 UserManager.shareUserManager.curUserInfo = userInfo
                 SVProgressHUD.showSuccess(withStatus: "登录成功")
-                self.dismiss(animated: true, completion: nil)
-                self.closure?()
+                NotificationCenter.default.post(name: NotificationLoginStateChange, object: true)
+                
                 
                 
             }, onError: { (error) in

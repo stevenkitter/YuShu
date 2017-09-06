@@ -3,10 +3,10 @@
 "3HW-ac-b0E.text" = "The most professional internship cloud service platform";
 
 /* Class = "UIButton"; normalTitle = "忘记密码"; ObjectID = "5H6-ei-glE"; */
-"5H6-ei-glE.normalTitle" = "Forgot password";
+"5H6-ei-glE.normalTitle" = "忘记密码";
 
 /* Class = "UIButton"; normalTitle = "登录"; ObjectID = "WOF-nH-7nn"; */
-"WOF-nH-7nn.normalTitle" = "Sign in";
+"WOF-nH-7nn.normalTitle" = "登录";
 
 /* Class = "UIButton"; normalTitle = "账号提示"; ObjectID = "lKv-ln-6uh"; */
-"lKv-ln-6uh.normalTitle" = "Account prompt";
+"lKv-ln-6uh.normalTitle" = "申请注册";

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSMeHeadView" customModule="YuShu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-Gs-kPc">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_icon" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-3t-bGf">
+                            <rect key="frame" x="162" y="10" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="Fb2-5m-Rvf"/>
+                                <constraint firstAttribute="height" constant="50" id="yfb-xJ-TA7"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fn0-DD-r8X">
+                            <rect key="frame" x="171.5" y="65" width="31" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="您加入了社区有2个月了" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ozz-md-loR">
+                            <rect key="frame" x="10" y="88" width="355" height="14.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Ozz-md-loR" firstAttribute="leading" secondItem="JTE-Gs-kPc" secondAttribute="leading" constant="10" id="2Rs-q3-fIG"/>
+                        <constraint firstItem="Fn0-DD-r8X" firstAttribute="top" secondItem="OBP-3t-bGf" secondAttribute="bottom" constant="5" id="2fA-rU-LTM"/>
+                        <constraint firstAttribute="bottom" secondItem="Ozz-md-loR" secondAttribute="bottom" constant="22.5" id="54F-zb-q4f"/>
+                        <constraint firstItem="Fn0-DD-r8X" firstAttribute="centerX" secondItem="JTE-Gs-kPc" secondAttribute="centerX" id="9o6-9g-C8j"/>
+                        <constraint firstItem="OBP-3t-bGf" firstAttribute="centerX" secondItem="JTE-Gs-kPc" secondAttribute="centerX" id="BQT-U2-nzv"/>
+                        <constraint firstAttribute="width" secondItem="JTE-Gs-kPc" secondAttribute="height" multiplier="3:1" id="W4j-qS-MYD"/>
+                        <constraint firstAttribute="trailing" secondItem="Ozz-md-loR" secondAttribute="trailing" constant="10" id="eQp-Lx-YDQ"/>
+                        <constraint firstItem="Ozz-md-loR" firstAttribute="top" secondItem="Fn0-DD-r8X" secondAttribute="bottom" constant="5" id="n3X-0I-bYV"/>
+                        <constraint firstItem="OBP-3t-bGf" firstAttribute="top" secondItem="JTE-Gs-kPc" secondAttribute="top" constant="10" id="nMU-JO-xkE"/>
+                        <constraint firstItem="Ozz-md-loR" firstAttribute="centerX" secondItem="JTE-Gs-kPc" secondAttribute="centerX" id="s94-rY-aLR"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGq-tB-X2e">
+                    <rect key="frame" x="0.0" y="125" width="375" height="120"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6b1-Xl-8Im">
+                            <rect key="frame" x="0.0" y="20" width="375" height="100"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GXl-8m-kaV">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                            <connections>
+                                <outlet property="dataSource" destination="iN0-l3-epB" id="YIA-WI-EMD"/>
+                                <outlet property="delegate" destination="iN0-l3-epB" id="24g-5X-grF"/>
+                            </connections>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="6b1-Xl-8Im" secondAttribute="trailing" id="0bz-Ap-bOE"/>
+                        <constraint firstItem="6b1-Xl-8Im" firstAttribute="leading" secondItem="eGq-tB-X2e" secondAttribute="leading" id="MKD-Hd-Lkh"/>
+                        <constraint firstAttribute="bottom" secondItem="6b1-Xl-8Im" secondAttribute="bottom" id="kg4-FD-YRK"/>
+                        <constraint firstItem="6b1-Xl-8Im" firstAttribute="top" secondItem="eGq-tB-X2e" secondAttribute="top" constant="20" id="lMp-DS-uw3"/>
+                        <constraint firstAttribute="height" constant="120" id="uqL-AI-dkz"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4tp-me-eqp">
+                    <rect key="frame" x="127" y="107.5" width="120" height="35"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10栋502" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyC-dc-1qc">
+                            <rect key="frame" x="33" y="9" width="55" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="HyC-dc-1qc" firstAttribute="centerX" secondItem="4tp-me-eqp" secondAttribute="centerX" id="3Y0-QV-Di2"/>
+                        <constraint firstAttribute="width" constant="120" id="UAd-mD-Qli"/>
+                        <constraint firstAttribute="height" constant="35" id="idN-ck-uVH"/>
+                        <constraint firstItem="HyC-dc-1qc" firstAttribute="centerY" secondItem="4tp-me-eqp" secondAttribute="centerY" id="kwR-pr-SwR"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <real key="value" value="17.5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="4tp-me-eqp" firstAttribute="bottom" secondItem="JTE-Gs-kPc" secondAttribute="bottom" constant="17.5" id="8Ny-r5-kVP"/>
+                <constraint firstItem="JTE-Gs-kPc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Bw9-9K-OIb"/>
+                <constraint firstAttribute="trailing" secondItem="eGq-tB-X2e" secondAttribute="trailing" id="Hy0-Dl-4HN"/>
+                <constraint firstItem="eGq-tB-X2e" firstAttribute="top" secondItem="JTE-Gs-kPc" secondAttribute="bottom" id="IJU-Lg-eHr"/>
+                <constraint firstAttribute="trailing" secondItem="JTE-Gs-kPc" secondAttribute="trailing" id="KTy-3j-CK4"/>
+                <constraint firstItem="4tp-me-eqp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="L4o-Go-9xE"/>
+                <constraint firstItem="JTE-Gs-kPc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N3h-Jf-cY4"/>
+                <constraint firstItem="eGq-tB-X2e" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hR9-S5-kGH"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="centerView" destination="4tp-me-eqp" id="UWx-9a-6g1"/>
+                <outlet property="collectionView" destination="6b1-Xl-8Im" id="8GQ-6u-bK7"/>
+                <outlet property="floorLabel" destination="HyC-dc-1qc" id="Rsi-kn-9Ag"/>
+                <outlet property="flowLayout" destination="GXl-8m-kaV" id="2Ib-D7-Pwq"/>
+                <outlet property="iconImageView" destination="OBP-3t-bGf" id="9JI-hb-1wc"/>
+                <outlet property="nameLabel" destination="Fn0-DD-r8X" id="64x-fC-eXX"/>
+                <outlet property="userDetailLabel" destination="Ozz-md-loR" id="Dwn-Ka-hFq"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="131.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="default_icon" width="100" height="100"/>
+    </resources>
+</document>

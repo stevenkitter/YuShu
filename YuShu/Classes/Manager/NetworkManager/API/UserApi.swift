@@ -12,11 +12,12 @@ import Moya
 let GitHubProvider = MoyaProvider<UserApi>()
 
 enum UserApi {
-    case login(tel:String, password: String)
+   
+    case login(account:String, pwd: String)
     case logout
     case userInfo(user_id: String)
     case update(tel: String, info: String, value: String)
-    case register(tel: String, pass: String)
+    case register(user_name: String, user_floor: String, user_room: String,user_tel: String)
     case getCode(tel: String)
     case updateByUserId(user_id: String, info: String, value: String)
     case uploadAva(user_id: String, image: UIImage, imageName: String)
@@ -61,11 +62,12 @@ extension UserApi: TargetType {
     
     var parameters: [String : Any]? {
         switch self {
-        case let .login(tel,password):
+        case let .login(account,pwd):
             var params: [String: Any] = [:]
-            params["tel"] = tel
-            params["pass"] = password
+            params["account"] = account
+            params["pwd"] = pwd
             params["service"] = "User.login"
+            
             return params
         case .logout:
             return nil
@@ -74,10 +76,12 @@ extension UserApi: TargetType {
             params["user_id"] = user_id
             params["service"] = "User.get_user"
             return params
-        case let .register(tel, pass):
+        case let .register(user_name, user_floor, user_room, user_tel):
             var params: [String: Any] = [:]
-            params["tel"] = tel
-            params["pass"] = pass
+            params["user_name"] = user_name
+            params["user_floor"] = user_floor
+            params["user_room"] = user_room
+            params["user_tel"] = user_tel
             params["service"] = "User.register"
             return params
         case let .update(tel, info, value):

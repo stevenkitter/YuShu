@@ -24,7 +24,7 @@ class RegisterXViewController: RootViewController {
     
     @IBOutlet weak var passwordSureTextField: UITextField!
     
-    @IBOutlet weak var getCodeBtn: UIButton!
+   
     
     @IBOutlet weak var actionButton: UIButton!
     
@@ -61,27 +61,36 @@ class RegisterXViewController: RootViewController {
     }
     
     func setupRx() {
-        let _ = usernameTextField.rx.text.orEmpty
-            .map {$0.characters.count >= minUsernameLength && $0.characters.count < maxUsernameLength}.subscribe(onNext: { [unowned self] (isable) in
-                self.getCodeBtn.isEnabled = isable
-            }, onError: { (error) in
-                
-            }).addDisposableTo(disposeBag)
-        getCodeBtn.rx.tap.subscribe(onNext: { [unowned self] in
-            self.getCode()
-        }).addDisposableTo(disposeBag)
-        
+       
+       
+        //楼号
         let usernameValid = usernameTextField.rx.text.orEmpty
-            .map {$0.characters.count >= minUsernameLength && $0.characters.count < maxUsernameLength}
+            .map { (str) -> Bool in
+                if !str.characters.contains("#") {
+                    return false
+                }
+                let twoStrs = str.components(separatedBy: "#")
+                if twoStrs.count != 2 {
+                    return false
+                }
+                for item in twoStrs {
+                    if item.characters.count == 0 {
+                        return false
+                    }
+                }
+                return true
+        }
+        //手机号
         let codeValid = codeTextField.rx.text.orEmpty
-            .map {$0.characters.count >= 4}
+            .map {$0.isRealPhoneNumber()}
         
+        //名字
         let passwordValid = passwordTextField.rx.text.orEmpty
-            .map {$0.characters.count >= minPasswordLength && $0.characters.count < maxPasswordLength}
-        let passwordSureValid = passwordSureTextField.rx.text.orEmpty
-            .map {$0.characters.count >= minPasswordLength && $0.characters.count < maxPasswordLength}
-        Observable.combineLatest(usernameValid, codeValid, passwordValid, passwordSureValid)
-            .map({ $0 && $1 && $2 && $3})
+            .map {$0.characters.count >= 1}
+        
+        
+        Observable.combineLatest(usernameValid, codeValid, passwordValid)
+            .map({ $0 && $1 && $2})
             .subscribe(onNext:{ [unowned self] in
                 self.actionButton.isEnabled = $0
                 self.actionButton.backgroundColor = $0 ? #colorLiteral(red: 0.2182945311, green: 0.6282978058, blue: 0.5143177509, alpha: 1) : UIColor.lightGray
@@ -92,10 +101,14 @@ class RegisterXViewController: RootViewController {
             self.register()
         }).addDisposableTo(disposeBag)
     }
-    fileprivate func getCode(){
+    
+    
+    fileprivate func register() {
         WXActivityIndicatorView.start()
-        NetworkManager.providerUserApi.request(.getCode(tel: usernameTextField.text ?? "")).mapJSON()
-        .subscribe(onNext: { (res) in
+        
+        guard let twoStrs = usernameTextField.text?.components(separatedBy: "#") else {return}
+        NetworkManager.providerUserApi.request(.register(user_name: passwordTextField.text ?? "", user_floor: twoStrs.first ?? "", user_room:  twoStrs.last ?? "", user_tel: codeTextField.text ?? "")).mapJSON()
+            .subscribe(onNext: { [unowned self] (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -103,63 +116,22 @@ class RegisterXViewController: RootViewController {
             guard let data = respon["data"] as? Dictionary<String, Any> else {
                 return
             }
-            guard let result = data["data"] as? Dictionary<String, Any> else {
-                return
-            }
-            SVProgressHUD.showSuccess(withStatus: data["msg"] as? String ?? "")
-            self.code = "\(result["captcha"] ?? "")"
-            self.codeXGeted()
+                
+            let msg = data["msg"] as? String
+            let code = data["code"] as? Int
+            self.alertWithMessageOK(message: msg ?? "成功", okClosure: { [unowned self] (_) in
+                if code == 1 {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            })
             
-        }, onError: { (er) in
+            
+            
+        }, onError: { (error) in
             WXActivityIndicatorView.stop()
         }).addDisposableTo(disposeBag)
-    }
-    
-    fileprivate func register() {
-        if passwordTextField.text != passwordSureTextField.text {
-            SVProgressHUD.showError(withStatus: "两次密码输入不一样")
-            return
-        }
-        if codeTextField.text != code {
-            SVProgressHUD.showError(withStatus: "验证码错误")
-            return
-        }
-        WXActivityIndicatorView.start()
-        if !isFindPassword {
-            NetworkManager.providerUserApi.request(.register(tel: usernameTextField.text ?? "", pass: passwordTextField.text ?? "")).mapJSON()
-                .subscribe(onNext: { [unowned self] (res) in
-                WXActivityIndicatorView.stop()
-                guard let respon = res as? Dictionary<String, Any> else{
-                    return
-                }
-                guard let data = respon["data"] as? Dictionary<String, Any> else {
-                    return
-                }
-                SVProgressHUD.showSuccess(withStatus: "注册成功请登录")
-                self.dismissPresent()
-                
-                
-            }, onError: { (error) in
-                WXActivityIndicatorView.stop()
-            }).addDisposableTo(disposeBag)
-        }else{
-            NetworkManager.providerUserApi.request(.update(tel: usernameTextField.text ?? "", info: "pass", value: passwordTextField.text ?? "")).mapJSON()
-                .subscribe(onNext: { [unowned self] (res) in
-                    WXActivityIndicatorView.stop()
-                    guard let respon = res as? Dictionary<String, Any> else{
-                        return
-                    }
-                    guard let data = respon["data"] as? Dictionary<String, Any> else {
-                        return
-                    }
-                    SVProgressHUD.showSuccess(withStatus: "修改成功，请登录")
-                    self.dismiss(animated: true, completion: nil)
-                    
-                    
-                    }, onError: { (error) in
-                    WXActivityIndicatorView.stop()
-                }).addDisposableTo(disposeBag)
-        }
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -173,34 +145,5 @@ class RegisterXViewController: RootViewController {
 }
 
 extension RegisterXViewController {
-    func codeXGeted(){
-        var second = 60
-        
-        let timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.global())
-        let work = DispatchWorkItem {
-            
-            DispatchQueue.main.async {
-                self.getCodeBtn.isEnabled = false
-                self.getCodeBtn.setTitle("剩余\(second)", for: .disabled)
-            }
-            if second == 0 {
-                DispatchQueue.main.async {
-                    self.getCodeBtn.isEnabled = true
-                }
-                timer.cancel()
-            }
-            second -= 1
-        }
-        
-        
-        
-        timer.scheduleRepeating(deadline: .now(), interval: .seconds(1), leeway: .seconds(60))
-        timer.setEventHandler(handler: work)
-        if #available(iOS 10.0, *) {
-            timer.activate()
-        } else {
-            
-            timer.resume()
-        }
-    }
+    
 }

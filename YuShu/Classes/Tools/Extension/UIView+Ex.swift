@@ -29,6 +29,20 @@ extension UIView {
     
 }
 
+extension UIView {
+    func moveX(x: CGFloat) {
+        var frame = self.frame
+        frame.origin.x += x
+        self.frame = frame
+    }
+    
+    func `setwidth`(w: CGFloat) {
+        var frame = self.frame
+        frame.size.width = w
+        self.frame = frame
+    }
+}
+
 extension UITableView{
     func register(str: String){
         self.register(UINib(nibName: str, bundle: nil), forCellReuseIdentifier: str)
@@ -45,3 +59,5 @@ extension UIImageView{
         self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
     }
 }
+
+

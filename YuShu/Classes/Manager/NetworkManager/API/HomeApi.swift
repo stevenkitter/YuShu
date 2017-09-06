@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum HomeApi {
+    case homeInfo()
     case getArticle(page: Int)
     case getAd(classid: Int)
     case getComment(article_id: String, user_id: String, page: Int)
@@ -50,6 +51,10 @@ extension HomeApi: TargetType {
     
     var parameters: [String : Any]? {
         switch self {
+        case .homeInfo():
+            var params: [String: Any] = [:]
+            params["service"] = "Index.getIndexInfo"
+            return params
         case let .getArticle(page):
             var params: [String: Any] = [:]
             params["page"] = page

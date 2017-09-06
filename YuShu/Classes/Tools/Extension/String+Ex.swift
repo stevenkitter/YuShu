@@ -21,12 +21,28 @@ extension String {
         return self.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
     }
     
+    func isRealPhoneNumber()-> Bool {
+        if self.characters.count != 11 {return false}
+        let reg = "^(1[0-9])\\d{9}$"
+        let predict = NSPredicate(format: "SELF MATCHES %@", reg)
+        return predict.evaluate(with: self)
+    }
+    
     func strRectMaxH(_ width: CGFloat, font: UIFont?)-> CGFloat {
         
         let nsStr = NSString(string: self)
         let rect = nsStr.boundingRect(with: CGSize(width: width, height: 8888), options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesFontLeading], attributes: [NSFontAttributeName: font ?? UIFont.systemFont(ofSize: 14)], context: nil)
         return rect.size.height
     }
+    
+    func strRectMaxW(_ height: CGFloat, font: UIFont?)-> CGFloat {
+        
+        let nsStr = NSString(string: self)
+        let rect = nsStr.boundingRect(with: CGSize(width: 8888, height: height), options: [.usesLineFragmentOrigin,.truncatesLastVisibleLine,.usesFontLeading], attributes: [NSFontAttributeName: font ?? UIFont.systemFont(ofSize: 14)], context: nil)
+        return rect.size.width
+    }
+    
+    
     
     func lastStr(off: Int)-> String {
         if self.characters.count == 0 {

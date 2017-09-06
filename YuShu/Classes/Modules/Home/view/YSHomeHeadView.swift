@@ -7,23 +7,39 @@
 //
 
 import UIKit
-import pop
+import LLCycleScrollView
 let num: CGFloat = 4
 let itemW = (KScreenWidth - (num + 1) * 10)/num
+let labelSpace: CGFloat = 60
 class YSHomeHeadView: UIView {
-    var timer: DispatchSourceTimer?
-    let eightTitles = ["","","","","","","",""]
-    var notices = ["xxxx","xxx","xxx","xxx"] {
+    
+    var timer: DispatchSourceTimer!
+    let eightTitles = ["群主公告","闲置转让","物业人事","民意投票","御墅论坛","装修指南","小区公约","周边便民"]
+    var noticeStr = "" {
         didSet{
             self.setupAnimate()
         }
     }
+    var ads: [Slide]? {
+        didSet{
+            adsSetup()
+        }
+    }
+    
+    let appendLabel = UILabel()
+    
+    var adView: LLCycleScrollView!
+    
+    @IBOutlet weak var scroLabel: UILabel!
+    
     @IBOutlet weak var ys_adsuperView: UIView!
     
     @IBOutlet weak var ys_showView: UIView!
+    
     @IBOutlet weak var ys_collectionView: UICollectionView!
     
-    @IBOutlet weak var ys_tableView: UITableView!
+    @IBOutlet weak var ys_collectionViewHeight: NSLayoutConstraint!
+
     @IBOutlet weak var ys_flowLayout: UICollectionViewFlowLayout!
     
     
@@ -47,35 +63,107 @@ class YSHomeHeadView: UIView {
         
     }
     
+   
     func setupUI() {
         ys_flowLayout.itemSize = CGSize(width: itemW, height: itemW)
         ys_flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         ys_collectionView.register(str: "YSHomeCollectionViewCell")
-        ys_tableView.register(str: "YSHomeShowTableViewCell")
+        
+        ys_collectionViewHeight.constant = itemW * 2 + 30
+        
+        self.ys_showView.addSubview(appendLabel)
+        appendLabel.font = scroLabel.font
+        appendLabel.textColor = scroLabel.textColor
+        
+        adView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio), didSelectItemAtIndex: { (index) in
+            
+        })
+        adView.autoScroll = true
+        adView.autoScrollTimeInterval = 4.0
+        adView.customPageControlStyle = .pill
+        ys_adsuperView.addSubview(adView)
     }
     
-    func setupAnimate() {
-        var row = 0
-        self.timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue.main)
-        timer?.scheduleRepeating(deadline: .now(), interval: .seconds(1))
-        timer?.setEventHandler {
-            if row == self.notices.count - 1 {
-                row = 0
-            }
-            DispatchQueue.main.async {
-                if row < self.notices.count {
-                    let indexP = IndexPath(row: row, section: 0)
-                    self.ys_tableView.scrollToRow(at: indexP, at: .top, animated: true)
-                }
-               
-            }
-            row += 1
-
-        }
-        if #available(iOS 10.0, *) {
-            timer?.activate()
+    func setLabelFrame() {
+        let ys_maxSuperW = self.ys_showView.frame.width
+        let ys_maxX = noticeStr.strRectMaxW(self.scroLabel.frame.height, font: self.scroLabel.font)
+        
+        
+        if ys_maxSuperW - ys_maxX > labelSpace {
+            self.appendLabel.frame = CGRect(x: ys_maxSuperW, y: self.scroLabel.frame.origin.y, width: self.scroLabel.frame.width, height: self.scroLabel.frame.height)
         }else{
-            timer?.resume()
+            appendLabel.frame = CGRect(x: ys_maxX + labelSpace, y: self.scroLabel.frame.origin.y, width: self.scroLabel.frame.width, height: self.scroLabel.frame.height)
+        }
+    }
+    
+    func resetFrame() {
+        let ys_maxSuperW = self.ys_showView.frame.width
+        
+        let scroX = self.scroLabel.frame.maxX
+        let appendX = self.appendLabel.frame.maxX
+        
+        //没出格不能换
+        if scroX > 0 && appendX > 0{
+            return
+        }
+        
+        //间距太小 不能换
+        if ys_maxSuperW - scroX < labelSpace || ys_maxSuperW - appendX < labelSpace{
+            return
+        }
+        
+        if scroX < appendX {
+            self.scroLabel.frame = CGRect(x: ys_maxSuperW, y: self.scroLabel.frame.origin.y, width: self.scroLabel.frame.width, height: self.scroLabel.frame.height)
+        }else{
+            self.appendLabel.frame = CGRect(x: ys_maxSuperW, y: self.scroLabel.frame.origin.y, width: self.scroLabel.frame.width, height: self.scroLabel.frame.height)
+        }
+    }
+    
+    func adsSetup(){
+        guard let thisAds = ads else {return}
+        var titles: [String] = []
+        var images: [String] = []
+        for item in thisAds {
+            titles.append(item.slide_title ?? "")
+            images.append(item.slide_image_path ?? "")
+        }
+        adView.titles = titles
+        adView.imagePaths = images
+    }
+    
+    
+    func setupAnimate() {
+        scroLabel.text = self.noticeStr
+        appendLabel.text = self.noticeStr
+        
+        setLabelFrame()
+        
+        timer = DispatchSource.timer(interval: .milliseconds(50), queue: DispatchQueue.main) { [unowned self] in
+            if self.appendLabel.frame.width != self.scroLabel.frame.width {
+                self.appendLabel.setwidth(w: self.scroLabel.frame.width)
+            }
+            self.scroLabel.moveX(x: -1)
+            self.appendLabel.moveX(x: -1)
+            
+            let ys_maxX = self.scroLabel.frame.maxX
+            let ys_maxX0 = self.appendLabel.frame.maxX
+            
+            let ys_minX = self.scroLabel.frame.minX
+            let ys_minX0 = self.appendLabel.frame.minX
+            
+            if ys_maxX < 0 && ys_minX0 < 0{
+                //已出
+                self.resetFrame()
+                return
+            }
+            
+            
+            if ys_maxX0 < 0 && ys_minX < 0{
+                //已出
+                self.resetFrame()
+                return
+            }
+            
         }
     }
 }
@@ -90,21 +178,4 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 }
 
-extension YSHomeHeadView: UITableViewDataSource,UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notices.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.ys_showView.frame.height
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YSHomeShowTableViewCell", for: indexPath)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
+

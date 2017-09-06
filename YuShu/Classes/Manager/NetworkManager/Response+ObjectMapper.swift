@@ -26,17 +26,17 @@ public extension Response {
             throw MoyaError.jsonMapping(self)
         }
         
-        guard let status = jsonData["status"] as? String else {
+        guard let status = jsonData["code"] as? Int else {
             throw MoyaError.jsonMapping(self)
         }
         
-        if status != "ok" {
-            let msg = jsonData["msg"] ?? NSLocalizedString("error.api", comment: "")
+        if status != 1 {
+            let msg = jsonData["msg"] ?? "出错"
             WXAlertController.alertWithMessageOK(message: msg as! String, okClosure: nil)
             throw MoyaError.jsonMapping(self)
         }
         
-		guard let object = Mapper<T>(context: context).map(JSONObject: jsonData["data"]) else {
+		guard let object = Mapper<T>(context: context).map(JSONObject: jsonData["info"]) else {
             throw MoyaError.jsonMapping(self)
             }
         return object

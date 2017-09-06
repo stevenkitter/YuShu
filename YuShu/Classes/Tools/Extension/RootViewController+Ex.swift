@@ -53,7 +53,7 @@ extension RootViewController {
         guard let user = UserManager.shareUserManager.curUserInfo else{
             return
         }
-        NetworkManager.providerUserApi.request(.unRead(user_id: user.id ?? "")).mapObject(UnRead.self).subscribe(onNext: { (unReadModel) in
+        NetworkManager.providerUserApi.request(.unRead(user_id: user.user_id ?? "")).mapObject(UnRead.self).subscribe(onNext: { (unReadModel) in
             closure?(unReadModel)
         }, onError: { (err) in
             

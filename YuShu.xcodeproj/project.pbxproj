@@ -68,6 +68,12 @@
 		6D886BD1633AE8BBF3C75E4B /* Pods_YuShuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C970ECE0193764933CEE935E /* Pods_YuShuTests.framework */; };
 		EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */; };
 		EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */; };
+		EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */; };
+		EC895AF21F5FD0DB00D55EB8 /* YSMeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AF11F5FD0DB00D55EB8 /* YSMeHeadView.swift */; };
+		EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */; };
+		EC895AF71F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */; };
+		EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */; };
+		EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */; };
 		EE292C7A3A3DFD8F86FCF55C /* Pods_YuShu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54032F9999E05309CA785BA0 /* Pods_YuShu.framework */; };
 /* End PBXBuildFile section */
 
@@ -165,6 +171,12 @@
 		D930E970EC2C340921D7C8E2 /* Pods_YuShuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuShuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeShowTableViewCell.swift; sourceTree = "<group>"; };
 		EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeShowTableViewCell.xib; sourceTree = "<group>"; };
+		EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchSource+Ex.swift"; sourceTree = "<group>"; };
+		EC895AF11F5FD0DB00D55EB8 /* YSMeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeHeadView.swift; sourceTree = "<group>"; };
+		EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeHeadView.xib; sourceTree = "<group>"; };
+		EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeHeadCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInfo.swift; sourceTree = "<group>"; };
 		F8CFB6C04910FD2D24498985 /* Pods-YuShu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuShu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YuShu/Pods-YuShu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -386,9 +398,9 @@
 		184351E91F5CF54200BB86CA /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				EC895AEF1F5FD0B200D55EB8 /* view */,
+				EC895AF01F5FD0B200D55EB8 /* model */,
 				18D788331F5D33E700312DF4 /* controller */,
-				18D788341F5D33E700312DF4 /* model */,
-				18D788351F5D33E700312DF4 /* view */,
 			);
 			path = Me;
 			sourceTree = "<group>";
@@ -433,6 +445,7 @@
 				1843520E1F5CF54200BB86CA /* UIColor+Ex.swift */,
 				1843520F1F5CF54200BB86CA /* UITextField+LeftView.swift */,
 				184352101F5CF54200BB86CA /* UIView+Ex.swift */,
+				EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -465,20 +478,6 @@
 				18D788361F5D33FE00312DF4 /* YSMeViewController.swift */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		18D788341F5D33E700312DF4 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		18D788351F5D33E700312DF4 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		18D788381F5D357900312DF4 /* controller */ = {
@@ -514,6 +513,7 @@
 		18EF42741F5CFB8B008280F3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -554,6 +554,24 @@
 				2853244807EDE95540408550 /* Pods-YuShuUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC895AEF1F5FD0B200D55EB8 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EC895AF11F5FD0DB00D55EB8 /* YSMeHeadView.swift */,
+				EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */,
+				EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */,
+				EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		EC895AF01F5FD0B200D55EB8 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -684,9 +702,11 @@
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
+				EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */,
 				1843526F1F5CF54200BB86CA /* CommentToolView.xib in Resources */,
 				184352621F5CF54200BB86CA /* Localizable.strings in Resources */,
 				18D788401F5D36B600312DF4 /* YSHomeCollectionViewCell.xib in Resources */,
+				EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */,
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
 				184352611F5CF54200BB86CA /* Assets.xcassets in Resources */,
 			);
@@ -936,8 +956,10 @@
 				184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */,
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
+				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
 				184352671F5CF54200BB86CA /* RootViewController.swift in Sources */,
 				184352211F5CF54200BB86CA /* BaseApiModel.swift in Sources */,
+				EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */,
 				1843526D1F5CF54200BB86CA /* UIView+Ex.swift in Sources */,
 				184352221F5CF54200BB86CA /* CircleApi.swift in Sources */,
 				1843521E1F5CF54200BB86CA /* NotificationNameConstant.swift in Sources */,
@@ -952,6 +974,8 @@
 				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
 				EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,
+				EC895AF21F5FD0DB00D55EB8 /* YSMeHeadView.swift in Sources */,
+				EC895AF71F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift in Sources */,
 				184352271F5CF54200BB86CA /* Response+ObjectMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
