@@ -11,12 +11,13 @@ import SnapKit
 class YSHomeViewController: RootViewController {
     
     let contents: [[String]] = []
-    
+    var timer: DispatchSourceTimer?
     let tableHeader = YSHomeHeadView.default()!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Do any additional setup after loading the view.
+        setupRefresh()
+        tableView.mj_header.beginRefreshing()
     }
     
     func setupUI() {
@@ -31,6 +32,22 @@ class YSHomeViewController: RootViewController {
         headContainer.addSubview(tableHeader)
         tableView.tableHeaderView = headContainer
     }
+    
+    override func setupRefresh() {
+        tableView.mj_header = RefreshHeader(refreshingBlock: { [unowned self] in
+            self.loadServerData()
+        })
+    }
+    
+    override func loadServerData() {
+        
+        tableHeader.notices = ["小区消息发过来了","小区消息发过来了","小区消息发过来了","小区消息发过来了","小区消息发过来了"]
+        tableView.mj_header.endRefreshing()
+        
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

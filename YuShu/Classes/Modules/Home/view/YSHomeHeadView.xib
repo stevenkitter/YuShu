@@ -34,28 +34,21 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnh-q9-Tbh">
                             <rect key="frame" x="100" y="10" width="235" height="60"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="紧急通知：小区要下雨，赶紧收衣服小区要下雨，赶紧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTv-X2-0Uk">
-                                    <rect key="frame" x="10" y="5" width="215" height="33.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3分钟前" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9k-eO-5El">
-                                    <rect key="frame" x="10" y="39" width="215" height="16"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="10e-y0-aXb">
+                                    <rect key="frame" x="0.0" y="0.0" width="235" height="60"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="iN0-l3-epB" id="rNt-ed-n50"/>
+                                        <outlet property="delegate" destination="iN0-l3-epB" id="Su4-BJ-em2"/>
+                                    </connections>
+                                </tableView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="y9k-eO-5El" firstAttribute="leading" secondItem="dnh-q9-Tbh" secondAttribute="leading" constant="10" id="07D-Dr-bk8"/>
-                                <constraint firstAttribute="bottom" secondItem="y9k-eO-5El" secondAttribute="bottom" constant="5" id="2O7-nj-SY9"/>
-                                <constraint firstAttribute="trailing" secondItem="y9k-eO-5El" secondAttribute="trailing" constant="10" id="XEX-KN-a8u"/>
-                                <constraint firstAttribute="trailing" secondItem="oTv-X2-0Uk" secondAttribute="trailing" constant="10" id="hS8-8Q-Z7B"/>
-                                <constraint firstItem="y9k-eO-5El" firstAttribute="top" secondItem="oTv-X2-0Uk" secondAttribute="bottom" constant="0.5" id="ihj-Wv-vds"/>
-                                <constraint firstItem="oTv-X2-0Uk" firstAttribute="top" secondItem="dnh-q9-Tbh" secondAttribute="top" constant="5" id="jIq-Hf-mkM"/>
-                                <constraint firstItem="oTv-X2-0Uk" firstAttribute="leading" secondItem="dnh-q9-Tbh" secondAttribute="leading" constant="10" id="k4w-aK-GpU"/>
+                                <constraint firstItem="10e-y0-aXb" firstAttribute="leading" secondItem="dnh-q9-Tbh" secondAttribute="leading" id="Cjl-Ta-yov"/>
+                                <constraint firstItem="10e-y0-aXb" firstAttribute="top" secondItem="dnh-q9-Tbh" secondAttribute="top" id="Qei-vv-gQE"/>
+                                <constraint firstAttribute="bottom" secondItem="10e-y0-aXb" secondAttribute="bottom" id="mFg-u9-vwq"/>
+                                <constraint firstAttribute="trailing" secondItem="10e-y0-aXb" secondAttribute="trailing" id="veb-YB-n4F"/>
                             </constraints>
                         </view>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="rBU-1N-Zoc">
@@ -65,27 +58,17 @@
                                 <constraint firstAttribute="height" constant="20" id="5ed-pd-XSM"/>
                             </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iA6-Q6-1TM">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
-                            <connections>
-                                <action selector="ys_showClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="dR2-9G-nqs"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.90831029419999998" green="0.77779620890000001" blue="0.52908593420000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Abl-Ou-kHr" secondAttribute="bottom" constant="10" id="07N-gj-zYX"/>
-                        <constraint firstAttribute="bottom" secondItem="iA6-Q6-1TM" secondAttribute="bottom" id="3bt-de-Fro"/>
                         <constraint firstItem="Abl-Ou-kHr" firstAttribute="top" secondItem="F6G-J0-axd" secondAttribute="top" constant="10" id="AGr-5N-FZg"/>
                         <constraint firstAttribute="trailing" secondItem="rBU-1N-Zoc" secondAttribute="trailing" constant="10" id="CCv-Kx-t1W"/>
                         <constraint firstItem="dnh-q9-Tbh" firstAttribute="top" secondItem="F6G-J0-axd" secondAttribute="top" constant="10" id="S9L-RM-vry"/>
                         <constraint firstItem="rBU-1N-Zoc" firstAttribute="leading" secondItem="dnh-q9-Tbh" secondAttribute="trailing" constant="10" id="Xwe-mG-6ld"/>
-                        <constraint firstAttribute="trailing" secondItem="iA6-Q6-1TM" secondAttribute="trailing" id="Z0a-5T-Csi"/>
                         <constraint firstItem="dnh-q9-Tbh" firstAttribute="leading" secondItem="Abl-Ou-kHr" secondAttribute="trailing" constant="10" id="g4P-gE-8tl"/>
                         <constraint firstAttribute="bottom" secondItem="dnh-q9-Tbh" secondAttribute="bottom" constant="10" id="ja0-vK-vRc"/>
-                        <constraint firstItem="iA6-Q6-1TM" firstAttribute="top" secondItem="F6G-J0-axd" secondAttribute="top" id="lR4-NT-jQm"/>
                         <constraint firstItem="rBU-1N-Zoc" firstAttribute="centerY" secondItem="dnh-q9-Tbh" secondAttribute="centerY" id="oGJ-az-ACj"/>
-                        <constraint firstItem="iA6-Q6-1TM" firstAttribute="leading" secondItem="F6G-J0-axd" secondAttribute="leading" id="qq2-6b-1Xn"/>
                         <constraint firstAttribute="height" constant="80" id="vaZ-3c-IAq"/>
                         <constraint firstItem="Abl-Ou-kHr" firstAttribute="leading" secondItem="F6G-J0-axd" secondAttribute="leading" constant="10" id="vtn-7H-qsV"/>
                     </constraints>
@@ -128,6 +111,7 @@
                 <outlet property="ys_collectionView" destination="YJF-eh-5Xl" id="vhH-E1-Vt1"/>
                 <outlet property="ys_flowLayout" destination="bak-bv-bps" id="458-K2-FVy"/>
                 <outlet property="ys_showView" destination="dnh-q9-Tbh" id="4AJ-nJ-Hzq"/>
+                <outlet property="ys_tableView" destination="10e-y0-aXb" id="ywj-hx-kZy"/>
             </connections>
             <point key="canvasLocation" x="22.5" y="-119"/>
         </view>
