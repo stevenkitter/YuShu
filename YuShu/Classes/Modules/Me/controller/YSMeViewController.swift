@@ -9,17 +9,18 @@
 import UIKit
 
 class YSMeViewController: RootViewController {
-    var contents = [""]
     
+    let contents = [YSMeHeadViewCellM(image: "send_normal", title: "联系客服", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "提出意见", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "关于御墅社区", num: "2"),
+                 YSMeHeadViewCellM(image: "send_normal", title: "给个好评吧", num: "2")]
     let tableHeader = YSMeHeadView.default()!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        // Do any additional setup after loading the view.
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(UIColor.clear.createImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIColor.clear.createImage()
         
@@ -38,7 +39,7 @@ class YSMeViewController: RootViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-        tableView.register(UINib(nibName: "YSHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "YSHomeTableViewCell")
+        tableView.register(str: "YSMeTableViewCell")
         let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: ysMeHeadViewH))
         headContainer.addSubview(tableHeader)
         tableView.tableHeaderView = headContainer
@@ -48,6 +49,12 @@ class YSMeViewController: RootViewController {
         topImageView.contentMode = .scaleAspectFill
         topImageView.tag = 101
         tableView.insertSubview(topImageView, at: 0)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "设置"), style: .plain, target: self, action: #selector(setting))
+    }
+    
+    func setting() {
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,8 +69,18 @@ extension YSMeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YSHomeTableViewCell", for: indexPath)
+        let model = contents[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YSMeTableViewCell", for: indexPath) as! YSMeTableViewCell
+        cell.ys_imageView.image = UIImage(named: model.image)
+        cell.ys_titleLabel.text = model.title
+        cell.ys_detailLabel.text = ""
         return cell
     }
 }
@@ -76,7 +93,7 @@ extension YSMeViewController: UIScrollViewDelegate {
         if space > 0 {
             var rect = tableView.viewWithTag(101)!.frame
             rect.origin.y = -space
-            rect.size.height = ysMeHeadViewH + space
+            rect.size.height = KScreenWidth * ratio + space
             tableView.viewWithTag(101)!.frame = rect
         }
     }

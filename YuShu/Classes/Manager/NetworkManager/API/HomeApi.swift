@@ -11,8 +11,8 @@ import Moya
 
 enum HomeApi {
     case homeInfo()
-    case getArticle(page: Int)
-    case getAd(classid: Int)
+    case getImageList()
+    case getVideoList()
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
     case setCollect(article_id: String, user_id: String)
@@ -27,9 +27,9 @@ extension HomeApi: TargetType {
     
     var path: String {
         switch self {
-        case .getArticle:
+        case .getImageList:
             return ServiceUrlStr
-        case .getAd:
+        case .getVideoList:
             return ServiceUrlStr
         default:
             return ServiceUrlStr
@@ -37,9 +37,9 @@ extension HomeApi: TargetType {
     }
     var method: Moya.Method {
         switch self {
-        case .getArticle:
+        case .getImageList:
             return .get
-        case .getAd:
+        case .getVideoList:
             return .get
         default:
             return .get
@@ -55,15 +55,13 @@ extension HomeApi: TargetType {
             var params: [String: Any] = [:]
             params["service"] = "Index.getIndexInfo"
             return params
-        case let .getArticle(page):
+        case .getImageList():
             var params: [String: Any] = [:]
-            params["page"] = page
-            params["service"] = "Home.get_article"
+            params["service"] = "Index.getAllImages"
             return params
-        case let .getAd(classid):
+        case .getVideoList():
             var params: [String: Any] = [:]
-            params["classid"] = classid
-            params["service"] = "Home.ad"
+            params["service"] = "Index.getAllVideos"
             return params
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]

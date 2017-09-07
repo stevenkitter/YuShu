@@ -74,6 +74,13 @@
 		EC895AF71F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */; };
 		EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */; };
 		EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */; };
+		EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF6F1F60EF8F00C43686 /* YSMoreViewController.swift */; };
+		EC89FF721F60F28A00C43686 /* YSMoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */; };
+		EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF751F61242C00C43686 /* InlineFunc.swift */; };
+		EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF771F613E7800C43686 /* YSMoreImageCollectionReusableView.swift */; };
+		EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */; };
+		EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */; };
+		EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */; };
 		EE292C7A3A3DFD8F86FCF55C /* Pods_YuShu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54032F9999E05309CA785BA0 /* Pods_YuShu.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +184,13 @@
 		EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeHeadCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInfo.swift; sourceTree = "<group>"; };
+		EC89FF6F1F60EF8F00C43686 /* YSMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMoreViewController.swift; sourceTree = "<group>"; };
+		EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMoreLayout.swift; sourceTree = "<group>"; };
+		EC89FF751F61242C00C43686 /* InlineFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineFunc.swift; sourceTree = "<group>"; };
+		EC89FF771F613E7800C43686 /* YSMoreImageCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMoreImageCollectionReusableView.swift; sourceTree = "<group>"; };
+		EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMoreImageCollectionReusableView.xib; sourceTree = "<group>"; };
+		EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeTableViewCell.swift; sourceTree = "<group>"; };
+		EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeTableViewCell.xib; sourceTree = "<group>"; };
 		F8CFB6C04910FD2D24498985 /* Pods-YuShu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuShu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YuShu/Pods-YuShu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,6 +301,7 @@
 				184351A91F5CF54200BB86CA /* NotificationNameConstant.swift */,
 				184351AA1F5CF54200BB86CA /* UrlsConstant.swift */,
 				184351AB1F5CF54200BB86CA /* UtilsConstant.swift */,
+				EC89FF751F61242C00C43686 /* InlineFunc.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -506,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				18EF42761F5CFBC4008280F3 /* YSHomeViewController.swift */,
+				EC89FF6F1F60EF8F00C43686 /* YSMoreViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -514,6 +530,7 @@
 			isa = PBXGroup;
 			children = (
 				EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */,
+				EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -529,6 +546,8 @@
 				18D7883E1F5D36B600312DF4 /* YSHomeCollectionViewCell.xib */,
 				EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */,
 				EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */,
+				EC89FF771F613E7800C43686 /* YSMoreImageCollectionReusableView.swift */,
+				EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -563,6 +582,8 @@
 				EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */,
 				EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */,
 				EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */,
+				EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */,
+				EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -696,8 +717,10 @@
 			files = (
 				18EF427B1F5CFC08008280F3 /* YSHomeTableViewCell.xib in Resources */,
 				18EF427F1F5CFC42008280F3 /* YSHomeHeadView.xib in Resources */,
+				EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */,
 				EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */,
 				1843524A1F5CF54200BB86CA /* LoginViewController.xib in Resources */,
+				EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */,
 				184352491F5CF54200BB86CA /* LoadingViewController.xib in Resources */,
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
@@ -942,6 +965,7 @@
 				184352241F5CF54200BB86CA /* UserApi.swift in Sources */,
 				184352291F5CF54200BB86CA /* UserManager.swift in Sources */,
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
+				EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */,
 				1843521F1F5CF54200BB86CA /* UrlsConstant.swift in Sources */,
 				184352231F5CF54200BB86CA /* HomeApi.swift in Sources */,
 				184352731F5CF54200BB86CA /* WXActivityIndicatorView.swift in Sources */,
@@ -950,13 +974,16 @@
 				18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
+				EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */,
 				1843521B1F5CF54200BB86CA /* AppDelegate+AppService.swift in Sources */,
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,
 				184352201F5CF54200BB86CA /* UtilsConstant.swift in Sources */,
 				184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */,
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
+				EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */,
 				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
+				EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */,
 				184352671F5CF54200BB86CA /* RootViewController.swift in Sources */,
 				184352211F5CF54200BB86CA /* BaseApiModel.swift in Sources */,
 				EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */,
@@ -974,6 +1001,7 @@
 				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
 				EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,
+				EC89FF721F60F28A00C43686 /* YSMoreLayout.swift in Sources */,
 				EC895AF21F5FD0DB00D55EB8 /* YSMeHeadView.swift in Sources */,
 				EC895AF71F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift in Sources */,
 				184352271F5CF54200BB86CA /* Response+ObjectMapper.swift in Sources */,

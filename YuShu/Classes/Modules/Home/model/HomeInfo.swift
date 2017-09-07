@@ -11,8 +11,8 @@ import ObjectMapper
 struct HomeInfo: Mappable {
     var broadcastlist: [BroadCast] = []
     var slidelist: [Slide] = []
-    var imageList: [Slide] = []
-    var videoList: [Slide] = []
+    var imageList: [ImageFile] = []
+    var videoList: [VideoFile] = []
     init?(map: Map) {
         
     }
@@ -52,8 +52,42 @@ struct Slide: Mappable {
     mutating func mapping(map: Map) {
         slide_id <- map["slide_id"]
         slide_title <- map["slide_title"]
-        slide_image_path <- map["slide_image_path"]
+        slide_image_path <- (map["slide_image_path"], AvatarTransform())
         slide_desc <- map["slide_desc"]
         slide_addtime <- map["slide_addtime"]
+    }
+}
+
+struct ImageFile: Mappable {
+    var image_id: String?
+    var image_title: String?
+    var image_file_path: String?
+    var image_file_path_small: String?
+   
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        image_id <- map["image_id"]
+        image_title <- map["image_title"]
+        image_file_path <- (map["image_file_path"], AvatarTransform())
+        image_file_path_small <- (map["image_file_path_small"], AvatarTransform())
+    }
+}
+
+struct VideoFile: Mappable {
+    var video_id: String?
+    var video_title: String?
+    var video_logo_path: String?
+    var video_logo_path_small: String?
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        video_id <- map["video_id"]
+        video_title <- map["video_title"]
+        video_logo_path <- (map["video_logo_path"], AvatarTransform())
+        video_logo_path_small <- (map["video_logo_path_small"], AvatarTransform())
     }
 }

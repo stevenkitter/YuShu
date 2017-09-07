@@ -12,7 +12,8 @@ let ysMeHeadViewH = KScreenWidth * ratio + 120
 
 class YSMeHeadView: UIView {
     
-    let cells = [YSMeHeadViewCellM(image: "send_normal", title: "我的发表", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "我的发表", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "我的发表", num: "2")]
+    let cells = [YSMeHeadViewCellM(image: "send_normal", title: "我发布的", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "我收藏的", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "我评论的", num: "2"),
+                 YSMeHeadViewCellM(image: "send_normal", title: "我点赞的", num: "2")]
     
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -42,6 +43,7 @@ class YSMeHeadView: UIView {
     
     func setupUI(){
         flowLayout.itemSize = CGSize(width: itemW, height: 120 - 17.5)
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         flowLayout.scrollDirection = .horizontal
         collectionView.register(str: "YSMeHeadCollectionViewCell")
         centerView.layer.shadowOffset = CGSize(width: 2, height: 2)

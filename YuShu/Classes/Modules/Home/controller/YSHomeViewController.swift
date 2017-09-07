@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-let ratio: CGFloat = 1/3
+let ratio: CGFloat = 2/5
 class YSHomeViewController: RootViewController {
     
     var homeInfo: HomeInfo? = nil {
@@ -55,7 +55,7 @@ class YSHomeViewController: RootViewController {
             self.tableView.mj_header.endRefreshing()
         }).addDisposableTo(disposeBag)
         
-        tableHeader.noticeStr = "小区消息发过来了,小区消息发过来了®"
+        
         
         
         
@@ -67,16 +67,17 @@ class YSHomeViewController: RootViewController {
         tableHeader.ads = info.slidelist
         var broadStr = ""
         for item in info.broadcastlist {
-            broadStr += (item.broadcast_title ?? "")
+            broadStr += "      \(item.broadcast_title ?? "")"
         }
         tableHeader.noticeStr = broadStr
+        tableView.reloadData()
     }
     
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
 
@@ -86,15 +87,30 @@ class YSHomeViewController: RootViewController {
 //MARK: tableview
 extension YSHomeViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 0 {
+            let vc = YSMoreViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else{
+            let vc = YSMoreVideoViewController()
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "YSHomeTableViewCell", for: indexPath) as! YSHomeTableViewCell
-        if indexPath.row == 0 {
+        if indexPath.section == 0 {
             cell.titleLabel.text = "图片分享"
             cell.models = homeInfo?.imageList ?? []
         }else{

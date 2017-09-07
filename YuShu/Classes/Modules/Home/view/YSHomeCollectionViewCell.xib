@@ -6,49 +6,48 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YSHomeCollectionViewCell" id="gTV-IL-0wX" customClass="YSHomeCollectionViewCell" customModule="YuShu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="178" height="199"/>
+            <rect key="frame" x="0.0" y="0.0" width="178" height="201"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="178" height="199"/>
+                <rect key="frame" x="0.0" y="0.0" width="178" height="201"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbO-T7-yz1">
-                        <rect key="frame" x="0.0" y="181" width="178" height="18"/>
+                        <rect key="frame" x="0.0" y="171" width="178" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Ory-8e-GaK"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-hD-utK">
-                        <rect key="frame" x="5" y="8" width="168" height="168"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="DXA-hD-utK" secondAttribute="height" multiplier="1:1" id="6SR-GS-N8B"/>
-                        </constraints>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DXA-hD-utK">
+                        <rect key="frame" x="0.0" y="0.0" width="178" height="161"/>
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.29547987790000002" green="0.5485220099" blue="0.58626538520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="tbO-T7-yz1" secondAttribute="trailing" id="2v4-wA-o6V"/>
-                <constraint firstAttribute="bottom" secondItem="tbO-T7-yz1" secondAttribute="bottom" id="FIt-zB-plb"/>
+                <constraint firstAttribute="trailing" secondItem="DXA-hD-utK" secondAttribute="trailing" id="D6I-zg-KqN"/>
+                <constraint firstItem="DXA-hD-utK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="E7d-jG-dqU"/>
+                <constraint firstAttribute="bottom" secondItem="tbO-T7-yz1" secondAttribute="bottom" constant="10" id="FIt-zB-plb"/>
                 <constraint firstItem="tbO-T7-yz1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LdU-Dx-ZSc"/>
-                <constraint firstAttribute="trailing" secondItem="DXA-hD-utK" secondAttribute="trailing" constant="5" id="TF0-UQ-7fv"/>
-                <constraint firstItem="tbO-T7-yz1" firstAttribute="top" secondItem="DXA-hD-utK" secondAttribute="bottom" constant="5" id="jIo-SW-GRZ"/>
-                <constraint firstItem="DXA-hD-utK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="q7h-kx-plb"/>
-                <constraint firstItem="DXA-hD-utK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xiF-KD-mxM"/>
+                <constraint firstItem="tbO-T7-yz1" firstAttribute="top" secondItem="DXA-hD-utK" secondAttribute="bottom" constant="10" id="Q5Q-qf-MJY"/>
+                <constraint firstItem="DXA-hD-utK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rXf-EQ-naK"/>
             </constraints>
-            <size key="customSize" width="185" height="199"/>
+            <size key="customSize" width="185" height="201"/>
             <connections>
                 <outlet property="ys_imageView" destination="DXA-hD-utK" id="9dJ-N4-wg6"/>
                 <outlet property="ys_titleLabel" destination="tbO-T7-yz1" id="XR8-en-ARg"/>
             </connections>
-            <point key="canvasLocation" x="99" y="152.5"/>
+            <point key="canvasLocation" x="99" y="151.5"/>
         </collectionViewCell>
     </objects>
 </document>

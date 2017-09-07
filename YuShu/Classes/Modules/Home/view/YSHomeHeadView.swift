@@ -174,6 +174,7 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YSHomeCollectionViewCell", for: indexPath) as! YSHomeCollectionViewCell
+        cell.ys_titleLabel.text = eightTitles[indexPath.item]
         return cell
     }
 }

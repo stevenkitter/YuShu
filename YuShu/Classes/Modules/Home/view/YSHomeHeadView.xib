@@ -17,14 +17,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFC-xb-0EM">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="125"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="ZFC-xb-0EM" secondAttribute="height" multiplier="3:1" id="R9t-4I-pYk"/>
+                        <constraint firstAttribute="width" secondItem="ZFC-xb-0EM" secondAttribute="height" multiplier="5:2" id="R9t-4I-pYk"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F6G-J0-axd">
-                    <rect key="frame" x="0.0" y="125" width="375" height="40"/>
+                    <rect key="frame" x="0.0" y="150" width="375" height="40"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnh-q9-Tbh">
                             <rect key="frame" x="105" y="10" width="260" height="20"/>
@@ -32,7 +32,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="主内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nx-B9-9du">
                                     <rect key="frame" x="0.0" y="0.0" width="52" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.98039533810000001" green="1" blue="0.97939566310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -44,11 +44,10 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小区广播：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5dn-fl-ENk">
                             <rect key="frame" x="10" y="10.5" width="85" height="20"/>
                             <fontDescription key="fontDescription" name="HanziPenSC-W5" family="HanziPen SC" pointSize="17"/>
-                            <color key="textColor" red="0.98039533810000001" green="1" blue="0.97939566310000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.58626538520000004" green="0.2372513711" blue="0.18837532400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="dnh-q9-Tbh" firstAttribute="leading" secondItem="5dn-fl-ENk" secondAttribute="trailing" constant="10" id="LMn-j8-W7M"/>
                         <constraint firstItem="5dn-fl-ENk" firstAttribute="leading" secondItem="F6G-J0-axd" secondAttribute="leading" constant="10" id="Q7N-dE-aqq"/>
@@ -60,7 +59,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="YJF-eh-5Xl">
-                    <rect key="frame" x="0.0" y="165" width="375" height="120"/>
+                    <rect key="frame" x="0.0" y="190" width="375" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="120" id="tjA-7p-udl"/>

@@ -31,7 +31,7 @@ public extension Response {
         }
         
         if status != 1 {
-            let msg = jsonData["msg"] ?? "出错"
+            let msg = jsonData["msg"] ?? "获取数据失败"
             WXAlertController.alertWithMessageOK(message: msg as! String, okClosure: nil)
             throw MoyaError.jsonMapping(self)
         }
@@ -56,17 +56,17 @@ public extension Response {
         throw MoyaError.jsonMapping(self)
     }
     
-    guard let status = jsonData["status"] as? String else {
+    guard let status = jsonData["code"] as? Int else {
         throw MoyaError.jsonMapping(self)
     }
     
-    if status != "ok" {
+    if status != 1 {
         let msg = jsonData["msg"] ?? "获取数据失败"
         WXAlertController.alertWithMessageOK(message: msg as! String, okClosure: nil)
         throw MoyaError.jsonMapping(self)
     }
     
-	guard let array = jsonData["data"] as? [[String : Any]] else {
+	guard let array = jsonData["info"] as? [[String : Any]] else {
       throw MoyaError.jsonMapping(self)
     }
     return Mapper<T>(context: context).mapArray(JSONArray: array)
