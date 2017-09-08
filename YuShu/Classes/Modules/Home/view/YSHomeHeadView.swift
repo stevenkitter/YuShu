@@ -30,6 +30,7 @@ class YSHomeHeadView: UIView {
     
     var adView: LLCycleScrollView!
     
+    @IBOutlet weak var broadView: UIView!
     @IBOutlet weak var scroLabel: UILabel!
     
     @IBOutlet weak var ys_adsuperView: UIView!
@@ -60,7 +61,7 @@ class YSHomeHeadView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        
+       
     }
     
    
@@ -80,8 +81,12 @@ class YSHomeHeadView: UIView {
         })
         adView.autoScroll = true
         adView.autoScrollTimeInterval = 4.0
-        adView.customPageControlStyle = .pill
+        adView.customPageControlStyle = .snake
+        adView.titleBackgroundColor = UIColor.clear
         ys_adsuperView.addSubview(adView)
+        
+        broadView.layer.borderColor = UIColor.lightGray.cgColor
+        broadView.layer.borderWidth = 1
     }
     
     func setLabelFrame() {
@@ -127,7 +132,7 @@ class YSHomeHeadView: UIView {
             titles.append(item.slide_title ?? "")
             images.append(item.slide_image_path ?? "")
         }
-        adView.titles = titles
+//        adView.titles = titles
         adView.imagePaths = images
     }
     

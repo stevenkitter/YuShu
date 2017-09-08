@@ -16,7 +16,7 @@ enum UserApi {
     case login(account:String, pwd: String)
     case logout
     case userInfo(user_id: String)
-    case update(tel: String, info: String, value: String)
+    case update(user_id: String, info: String, value: String)
     case register(user_name: String, user_floor: String, user_room: String,user_tel: String)
     case getCode(tel: String)
     case updateByUserId(user_id: String, info: String, value: String)
@@ -25,6 +25,7 @@ enum UserApi {
     case unRead(user_id: String)
     case myMessage(isComment: Bool,user_id: String, page: Int)
     case getPushedArticles(user_id: String, page: Int)
+    case uploadImage(image: UIImage)
 }
 
 extension UserApi: TargetType {
@@ -40,6 +41,8 @@ extension UserApi: TargetType {
             return ""
         case .uploadAva:
             return ServiceUrlStr + "?service=User.upload_avatar"
+        case .uploadImage:
+            return ServiceUrlStr + "?service=Upload.Go"
         default:
             return ServiceUrlStr
         }
@@ -51,6 +54,8 @@ extension UserApi: TargetType {
         case .logout:
             return .post
         case .uploadAva:
+            return .post
+        case .uploadImage:
             return .post
         default:
             return .get
@@ -74,7 +79,7 @@ extension UserApi: TargetType {
         case let .userInfo(user_id):
             var params: [String: Any] = [:]
             params["user_id"] = user_id
-            params["service"] = "User.get_user"
+            params["service"] = "User.getBaseInfo"
             return params
         case let .register(user_name, user_floor, user_room, user_tel):
             var params: [String: Any] = [:]
@@ -84,11 +89,11 @@ extension UserApi: TargetType {
             params["user_tel"] = user_tel
             params["service"] = "User.register"
             return params
-        case let .update(tel, info, value):
+        case let .update(user_id, info, value):
             var params: [String: Any] = [:]
-            params["tel"] = tel
+            params["user_id"] = user_id
             params[info] = value
-            params["service"] = "User.update_user"
+            params["service"] = "User.updateUserInfo"
             return params
         case let .getCode(tel):
             var params: [String: Any] = [:]
@@ -129,7 +134,9 @@ extension UserApi: TargetType {
             params["page"] = page
             params["service"] = "Home.get_article_push"
             return params
-
+        case .uploadImage(_):
+            
+            return nil
         }
     }
     var sampleData: Data {
@@ -152,7 +159,13 @@ extension UserApi: TargetType {
             img.append(formData)
             
             return .upload(.multipart(img))
+        case let .uploadImage(image):
+            var img: [MultipartFormData] = []
+            let imageData = UIImageJPEGRepresentation(image, 0.5)
+            let formData = MultipartFormData(provider: .data(imageData!), name: "file", fileName: "\(Date().timeIntervalSince1970).png", mimeType: "image/png")
+            img.append(formData)
             
+            return .upload(.multipart(img))
         default:
             return .request
         }

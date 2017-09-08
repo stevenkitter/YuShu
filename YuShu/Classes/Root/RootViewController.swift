@@ -10,6 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 import Then
+import SVProgressHUD
 class RootViewController: UIViewController {
     let disposeBag = DisposeBag()
     let tableView = UITableView(frame: CGRect.zero, style: .plain).then {
@@ -48,11 +49,53 @@ class RootViewController: UIViewController {
             tableView.mj_footer.resetNoMoreData()
         }
     }
+    
+    func loadUserInfo(ok: (()->Void)?) {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
+        NetworkManager.providerUserApi.request(.userInfo(user_id: userId)).mapObject(UserInfo.self)
+            .subscribe(onNext: { (info) in
+                UserManager.shareUserManager.curUserInfo = info
+                ok?()
+            }, onError: { (err) in
+                
+            }).addDisposableTo(disposeBag)
+    }
 
     func hideNavigationBar() {
         
         self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: true)
         
+    }
+
+}
+
+extension RootViewController {
+    func changeInfo(key: String, str: String) {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
+        
+        NetworkManager.providerUserApi.request(.update(user_id: userId, info: key, value: str))
+            .mapJSON().subscribe(onNext: { (res) in
+                
+                guard let respon = res as? Dictionary<String, Any> else{
+                    return
+                }
+                guard let data = respon["data"] as? Dictionary<String, Any> else {
+                    return
+                }
+                let msg = data["msg"] as? String
+                let code = data["code"] as? Int
+                if code == 1 {
+                    SVProgressHUD.showSuccess(withStatus: msg ?? "修改成功")
+                    NotificationCenter.default.post(name: UserInfoChanged, object: nil)
+                    
+                }else{
+                    SVProgressHUD.showError(withStatus: msg ?? "修改失败")
+                }
+                
+                
+            }, onError: { (err) in
+                
+            }).addDisposableTo(disposeBag)
     }
 
 }

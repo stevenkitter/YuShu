@@ -33,9 +33,11 @@ class YSHomeViewController: RootViewController {
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
         tableView.register(UINib(nibName: "YSHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "YSHomeTableViewCell")
-        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 40 + itemW*2 + 30))
+        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 40 + itemW*2 + 30 + 30))
         headContainer.addSubview(tableHeader)
         tableView.tableHeaderView = headContainer
+        
+        automaticallyAdjustsScrollViewInsets = false
     }
     
     override func setupRefresh() {
@@ -118,5 +120,15 @@ extension YSHomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.models = homeInfo?.videoList ?? []
         }
         return cell
+    }
+}
+
+extension YSHomeViewController: UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        hideNavigationBar()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
     }
 }

@@ -13,22 +13,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSMeHeadView" customModule="YuShu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="301"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-Gs-kPc">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_icon" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-3t-bGf">
-                            <rect key="frame" x="162" y="10" width="50" height="50"/>
+                            <rect key="frame" x="147" y="5" width="80" height="80"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="Fb2-5m-Rvf"/>
-                                <constraint firstAttribute="height" constant="50" id="yfb-xJ-TA7"/>
+                                <constraint firstAttribute="width" constant="80" id="Fb2-5m-Rvf"/>
+                                <constraint firstAttribute="height" constant="80" id="yfb-xJ-TA7"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fn0-DD-r8X">
-                            <rect key="frame" x="171.5" y="65" width="31" height="43"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <rect key="frame" x="171.5" y="90" width="31" height="18"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -48,7 +48,6 @@
                         <constraint firstAttribute="width" secondItem="JTE-Gs-kPc" secondAttribute="height" multiplier="5:2" id="W4j-qS-MYD"/>
                         <constraint firstAttribute="trailing" secondItem="Ozz-md-loR" secondAttribute="trailing" constant="10" id="eQp-Lx-YDQ"/>
                         <constraint firstItem="Ozz-md-loR" firstAttribute="top" secondItem="Fn0-DD-r8X" secondAttribute="bottom" constant="5" id="n3X-0I-bYV"/>
-                        <constraint firstItem="OBP-3t-bGf" firstAttribute="top" secondItem="JTE-Gs-kPc" secondAttribute="top" constant="10" id="nMU-JO-xkE"/>
                         <constraint firstItem="Ozz-md-loR" firstAttribute="centerX" secondItem="JTE-Gs-kPc" secondAttribute="centerX" id="s94-rY-aLR"/>
                     </constraints>
                 </view>
@@ -124,7 +123,7 @@
                 <outlet property="nameLabel" destination="Fn0-DD-r8X" id="64x-fC-eXX"/>
                 <outlet property="userDetailLabel" destination="Ozz-md-loR" id="Dwn-Ka-hFq"/>
             </connections>
-            <point key="canvasLocation" x="24.5" y="144"/>
+            <point key="canvasLocation" x="24.5" y="128.5"/>
         </view>
     </objects>
     <resources>

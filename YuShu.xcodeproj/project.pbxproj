@@ -81,6 +81,18 @@
 		EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */; };
 		EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */; };
 		EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */; };
+		ECACE29F1F62212D00A6207C /* YSEditMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE29D1F62212D00A6207C /* YSEditMeViewController.swift */; };
+		ECACE2A01F62212D00A6207C /* YSEditMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE29E1F62212D00A6207C /* YSEditMeViewController.xib */; };
+		ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2A11F62237500A6207C /* YSEditMeTableViewCell.swift */; };
+		ECACE2A41F62237500A6207C /* YSEditMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE2A21F62237500A6207C /* YSEditMeTableViewCell.xib */; };
+		ECACE2A71F62256500A6207C /* YSEditMeImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2A51F62256500A6207C /* YSEditMeImageTableViewCell.swift */; };
+		ECACE2A81F62256500A6207C /* YSEditMeImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE2A61F62256500A6207C /* YSEditMeImageTableViewCell.xib */; };
+		ECACE2AB1F623B4F00A6207C /* YSEditMeTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2A91F623B4F00A6207C /* YSEditMeTextFieldViewController.swift */; };
+		ECACE2AC1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE2AA1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib */; };
+		ECACE2AE1F628EE600A6207C /* YSEditPrivacySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2AD1F628EE600A6207C /* YSEditPrivacySettingViewController.swift */; };
+		ECACE2B11F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2AF1F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift */; };
+		ECACE2B21F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE2B01F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib */; };
+		ECACE2B41F629B4E00A6207C /* YSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2B31F629B4E00A6207C /* YSWebViewController.swift */; };
 		EE292C7A3A3DFD8F86FCF55C /* Pods_YuShu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54032F9999E05309CA785BA0 /* Pods_YuShu.framework */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +203,18 @@
 		EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMoreImageCollectionReusableView.xib; sourceTree = "<group>"; };
 		EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeTableViewCell.swift; sourceTree = "<group>"; };
 		EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeTableViewCell.xib; sourceTree = "<group>"; };
+		ECACE29D1F62212D00A6207C /* YSEditMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeViewController.swift; sourceTree = "<group>"; };
+		ECACE29E1F62212D00A6207C /* YSEditMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditMeViewController.xib; sourceTree = "<group>"; };
+		ECACE2A11F62237500A6207C /* YSEditMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeTableViewCell.swift; sourceTree = "<group>"; };
+		ECACE2A21F62237500A6207C /* YSEditMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditMeTableViewCell.xib; sourceTree = "<group>"; };
+		ECACE2A51F62256500A6207C /* YSEditMeImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeImageTableViewCell.swift; sourceTree = "<group>"; };
+		ECACE2A61F62256500A6207C /* YSEditMeImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditMeImageTableViewCell.xib; sourceTree = "<group>"; };
+		ECACE2A91F623B4F00A6207C /* YSEditMeTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeTextFieldViewController.swift; sourceTree = "<group>"; };
+		ECACE2AA1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditMeTextFieldViewController.xib; sourceTree = "<group>"; };
+		ECACE2AD1F628EE600A6207C /* YSEditPrivacySettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditPrivacySettingViewController.swift; sourceTree = "<group>"; };
+		ECACE2AF1F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditPrivacyTableViewCell.swift; sourceTree = "<group>"; };
+		ECACE2B01F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditPrivacyTableViewCell.xib; sourceTree = "<group>"; };
+		ECACE2B31F629B4E00A6207C /* YSWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSWebViewController.swift; sourceTree = "<group>"; };
 		F8CFB6C04910FD2D24498985 /* Pods-YuShu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuShu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YuShu/Pods-YuShu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -483,6 +507,7 @@
 				184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */,
 				184352191F5CF54200BB86CA /* WXAlertController.swift */,
 				1843521A1F5CF54200BB86CA /* WXProgressView.swift */,
+				ECACE2B31F629B4E00A6207C /* YSWebViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -491,6 +516,11 @@
 			isa = PBXGroup;
 			children = (
 				18D788361F5D33FE00312DF4 /* YSMeViewController.swift */,
+				ECACE29D1F62212D00A6207C /* YSEditMeViewController.swift */,
+				ECACE29E1F62212D00A6207C /* YSEditMeViewController.xib */,
+				ECACE2A91F623B4F00A6207C /* YSEditMeTextFieldViewController.swift */,
+				ECACE2AA1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib */,
+				ECACE2AD1F628EE600A6207C /* YSEditPrivacySettingViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -584,6 +614,12 @@
 				EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */,
 				EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */,
 				EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */,
+				ECACE2A11F62237500A6207C /* YSEditMeTableViewCell.swift */,
+				ECACE2A21F62237500A6207C /* YSEditMeTableViewCell.xib */,
+				ECACE2A51F62256500A6207C /* YSEditMeImageTableViewCell.swift */,
+				ECACE2A61F62256500A6207C /* YSEditMeImageTableViewCell.xib */,
+				ECACE2AF1F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift */,
+				ECACE2B01F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -719,9 +755,14 @@
 				18EF427F1F5CFC42008280F3 /* YSHomeHeadView.xib in Resources */,
 				EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */,
 				EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */,
+				ECACE2A01F62212D00A6207C /* YSEditMeViewController.xib in Resources */,
+				ECACE2A41F62237500A6207C /* YSEditMeTableViewCell.xib in Resources */,
+				ECACE2AC1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib in Resources */,
 				1843524A1F5CF54200BB86CA /* LoginViewController.xib in Resources */,
+				ECACE2B21F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib in Resources */,
 				EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */,
 				184352491F5CF54200BB86CA /* LoadingViewController.xib in Resources */,
+				ECACE2A81F62256500A6207C /* YSEditMeImageTableViewCell.xib in Resources */,
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
@@ -825,6 +866,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YuShu/Pods-YuShu-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ActionSheetPicker-3.0/ActionSheetPicker_3_0.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -852,6 +894,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ActionSheetPicker_3_0.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
@@ -954,13 +997,16 @@
 			files = (
 				1843522C1F5CF54200BB86CA /* WXMessage.swift in Sources */,
 				184352691F5CF54200BB86CA /* RootViewController+Ex.swift in Sources */,
+				ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */,
 				184352261F5CF54200BB86CA /* Observable+ObjectMapper.swift in Sources */,
 				1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */,
 				184352701F5CF54200BB86CA /* RSKPlaceholderTextView.swift in Sources */,
 				1843526C1F5CF54200BB86CA /* UITextField+LeftView.swift in Sources */,
 				1843521C1F5CF54200BB86CA /* AppDelegate.swift in Sources */,
+				ECACE2B11F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift in Sources */,
 				1843526B1F5CF54200BB86CA /* UIColor+Ex.swift in Sources */,
 				184352481F5CF54200BB86CA /* LoadingViewController.swift in Sources */,
+				ECACE2A71F62256500A6207C /* YSEditMeImageTableViewCell.swift in Sources */,
 				184352681F5CF54200BB86CA /* Date+Ex.swift in Sources */,
 				184352241F5CF54200BB86CA /* UserApi.swift in Sources */,
 				184352291F5CF54200BB86CA /* UserManager.swift in Sources */,
@@ -978,6 +1024,8 @@
 				1843521B1F5CF54200BB86CA /* AppDelegate+AppService.swift in Sources */,
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,
 				184352201F5CF54200BB86CA /* UtilsConstant.swift in Sources */,
+				ECACE2AE1F628EE600A6207C /* YSEditPrivacySettingViewController.swift in Sources */,
+				ECACE29F1F62212D00A6207C /* YSEditMeViewController.swift in Sources */,
 				184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */,
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
@@ -992,12 +1040,14 @@
 				1843521E1F5CF54200BB86CA /* NotificationNameConstant.swift in Sources */,
 				184352721F5CF54200BB86CA /* RefreshHeader.swift in Sources */,
 				184352281F5CF54200BB86CA /* UserInfo.swift in Sources */,
+				ECACE2B41F629B4E00A6207C /* YSWebViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
 				18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */,
 				18D788371F5D33FE00312DF4 /* YSMeViewController.swift in Sources */,
 				18EF427D1F5CFC33008280F3 /* YSHomeHeadView.swift in Sources */,
 				184352741F5CF54200BB86CA /* WXAlertController.swift in Sources */,
 				1843526A1F5CF54200BB86CA /* String+Ex.swift in Sources */,
+				ECACE2AB1F623B4F00A6207C /* YSEditMeTextFieldViewController.swift in Sources */,
 				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
 				EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,
@@ -1170,6 +1220,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6QXH57WWCN;
 				INFOPLIST_FILE = "$(SRCROOT)/YuShu/Classes/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderX.YuShu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1184,6 +1235,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6QXH57WWCN;
 				INFOPLIST_FILE = "$(SRCROOT)/YuShu/Classes/Other/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coderX.YuShu;
 				PRODUCT_NAME = "$(TARGET_NAME)";

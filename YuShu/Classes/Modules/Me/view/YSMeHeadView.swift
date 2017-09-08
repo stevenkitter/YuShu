@@ -48,9 +48,18 @@ class YSMeHeadView: UIView {
         collectionView.register(str: "YSMeHeadCollectionViewCell")
         centerView.layer.shadowOffset = CGSize(width: 2, height: 2)
         centerView.layer.shadowColor = UIColor.lightGray.cgColor
+        
+        iconImageView.cornerRadiusBorder(width: 80, border: 4)
     }
     
-    
+    func setupInfo() {
+        guard let user = UserManager.shareUserManager.curUserInfo else {return}
+        iconImageView.kfImage(user.user_headpic ?? "")
+        nameLabel.text = user.user_name ?? ""
+        floorLabel.text = (user.user_floor ?? "") + "栋" + (user.user_room ?? "")
+        userDetailLabel.text = "您已经使用御墅社区2个多月了，感谢您在这期间的支持"
+        
+    }
 }
 
 extension YSMeHeadView: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -67,6 +76,8 @@ extension YSMeHeadView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 }
 
+
+//编辑cell的模型
 struct YSMeHeadViewCellM {
     var image = ""
     var title = ""

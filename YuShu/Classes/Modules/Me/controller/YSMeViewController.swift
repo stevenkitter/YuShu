@@ -13,10 +13,12 @@ class YSMeViewController: RootViewController {
     let contents = [YSMeHeadViewCellM(image: "send_normal", title: "联系客服", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "提出意见", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "关于御墅社区", num: "2"),
                  YSMeHeadViewCellM(image: "send_normal", title: "给个好评吧", num: "2")]
     let tableHeader = YSMeHeadView.default()!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        tableHeader.setupInfo()
+        setupNoti()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,14 +27,15 @@ class YSMeViewController: RootViewController {
         self.navigationController?.navigationBar.shadowImage = UIColor.clear.createImage()
         
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(KNaviColor.createImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = nil
     }
+  
     
     func setupUI() {
+        self.title = ""
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(self.tableView)
@@ -53,11 +56,24 @@ class YSMeViewController: RootViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "设置"), style: .plain, target: self, action: #selector(setting))
     }
     
-    func setting() {
-        
+    func setupNoti() {
+        NotificationCenter.default.rx.notification(UserInfoChanged).subscribe(onNext: { [unowned self] (_) in
+            self.loadUserInfo(ok: { [unowned self] in
+                self.tableHeader.setupInfo()
+            })
+            
+        }, onError: { (err) in
+            
+        }).addDisposableTo(disposeBag)
     }
     
-    override func didReceiveMemoryWarning() {
+    func setting() {
+        let vc = YSEditMeViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

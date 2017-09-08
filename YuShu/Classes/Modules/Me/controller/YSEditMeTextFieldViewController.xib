@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSEditMeTextFieldViewController" customModule="YuShu" customModuleProvider="target">
+            <connections>
+                <outlet property="noticeLabel" destination="lig-g9-7Q4" id="T7Y-1i-M7P"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="2eL-gZ-9wT"/>
+                <outlet property="ys_textField" destination="Z91-eL-k20" id="SRy-YJ-4nr"/>
+                <outlet property="ys_titleLabel" destination="0dd-qj-90I" id="Hx5-Fl-Fvu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="esa-gc-ATd">
+                    <rect key="frame" x="0.0" y="46" width="375" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9qs-j3-VMf">
+                            <rect key="frame" x="66" y="15" width="1" height="20"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="MGZ-Bs-vc9"/>
+                                <constraint firstAttribute="width" constant="1" id="UNp-1z-dfU"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dd-qj-90I">
+                            <rect key="frame" x="10" y="16" width="46" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="新昵称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z91-eL-k20">
+                            <rect key="frame" x="77" y="10" width="288" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="QYr-QZ-kJO"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9qs-j3-VMf" firstAttribute="centerY" secondItem="esa-gc-ATd" secondAttribute="centerY" id="202-Mu-XoR"/>
+                        <constraint firstItem="0dd-qj-90I" firstAttribute="centerY" secondItem="esa-gc-ATd" secondAttribute="centerY" id="3Wl-0m-Xhh"/>
+                        <constraint firstAttribute="trailing" secondItem="Z91-eL-k20" secondAttribute="trailing" constant="10" id="FlU-7P-3ED"/>
+                        <constraint firstAttribute="height" constant="50" id="QG3-Ix-sP7"/>
+                        <constraint firstItem="9qs-j3-VMf" firstAttribute="leading" secondItem="0dd-qj-90I" secondAttribute="trailing" constant="10" id="QLI-gg-WHs"/>
+                        <constraint firstItem="Z91-eL-k20" firstAttribute="leading" secondItem="9qs-j3-VMf" secondAttribute="trailing" constant="10" id="VCm-G1-0ZQ"/>
+                        <constraint firstItem="Z91-eL-k20" firstAttribute="centerY" secondItem="esa-gc-ATd" secondAttribute="centerY" id="d43-Xj-SlP"/>
+                        <constraint firstItem="0dd-qj-90I" firstAttribute="leading" secondItem="esa-gc-ATd" secondAttribute="leading" constant="10" id="gsg-1Y-gZb"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lig-g9-7Q4">
+                    <rect key="frame" x="10" y="20" width="355" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lig-g9-7Q4" secondAttribute="trailing" constant="10" id="ACZ-Mq-gqQ"/>
+                <constraint firstItem="esa-gc-ATd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FZt-Qr-eCE"/>
+                <constraint firstItem="lig-g9-7Q4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fGH-k1-TKP"/>
+                <constraint firstItem="lig-g9-7Q4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="kH9-BS-vnq"/>
+                <constraint firstAttribute="trailing" secondItem="esa-gc-ATd" secondAttribute="trailing" id="wnc-C1-QiR"/>
+                <constraint firstItem="esa-gc-ATd" firstAttribute="top" secondItem="lig-g9-7Q4" secondAttribute="bottom" constant="10" id="xaT-xg-25H"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="51.5"/>
+        </view>
+    </objects>
+</document>

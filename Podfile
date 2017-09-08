@@ -30,7 +30,7 @@ target 'YuShu' do
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'    #颜色
   pod 'ImagePicker'
   pod 'Lightbox'
-  
+  pod 'ActionSheetPicker-3.0'
   pod 'pop', '~> 1.0'
  
   # Pods for YuShu

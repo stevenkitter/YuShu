@@ -15,6 +15,18 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
+    func cornerRadius(width: CGFloat) {
+        self.layer.cornerRadius = width / 2
+        self.layer.masksToBounds = true
+    }
+    
+    func cornerRadiusBorder(width: CGFloat,border: CGFloat) {
+        self.layer.cornerRadius = width / 2
+        self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor.white.cgColor
+        self.layer.borderWidth = border
+    }
+    
     func superVc()->UIViewController? {
         var superView = self.superview
         while superView != nil{

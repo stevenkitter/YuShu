@@ -26,7 +26,8 @@ class UserInfo: Mappable {
     var user_tel_set: String?
     var user_status: String?
     var user_check: String?
- 
+    var user_birthday: String?
+    var user_birthday_set: String?
  
     
     required init?(map: Map) {
@@ -48,7 +49,8 @@ class UserInfo: Mappable {
         user_tel_set <- map["user_tel_set"]
         user_status <- map["user_status"]
         user_check <- map["user_check"]
-     
+        user_birthday <- map["user_birthday"]
+        user_birthday_set <- map["user_birthday_set"]
     }
     
     
@@ -110,29 +112,4 @@ class DateTransform : TransformType {
 }
 
 
-
-/*{
-    "ret": 200,
-    "data": {
-        "status": "ok",
-        "data": {
-            "id": "22",
-            "user_login": "5201314",
-            "user_pass": "###48de0c9b9e76b88d532939f7c1293ac7",
-            "user_email": "",
-            "user_type": "student",
-            "avatar": "/data/upload/admin/20170815/5992604517366.png",
-            "sex": "1",
-            "birthday": "2000-01-01",
-            "last_login_ip": null,
-            "last_login_time": "2000-01-01 00:00:00",
-            "create_time": "2017-08-15 10:43:21",
-            "mobile": "5201314",
-            "user_nickname": "亚瑟",
-            "type": "实习学生"
-        },
-        "msg": "登录成功"
-    },
-    "msg": ""
-}*/
 

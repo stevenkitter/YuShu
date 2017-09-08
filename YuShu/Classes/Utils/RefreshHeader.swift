@@ -43,8 +43,10 @@ class RefreshHeader: MJRefreshHeader {
             case .idle:
                 self.activityView.stopAnimating()
             case .pulling:
-                self.activityView.stopAnimating()
+                self.activityView.startAnimating()
             case .refreshing:
+                self.activityView.startAnimating()
+            case .willRefresh:
                 self.activityView.startAnimating()
             default:
                 break
