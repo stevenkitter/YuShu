@@ -12,7 +12,7 @@ class YSPersonViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "物业人事"
         // Do any additional setup after loading the view.
     }
 

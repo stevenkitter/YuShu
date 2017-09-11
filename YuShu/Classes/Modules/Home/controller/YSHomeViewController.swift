@@ -30,10 +30,10 @@ class YSHomeViewController: RootViewController {
         tableView.dataSource = self
         self.view.addSubview(self.tableView)
         tableView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 48, 0))
         }
         tableView.register(UINib(nibName: "YSHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "YSHomeTableViewCell")
-        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 40 + itemW*2 + 30 + 30))
+        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 60 + itemW * 2 + 30 + 30))
         headContainer.addSubview(tableHeader)
         tableView.tableHeaderView = headContainer
         

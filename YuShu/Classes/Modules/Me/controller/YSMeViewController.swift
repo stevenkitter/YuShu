@@ -35,7 +35,6 @@ class YSMeViewController: RootViewController {
   
     
     func setupUI() {
-        self.title = ""
         tableView.delegate = self
         tableView.dataSource = self
         self.view.addSubview(self.tableView)

@@ -12,7 +12,7 @@ class YSVoteViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "民意投票"
         // Do any additional setup after loading the view.
     }
 

@@ -34,7 +34,7 @@ class YSWebViewController: RootViewController {
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
         let btn = UIButton(type: .custom).then{
-            $0.setImage(UIImage(named: ""), for: .normal)
+            $0.setImage(UIImage(named: "naviBack"), for: .normal)
             $0.setTitle("返回", for: .normal)
             $0.titleLabel?.font = UIFont.systemFont(ofSize: 14)
             $0.setTitleColor(UIColor.white, for: .normal)

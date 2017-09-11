@@ -9,7 +9,9 @@
 import UIKit
 
 class YSHomeEightCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var ys_titleLabel: UILabel!
 
+    @IBOutlet weak var ys_imageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

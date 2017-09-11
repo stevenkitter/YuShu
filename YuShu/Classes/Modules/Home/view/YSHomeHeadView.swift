@@ -68,7 +68,7 @@ class YSHomeHeadView: UIView {
     func setupUI() {
         ys_flowLayout.itemSize = CGSize(width: itemW, height: itemW)
         ys_flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        ys_collectionView.register(str: "YSHomeCollectionViewCell")
+        ys_collectionView.register(str: "YSHomeEightCollectionViewCell")
         
         ys_collectionViewHeight.constant = itemW * 2 + 30
         
@@ -76,8 +76,14 @@ class YSHomeHeadView: UIView {
         appendLabel.font = scroLabel.font
         appendLabel.textColor = scroLabel.textColor
         
-        adView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio), didSelectItemAtIndex: { (index) in
-            
+        adView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio), didSelectItemAtIndex: { [unowned self] (index) in
+            guard let superV = self.superVc() else {return}
+            guard let thisAds = self.ads else {return}
+            let ad = thisAds[index]
+            let vc = YSWebViewController()
+            vc.url = WebUrl + (ad.slide_id ?? "")
+            vc.hidesBottomBarWhenPushed = true
+            superV.navigationController?.pushViewController(vc, animated: true)
         })
         adView.autoScroll = true
         adView.autoScrollTimeInterval = 4.0
@@ -85,8 +91,8 @@ class YSHomeHeadView: UIView {
         adView.titleBackgroundColor = UIColor.clear
         ys_adsuperView.addSubview(adView)
         
-        broadView.layer.borderColor = UIColor.lightGray.cgColor
-        broadView.layer.borderWidth = 1
+        broadView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
+        broadView.layer.borderWidth = 0.8
     }
     
     func setLabelFrame() {
@@ -178,8 +184,9 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
         return eightTitles.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YSHomeCollectionViewCell", for: indexPath) as! YSHomeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YSHomeEightCollectionViewCell", for: indexPath) as! YSHomeEightCollectionViewCell
         cell.ys_titleLabel.text = eightTitles[indexPath.item]
+        cell.ys_imageView.image = UIImage(named: eightTitles[indexPath.item])
         return cell
     }
 }

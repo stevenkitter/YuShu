@@ -11,5 +11,5 @@ let IpAddress = "http://118.89.149.61:"
 let BaseUrlStr = IpAddress + "88/"      //前缀
 let ServiceUrlStr = "interface/public/yushuapp/"
 let ImageUrl = IpAddress + "88/"
-let WebUrl = IpAddress + "8002/admin/article/getWebView?article_id="
+let WebUrl = BaseUrlStr + "admin/webview/slide_display/slide_id/"
 

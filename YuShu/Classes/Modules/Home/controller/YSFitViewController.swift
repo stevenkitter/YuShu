@@ -12,7 +12,7 @@ class YSFitViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "装修指南"
         // Do any additional setup after loading the view.
     }
 

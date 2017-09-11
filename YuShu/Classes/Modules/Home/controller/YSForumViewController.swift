@@ -12,7 +12,7 @@ class YSForumViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "御墅论坛"
         // Do any additional setup after loading the view.
     }
 

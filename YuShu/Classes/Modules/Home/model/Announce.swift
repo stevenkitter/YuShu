@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import ObjectMapper
+struct Announce: Mappable {
+    var adminnotice_id: String?
+    var adminnotice_title: String?
+    var adminnotice_addtime: String?
+    var praise_id: String?
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        
+    }
+}

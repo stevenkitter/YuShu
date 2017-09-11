@@ -12,7 +12,7 @@ class YSTransferViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "闲置转让"
         // Do any additional setup after loading the view.
     }
 

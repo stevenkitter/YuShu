@@ -15,7 +15,7 @@ class RootTabBarController: UITabBarController {
     public let interactVc = YSInterViewController()
     public let meVc = YSMeViewController()
     //title image 
-    let titles = ["御墅","交流","我的"]
+    let titles = ["御墅","邻里","我的"]
     let unSelectedImageStrs = ["home","circle","me"]
     
     

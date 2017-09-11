@@ -12,7 +12,7 @@ class YSPactViewController: RootViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "小区公约"
         // Do any additional setup after loading the view.
     }
 
