@@ -12,8 +12,8 @@ let ysMeHeadViewH = KScreenWidth * ratio + 120
 
 class YSMeHeadView: UIView {
     
-    let cells = [YSMeHeadViewCellM(image: "send_normal", title: "我发布的", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "我收藏的", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "我评论的", num: "2"),
-                 YSMeHeadViewCellM(image: "send_normal", title: "我点赞的", num: "2")]
+    let cells = [YSMeHeadViewCellM(image: "我发布的", title: "我发布的", num: "2"),YSMeHeadViewCellM(image: "我收藏的", title: "我收藏的", num: "2"), YSMeHeadViewCellM(image: "我评论的", title: "我评论的", num: "2"),
+                 YSMeHeadViewCellM(image: "我点赞的", title: "我点赞的", num: "2")]
     
     @IBOutlet weak var iconImageView: UIImageView!
     

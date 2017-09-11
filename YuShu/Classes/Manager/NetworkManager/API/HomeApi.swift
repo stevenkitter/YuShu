@@ -13,11 +13,17 @@ enum HomeApi {
     case homeInfo()
     case getImageList()
     case getVideoList()
+    case getAnnounceList(user_id: String)
+    case getPersons()
+    case getVoteList(user_id: String, page: Int)
+    
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
     case setCollect(article_id: String, user_id: String)
     case sendCommentArticle(user_id: String, article_id: String, content: String)
     case sendCommentComment(user_id: String, article_id: String, content: String, comment_id: String)
+    
+    
 }
 
 extension HomeApi: TargetType {
@@ -63,6 +69,23 @@ extension HomeApi: TargetType {
             var params: [String: Any] = [:]
             params["service"] = "Index.getAllVideos"
             return params
+            
+        case let .getAnnounceList(user_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["service"] = "Index.getAdminnoticeInfo"
+            return params
+        case .getPersons():
+            var params: [String: Any] = [:]
+            params["service"] = "Index.getpersonnelInfo"
+            return params
+        case let .getVoteList(user_id, page):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["page"] = page
+            params["service"] = "Index.getVoteInfo"
+            return params
+            
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]
             params["article_id"] = article_id

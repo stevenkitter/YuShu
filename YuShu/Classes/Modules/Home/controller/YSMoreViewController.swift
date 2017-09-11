@@ -10,7 +10,6 @@ import UIKit
 import Hero
 // 图片的
 class YSMoreViewController: RootViewController {
-    var collectionView: UICollectionView! = nil
     var imageList: [ImageFile] = []
     
     override func viewDidLoad() {
@@ -35,11 +34,6 @@ class YSMoreViewController: RootViewController {
         collectionView.register(str: "YSHomeCollectionViewCell")
         collectionView.register(UINib(nibName: "YSMoreImageCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "YSMoreImageCollectionReusableView")
         view.addSubview(collectionView)
-        
-   
-        
-        
-       
     }
     
     override func setupRefresh() {
@@ -102,7 +96,7 @@ extension YSMoreViewController : UICollectionViewDataSource {
 
 extension YSMoreViewController : YSMoreLayoutDataSource {
     func waterfallLayout(_ layout: YSMoreLayout, indexPath: IndexPath) -> CGFloat {
-        return CGFloat(arc4random_uniform(80)) + cellWidth(10, 3) + 70
+        return CGFloat(arc4random_uniform(80)) + cellWidth(10, 3) + 40
     }
     
     func numberOfColsInWaterfallLayout(_ layout: YSMoreLayout) -> Int {
@@ -114,7 +108,7 @@ extension YSMoreViewController : YSMoreLayoutDataSource {
 
 //视频的
 class YSMoreVideoViewController: RootViewController {
-    var collectionView: UICollectionView! = nil
+    
     var videoList: [VideoFile] = []
     
     override func viewDidLoad() {
@@ -202,7 +196,7 @@ extension YSMoreVideoViewController : UICollectionViewDataSource {
 
 extension YSMoreVideoViewController : YSMoreLayoutDataSource {
     func waterfallLayout(_ layout: YSMoreLayout, indexPath: IndexPath) -> CGFloat {
-        return CGFloat(arc4random_uniform(80)) + cellWidth(10, 2) + 70
+        return CGFloat(arc4random_uniform(80)) + cellWidth(10, 2) + 40
     }
     
     func numberOfColsInWaterfallLayout(_ layout: YSMoreLayout) -> Int {

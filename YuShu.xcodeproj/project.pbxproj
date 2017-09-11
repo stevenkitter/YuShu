@@ -79,6 +79,13 @@
 		18EF427F1F5CFC42008280F3 /* YSHomeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18EF427E1F5CFC42008280F3 /* YSHomeHeadView.xib */; };
 		3F2823D49133615B76001899 /* Pods_YuShuUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D930E970EC2C340921D7C8E2 /* Pods_YuShuUITests.framework */; };
 		6D886BD1633AE8BBF3C75E4B /* Pods_YuShuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C970ECE0193764933CEE935E /* Pods_YuShuTests.framework */; };
+		EC1661281F6669AD00B0982A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1661271F6669AD00B0982A /* Person.swift */; };
+		EC16612B1F666D0400B0982A /* YSPersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1661291F666D0400B0982A /* YSPersonCollectionViewCell.swift */; };
+		EC16612C1F666D0400B0982A /* YSPersonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC16612A1F666D0400B0982A /* YSPersonCollectionViewCell.xib */; };
+		EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16612D1F66766400B0982A /* YSVoteTableViewCell.swift */; };
+		EC1661301F66766400B0982A /* YSVoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC16612E1F66766400B0982A /* YSVoteTableViewCell.xib */; };
+		EC1661321F667F7600B0982A /* YSVoteMemberLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1661311F667F7600B0982A /* YSVoteMemberLayout.swift */; };
+		EC1661341F668B8C00B0982A /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1661331F668B8C00B0982A /* Vote.swift */; };
 		EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */; };
 		EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */; };
 		EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */; };
@@ -214,6 +221,13 @@
 		C970ECE0193764933CEE935E /* Pods_YuShuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuShuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDD7A373A2809C17DD51C7C /* Pods-YuShuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YuShuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YuShuUITests/Pods-YuShuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D930E970EC2C340921D7C8E2 /* Pods_YuShuUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YuShuUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC1661271F6669AD00B0982A /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EC1661291F666D0400B0982A /* YSPersonCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPersonCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC16612A1F666D0400B0982A /* YSPersonCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPersonCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC16612D1F66766400B0982A /* YSVoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSVoteTableViewCell.swift; sourceTree = "<group>"; };
+		EC16612E1F66766400B0982A /* YSVoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSVoteTableViewCell.xib; sourceTree = "<group>"; };
+		EC1661311F667F7600B0982A /* YSVoteMemberLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSVoteMemberLayout.swift; sourceTree = "<group>"; };
+		EC1661331F668B8C00B0982A /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeShowTableViewCell.swift; sourceTree = "<group>"; };
 		EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeShowTableViewCell.xib; sourceTree = "<group>"; };
 		EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchSource+Ex.swift"; sourceTree = "<group>"; };
@@ -596,6 +610,9 @@
 				EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */,
 				EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */,
 				18884E4F1F62D04C00D285F7 /* Announce.swift */,
+				EC1661271F6669AD00B0982A /* Person.swift */,
+				EC1661311F667F7600B0982A /* YSVoteMemberLayout.swift */,
+				EC1661331F668B8C00B0982A /* Vote.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -617,6 +634,10 @@
 				18884E3C1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib */,
 				18E4F6041F66157E0042FE72 /* AnnounceTableViewCell.swift */,
 				18E4F6051F66157E0042FE72 /* AnnounceTableViewCell.xib */,
+				EC1661291F666D0400B0982A /* YSPersonCollectionViewCell.swift */,
+				EC16612A1F666D0400B0982A /* YSPersonCollectionViewCell.xib */,
+				EC16612D1F66766400B0982A /* YSVoteTableViewCell.swift */,
+				EC16612E1F66766400B0982A /* YSVoteTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -795,6 +816,7 @@
 				18884E3E1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib in Resources */,
 				EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */,
 				18E4F6071F66157E0042FE72 /* AnnounceTableViewCell.xib in Resources */,
+				EC1661301F66766400B0982A /* YSVoteTableViewCell.xib in Resources */,
 				EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */,
 				ECACE2A01F62212D00A6207C /* YSEditMeViewController.xib in Resources */,
 				ECACE2A41F62237500A6207C /* YSEditMeTableViewCell.xib in Resources */,
@@ -802,6 +824,7 @@
 				1843524A1F5CF54200BB86CA /* LoginViewController.xib in Resources */,
 				ECACE2B21F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib in Resources */,
 				EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */,
+				EC16612C1F666D0400B0982A /* YSPersonCollectionViewCell.xib in Resources */,
 				184352491F5CF54200BB86CA /* LoadingViewController.xib in Resources */,
 				ECACE2A81F62256500A6207C /* YSEditMeImageTableViewCell.xib in Resources */,
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
@@ -1041,7 +1064,9 @@
 				ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */,
 				184352261F5CF54200BB86CA /* Observable+ObjectMapper.swift in Sources */,
 				1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */,
+				EC1661321F667F7600B0982A /* YSVoteMemberLayout.swift in Sources */,
 				18E4F6061F66157E0042FE72 /* AnnounceTableViewCell.swift in Sources */,
+				EC1661281F6669AD00B0982A /* Person.swift in Sources */,
 				184352701F5CF54200BB86CA /* RSKPlaceholderTextView.swift in Sources */,
 				1843526C1F5CF54200BB86CA /* UITextField+LeftView.swift in Sources */,
 				1843521C1F5CF54200BB86CA /* AppDelegate.swift in Sources */,
@@ -1054,6 +1079,7 @@
 				184352241F5CF54200BB86CA /* UserApi.swift in Sources */,
 				184352291F5CF54200BB86CA /* UserManager.swift in Sources */,
 				18884E4C1F62CF7300D285F7 /* YSPactViewController.swift in Sources */,
+				EC16612B1F666D0400B0982A /* YSPersonCollectionViewCell.swift in Sources */,
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
 				EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */,
 				1843521F1F5CF54200BB86CA /* UrlsConstant.swift in Sources */,
@@ -1063,10 +1089,12 @@
 				18D7883C1F5D359D00312DF4 /* YSInterViewController.swift in Sources */,
 				18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
+				EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
 				18884E441F62CEDE00D285F7 /* YSPersonViewController.swift in Sources */,
 				EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */,
 				1843521B1F5CF54200BB86CA /* AppDelegate+AppService.swift in Sources */,
+				EC1661341F668B8C00B0982A /* Vote.swift in Sources */,
 				18884E4E1F62CF9300D285F7 /* YSRimViewController.swift in Sources */,
 				18884E481F62CF2500D285F7 /* YSForumViewController.swift in Sources */,
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,

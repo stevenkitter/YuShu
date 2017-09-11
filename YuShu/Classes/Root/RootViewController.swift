@@ -17,6 +17,7 @@ class RootViewController: UIViewController {
         $0.estimatedRowHeight = 50
         $0.tableFooterView = UIView()
     }
+    var collectionView: UICollectionView! = nil
     var page = 1
     
     override func viewDidLoad() {

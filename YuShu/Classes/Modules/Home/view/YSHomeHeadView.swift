@@ -189,6 +189,22 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.ys_imageView.image = UIImage(named: eightTitles[indexPath.item])
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let titleStr = eightTitles[indexPath.item]
+        var vc:RootViewController? = nil
+        switch titleStr {
+        case "群主公告":
+            vc = YSAnnounceViewController()
+        case "物业人事":
+            vc = YSPersonViewController()
+        default:
+            return
+        }
+        vc?.hidesBottomBarWhenPushed = true
+        guard let superVc = self.superVc(),vc != nil else {return}
+        
+        superVc.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 
 

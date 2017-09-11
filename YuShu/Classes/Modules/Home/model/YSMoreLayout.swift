@@ -15,6 +15,7 @@ import UIKit
 }
 
 let headH: CGFloat = 120 + 10
+
 class YSMoreLayout: UICollectionViewFlowLayout {
     
     // MARK: 对外提供属性

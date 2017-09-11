@@ -11,5 +11,5 @@ import UIKit
 
 /// 一个屏幕宽度放几个cell的宽度
 let cellWidth = { (space: CGFloat, num: CGFloat)->CGFloat in
-                    return (KScreenWidth - (num + 1) * space) / space
+                    return (KScreenWidth - (num + 1) * space) / num
                 }

@@ -10,8 +10,8 @@ import UIKit
 
 class YSMeViewController: RootViewController {
     
-    let contents = [YSMeHeadViewCellM(image: "send_normal", title: "联系客服", num: "2"),YSMeHeadViewCellM(image: "send_normal", title: "提出意见", num: "2"), YSMeHeadViewCellM(image: "send_normal", title: "关于御墅社区", num: "2"),
-                 YSMeHeadViewCellM(image: "send_normal", title: "给个好评吧", num: "2")]
+    let contents = [YSMeHeadViewCellM(image: "联系客服", title: "联系客服", num: "2"),YSMeHeadViewCellM(image: "提出意见", title: "提出意见", num: "2"), YSMeHeadViewCellM(image: "关于御墅社区", title: "关于御墅社区", num: "2"),
+                 YSMeHeadViewCellM(image: "给个好评吧", title: "给个好评吧", num: "2")]
     let tableHeader = YSMeHeadView.default()!
     
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ class YSMeViewController: RootViewController {
         tableView.tableHeaderView = headContainer
         
         let topImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio))
-        topImageView.image = UIImage(named: "UserHomePageHead_backImg")
+        topImageView.image = UIImage(named: "beijing")
         topImageView.contentMode = .scaleAspectFill
         topImageView.tag = 101
         tableView.insertSubview(topImageView, at: 0)
@@ -89,6 +89,9 @@ extension YSMeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = contents[indexPath.row]
