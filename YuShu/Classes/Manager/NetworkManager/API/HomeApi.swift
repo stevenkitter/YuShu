@@ -16,6 +16,10 @@ enum HomeApi {
     case getAnnounceList(user_id: String)
     case getPersons()
     case getVoteList(user_id: String, page: Int)
+    case getVoteInfo(vote_id: String, user_id: String)
+    case doVote(user_id: String, vote_id: String,vote_option_id: String)
+    case getCommentList(user_id: String, type: String, item_id: String, page: Int)
+    
     
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
@@ -85,6 +89,31 @@ extension HomeApi: TargetType {
             params["page"] = page
             params["service"] = "Index.getVoteInfo"
             return params
+        case let .getVoteInfo(vote_id, user_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["vote_id"] = vote_id
+            params["service"] = "Index.getVoteInfoById"
+            return params
+        case let .doVote(user_id, vote_id,vote_option_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["vote_id"] = vote_id
+            params["vote_option_id"] = vote_option_id
+            params["service"] = "Index.doVote"
+            return params
+            
+            
+            
+        case let .getCommentList(user_id, type, item_id, page):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["type"] = type
+            params["item_id"] = item_id
+            params["page"] = page
+            params["service"] = "Index.getCommentList"
+            return params
+            
             
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]

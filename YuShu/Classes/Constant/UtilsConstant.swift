@@ -26,4 +26,4 @@ let KTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 //
 let KPlaceholderImage = UIImage(named: "default_icon")
 
-
+let KVotePlaceholderImage = UIImage(named: "vote")

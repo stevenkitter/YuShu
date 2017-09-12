@@ -13,3 +13,10 @@ import UIKit
 let cellWidth = { (space: CGFloat, num: CGFloat)->CGFloat in
                     return (KScreenWidth - (num + 1) * space) / num
                 }
+
+// 头像布局的整个宽度
+let userHeadWidth = { (space: CGFloat, num: CGFloat, cellW: CGFloat)->CGFloat in
+    
+    let wi = (num - 1) * (cellW - space) + cellW
+    return wi
+}

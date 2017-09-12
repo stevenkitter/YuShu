@@ -30,6 +30,7 @@ class RootTabBarController: UITabBarController {
         for (index,item) in subViewControllers.enumerated() {
             item.title = titles[index]
             item.tabBarItem.title = titles[index]
+            item.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: KNaviColor], for: .selected)
             item.tabBarItem.image = UIImage(named: unSelectedImageStrs[index])
             item.tabBarItem.selectedImage = UIImage(named: "\(unSelectedImageStrs[index])_selected")
             let nav = RootNavigationController(rootViewController: item);

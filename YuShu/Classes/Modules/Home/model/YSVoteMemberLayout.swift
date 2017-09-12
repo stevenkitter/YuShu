@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+//头像的布局
 class YSVoteMemberLayout: UICollectionViewFlowLayout {
     fileprivate lazy var attrsArray : [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
     fileprivate var maxY : CGFloat = 0
     fileprivate let cellW: CGFloat = 30
-    
+    fileprivate let space: CGFloat = 8
     override func prepare() {
         super.prepare()
         attrsArray.removeAll()
@@ -20,7 +20,7 @@ class YSVoteMemberLayout: UICollectionViewFlowLayout {
         for i in 0..<itemCount {
             let indexPath = IndexPath(item: i, section: 0)
             let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            attrs.frame = CGRect(x: CGFloat(i * 20), y: 0, width: cellW, height: cellW)
+            attrs.frame = CGRect(x: CGFloat(i) * (cellW - space), y: 0, width: cellW, height: cellW)
             attrsArray.append(attrs)
         }
     }
@@ -33,6 +33,8 @@ extension YSVoteMemberLayout {
     }
     
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: 0, height: cellW)
+        let itemCount = collectionView!.numberOfItems(inSection: 0)
+        let width = userHeadWidth(space, CGFloat(itemCount), cellW)
+        return CGSize(width: width, height: cellW)
     }
 }

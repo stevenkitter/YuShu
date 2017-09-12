@@ -47,7 +47,10 @@ class RootViewController: UIViewController {
     func loadServerData() {
         if tableView.mj_header.isRefreshing() {
             page = 1
-            tableView.mj_footer.resetNoMoreData()
+            if tableView.mj_footer != nil {
+                tableView.mj_footer.resetNoMoreData()
+            }
+            
         }
     }
     

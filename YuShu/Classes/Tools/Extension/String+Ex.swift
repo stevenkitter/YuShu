@@ -84,6 +84,11 @@ extension String {
         let timeStr = time.format(with: "yyyy-MM-dd")
         return timeStr
     }
+    func timeMintStr()-> String {
+        let time = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
+        let timeStr = time.format(with: "yyyy-MM-dd HH:mm")
+        return timeStr
+    }
     func strDate()-> Date {
         let da = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
         return da

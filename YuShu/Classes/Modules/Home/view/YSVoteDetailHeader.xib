@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSVoteDetailHeader" customModule="YuShu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bPy-AW-ERv">
+                    <rect key="frame" x="10" y="10" width="355" height="68"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1oO-MH-ywT">
+                            <rect key="frame" x="295" y="0.0" width="60" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="5Mi-eG-Kyx"/>
+                                <constraint firstAttribute="height" constant="25" id="e2I-m5-U1H"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LuJ-eU-U0q">
+                            <rect key="frame" x="10" y="10" width="275" height="20"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gT-th-XSj">
+                            <rect key="frame" x="10" y="39.5" width="335" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1oO-MH-ywT" firstAttribute="leading" secondItem="LuJ-eU-U0q" secondAttribute="trailing" constant="10" id="66J-HV-1S7"/>
+                        <constraint firstAttribute="trailing" secondItem="1oO-MH-ywT" secondAttribute="trailing" id="B7f-PR-MTB"/>
+                        <constraint firstAttribute="trailing" secondItem="7gT-th-XSj" secondAttribute="trailing" constant="10" id="CmE-G1-qzw"/>
+                        <constraint firstItem="7gT-th-XSj" firstAttribute="top" secondItem="LuJ-eU-U0q" secondAttribute="bottom" constant="10" id="Rx7-ux-db5"/>
+                        <constraint firstItem="LuJ-eU-U0q" firstAttribute="leading" secondItem="bPy-AW-ERv" secondAttribute="leading" constant="10" id="cYY-6w-yW9"/>
+                        <constraint firstAttribute="bottom" secondItem="7gT-th-XSj" secondAttribute="bottom" constant="11.5" id="luU-QI-bef"/>
+                        <constraint firstItem="7gT-th-XSj" firstAttribute="leading" secondItem="bPy-AW-ERv" secondAttribute="leading" constant="10" id="pSF-gh-Fc1"/>
+                        <constraint firstItem="LuJ-eU-U0q" firstAttribute="top" secondItem="bPy-AW-ERv" secondAttribute="top" constant="10" id="qol-Rb-Ob4"/>
+                        <constraint firstItem="1oO-MH-ywT" firstAttribute="top" secondItem="bPy-AW-ERv" secondAttribute="top" id="vFA-oO-Q1M"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="bPy-AW-ERv" secondAttribute="trailing" constant="10" id="K7P-is-Chm"/>
+                <constraint firstItem="bPy-AW-ERv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="a8V-9m-4Fp"/>
+                <constraint firstItem="bPy-AW-ERv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="qDh-R1-thg"/>
+                <constraint firstAttribute="bottom" secondItem="bPy-AW-ERv" secondAttribute="bottom" constant="10" id="u4P-MK-uLO"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLabel" destination="7gT-th-XSj" id="Qfj-ia-d2Y"/>
+                <outlet property="statusImageView" destination="1oO-MH-ywT" id="rKX-F1-Yla"/>
+                <outlet property="titleLabel" destination="LuJ-eU-U0q" id="FX0-0b-SQX"/>
+            </connections>
+            <point key="canvasLocation" x="-23.5" y="197"/>
+        </view>
+    </objects>
+</document>

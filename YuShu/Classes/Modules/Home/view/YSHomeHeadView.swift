@@ -11,6 +11,7 @@ import LLCycleScrollView
 let num: CGFloat = 4
 let itemW = (KScreenWidth - (num + 1) * 10)/num
 let labelSpace: CGFloat = 60
+
 class YSHomeHeadView: UIView {
     
     var timer: DispatchSourceTimer!
@@ -197,6 +198,8 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
             vc = YSAnnounceViewController()
         case "物业人事":
             vc = YSPersonViewController()
+        case "民意投票":
+            vc = YSVoteViewController()
         default:
             return
         }

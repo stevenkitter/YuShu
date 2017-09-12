@@ -23,7 +23,6 @@ class YSAnnounceViewController: RootViewController {
         guard let user_id = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         NetworkManager.providerHomeApi.request(.getAnnounceList(user_id: user_id))
         .mapArray(Announce.self).subscribe(onNext: { (list) in
-            guard list.count > 0 else {return}
             if self.page == 1 {
                 self.contents.removeAll()
             }
@@ -69,5 +68,12 @@ extension YSAnnounceViewController: UITableViewDelegate,UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnnounceTableViewCell", for: indexPath) as! AnnounceTableViewCell
         cell.annouce = contents[indexPath.row]
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let announce = contents[indexPath.row]
+        let vc = YSAnnounceDetailViewController()
+        vc.announceId = announce.adminnotice_id ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
