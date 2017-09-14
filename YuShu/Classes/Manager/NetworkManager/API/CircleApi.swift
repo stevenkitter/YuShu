@@ -11,6 +11,11 @@ import Moya
 enum CircleApi {
     case circles(friend_id: String, user_id: String, page: Int)
     case sendComment(content: String, user_id: String, friend_id: String, about_user_id: String)
+    
+    
+    case getFloorList()
+    case getRoomList(user_floor: String)
+    case getUserList(user_floor: String, user_room: String)
 //    case newCircle(content: String, user_id: String, images: [WXPostImage])
 }
 
@@ -62,11 +67,22 @@ extension CircleApi: TargetType {
             params["about_user_id"] = about_user_id
             params["service"] = "Friend.send_con"
             return params
-//        case let .newCircle(content, user_id, _):
-//            var params: [String: Any] = [:]
-//            params["content"] = content
-//            params["user_id"] = user_id
-//            return params
+        case .getFloorList():
+            var params: [String: Any] = [:]
+       
+            params["service"] = "User.getFloorInfo"
+            return params
+        case let .getRoomList(user_floor):
+            var params: [String: Any] = [:]
+            params["user_floor"] = user_floor
+            params["service"] = "User.getRoomListByFloor"
+            return params
+        case let .getUserList(user_floor, user_room):
+            var params: [String: Any] = [:]
+            params["user_floor"] = user_floor
+            params["user_room"] = user_room
+            params["service"] = "User.getUserListByRoom"
+            return params
         }
         
     }

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class YSPactViewController: RootViewController {
+class YSPactViewController: YSWebViewController {
 
     override func viewDidLoad() {
+        url = WebViewUrl + "convention_display"
         super.viewDidLoad()
         self.title = "小区公约"
         // Do any additional setup after loading the view.
@@ -22,14 +23,6 @@ class YSPactViewController: RootViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

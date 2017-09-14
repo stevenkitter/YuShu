@@ -32,7 +32,7 @@ target 'YuShu' do
   pod 'Lightbox'
   pod 'ActionSheetPicker-3.0'
   pod 'pop', '~> 1.0'
- 
+  pod 'EasyTipView', '~> 1.0.2'
   # Pods for YuShu
 
   target 'YuShuTests' do

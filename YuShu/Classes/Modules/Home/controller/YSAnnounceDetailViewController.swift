@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SVProgressHUD
 class YSAnnounceDetailViewController: RootViewController {
     var announceId = "" {
         didSet{
@@ -25,7 +26,7 @@ class YSAnnounceDetailViewController: RootViewController {
         $0.scrollView.keyboardDismissMode = .onDrag
         $0.scrollView.isScrollEnabled = false
     }
-    let tableViewHeader = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenHeight))
+    let tableViewHeader = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 10))
     let commentView = CommentToolView.default()!
     
     override func viewDidLoad() {
@@ -73,11 +74,11 @@ class YSAnnounceDetailViewController: RootViewController {
         let block =  { [unowned self] (btn: UIButton) in
             switch btn.tag {
             case 0:
-                print("点赞")
+                self.like(btn: btn)
             case 1:
-                print("分享")
+                self.save()
             case 2:
-                print("发送")
+                self.send()
             default:
                 return
             }
@@ -95,7 +96,7 @@ class YSAnnounceDetailViewController: RootViewController {
     override func loadServerData() {
         super.loadServerData()
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
-        NetworkManager.providerHomeApi.request(.getCommentList(user_id: userId, type: "", item_id: announceId, page: page))
+        NetworkManager.providerHomeApi.request(.getCommentList(user_id: userId, type: "adminnotice", item_id: announceId, page: page))
         .mapArray(Comment.self).subscribe(onNext: { (list) in
             
             if self.page == 1 {
@@ -127,6 +128,61 @@ class YSAnnounceDetailViewController: RootViewController {
     
 
 }
+//MARK: 评论操作
+extension YSAnnounceDetailViewController{
+    func like(btn bt: UIButton) {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
+        WXActivityIndicatorView.start()
+        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "adminnotice", praise_item_id: announceId)).mapJSON().subscribe(onNext: { (res) in
+            WXActivityIndicatorView.stop()
+            guard let respon = res as? Dictionary<String, Any> else{
+                return
+            }
+            guard let data = respon["data"] as? Dictionary<String, Any> else {
+                return
+            }
+            let msg = data["msg"] as? String
+            let code = data["code"] as? Int
+            if code == 1 {
+                SVProgressHUD.showSuccess(withStatus: msg ?? "点赞成功")
+                bt.isSelected = !bt.isSelected
+            }else{
+                SVProgressHUD.showError(withStatus: msg ?? "点赞失败")
+            }
+
+        }, onError: { (err) in
+            WXActivityIndicatorView.stop()
+        }).addDisposableTo(disposeBag)
+    }
+    func save() {
+        
+    }
+    
+    func send() {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
+        WXActivityIndicatorView.start()
+        NetworkManager.providerHomeApi.request(.doComment(user_id: userId, comment_type: "adminnotice", comment_item_id: announceId, comment_desc: commentView.textField.text)).mapJSON().subscribe(onNext: { (res) in
+            WXActivityIndicatorView.stop()
+            guard let respon = res as? Dictionary<String, Any> else{
+                return
+            }
+            guard let data = respon["data"] as? Dictionary<String, Any> else {
+                return
+            }
+            let msg = data["msg"] as? String
+            let code = data["code"] as? Int
+            if code == 1 {
+                SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
+                self.tableView.reloadData()
+            }else{
+                SVProgressHUD.showError(withStatus: msg ?? "评论失败")
+            }
+        }, onError: { (err) in
+            
+        }).addDisposableTo(disposeBag)
+    }
+}
+
 extension YSAnnounceDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
@@ -140,6 +196,7 @@ extension YSAnnounceDetailViewController: UITableViewDelegate, UITableViewDataSo
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YSCommentTableViewCell", for: indexPath) as! YSCommentTableViewCell
+        cell.comment = contents[indexPath.row]
         return cell
     }
 }
@@ -151,7 +208,9 @@ extension YSAnnounceDetailViewController: WKNavigationDelegate {
             
             if let h = content as? CGFloat {
                 self.tableViewHeader.setHeight(h: h)
+                self.tableView.beginUpdates()
                 self.tableView.tableHeaderView = self.tableViewHeader
+                self.tableView.endUpdates()
             }
         }
     }

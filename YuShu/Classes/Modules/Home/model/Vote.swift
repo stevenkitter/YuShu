@@ -35,13 +35,17 @@ struct Vote: Mappable{
 
 struct PraiseUser: Mappable {
     var user_headpic: String?
-   
+    var user_id: String?
+    var user_status: String?
+    var user_name: String?
     init?(map: Map) {
         
     }
     mutating func mapping(map: Map) {
         user_headpic <- (map["user_headpic"],AvatarTransform())
-        
+        user_id <- map["user_id"]
+        user_status <- map["user_status"]
+        user_name <- map["user_name"]
     }
 }
 

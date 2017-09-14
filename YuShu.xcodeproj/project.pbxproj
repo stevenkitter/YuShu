@@ -100,6 +100,13 @@
 		EC7CB95F1F67C0DE009CE9BC /* YSVoteDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */; };
 		EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */; };
 		EC7CB9631F67DDA7009CE9BC /* FootFuncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */; };
+		EC8407811F6A5D86009E6721 /* YSInterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84077F1F6A5D86009E6721 /* YSInterCollectionViewCell.swift */; };
+		EC8407821F6A5D86009E6721 /* YSInterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8407801F6A5D86009E6721 /* YSInterCollectionViewCell.xib */; };
+		EC8407841F6A6220009E6721 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8407831F6A6220009E6721 /* Floor.swift */; };
+		EC8407871F6A7003009E6721 /* YSRoomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8407851F6A7003009E6721 /* YSRoomCollectionViewCell.swift */; };
+		EC8407881F6A7003009E6721 /* YSRoomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8407861F6A7003009E6721 /* YSRoomCollectionViewCell.xib */; };
+		EC84078A1F6A75BB009E6721 /* YSRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8407891F6A75BB009E6721 /* YSRoomListViewController.swift */; };
+		EC84078C1F6A7FFE009E6721 /* YSUserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84078B1F6A7FFE009E6721 /* YSUserListView.swift */; };
 		EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */; };
 		EC895AF21F5FD0DB00D55EB8 /* YSMeHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AF11F5FD0DB00D55EB8 /* YSMeHeadView.swift */; };
 		EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */; };
@@ -254,6 +261,13 @@
 		EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSVoteDetailHeader.swift; sourceTree = "<group>"; };
 		EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSVoteDetailHeader.xib; sourceTree = "<group>"; };
 		EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootFuncButton.swift; sourceTree = "<group>"; };
+		EC84077F1F6A5D86009E6721 /* YSInterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSInterCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC8407801F6A5D86009E6721 /* YSInterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSInterCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC8407831F6A6220009E6721 /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
+		EC8407851F6A7003009E6721 /* YSRoomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSRoomCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC8407861F6A7003009E6721 /* YSRoomCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRoomCollectionViewCell.xib; sourceTree = "<group>"; };
+		EC8407891F6A75BB009E6721 /* YSRoomListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSRoomListViewController.swift; sourceTree = "<group>"; };
+		EC84078B1F6A7FFE009E6721 /* YSUserListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSUserListView.swift; sourceTree = "<group>"; };
 		EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchSource+Ex.swift"; sourceTree = "<group>"; };
 		EC895AF11F5FD0DB00D55EB8 /* YSMeHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeHeadView.swift; sourceTree = "<group>"; };
 		EC895AF31F5FD0FD00D55EB8 /* YSMeHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeHeadView.xib; sourceTree = "<group>"; };
@@ -470,9 +484,9 @@
 		184351D01F5CF54200BB86CA /* Interact */ = {
 			isa = PBXGroup;
 			children = (
+				EC84077D1F6A5D79009E6721 /* model */,
+				EC84077E1F6A5D79009E6721 /* view */,
 				18D788381F5D357900312DF4 /* controller */,
-				18D788391F5D357900312DF4 /* model */,
-				18D7883A1F5D357900312DF4 /* view */,
 			);
 			path = Interact;
 			sourceTree = "<group>";
@@ -594,22 +608,9 @@
 			isa = PBXGroup;
 			children = (
 				18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */,
+				EC8407891F6A75BB009E6721 /* YSRoomListViewController.swift */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		18D788391F5D357900312DF4 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		18D7883A1F5D357900312DF4 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
 			sourceTree = "<group>";
 		};
 		18EF42731F5CFB8B008280F3 /* controller */ = {
@@ -699,6 +700,26 @@
 				2853244807EDE95540408550 /* Pods-YuShuUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC84077D1F6A5D79009E6721 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EC8407831F6A6220009E6721 /* Floor.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EC84077E1F6A5D79009E6721 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				EC84077F1F6A5D86009E6721 /* YSInterCollectionViewCell.swift */,
+				EC8407801F6A5D86009E6721 /* YSInterCollectionViewCell.xib */,
+				EC8407851F6A7003009E6721 /* YSRoomCollectionViewCell.swift */,
+				EC8407861F6A7003009E6721 /* YSRoomCollectionViewCell.xib */,
+				EC84078B1F6A7FFE009E6721 /* YSUserListView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		EC895AEF1F5FD0B200D55EB8 /* view */ = {
@@ -876,7 +897,9 @@
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
 				EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */,
 				EC7CB95D1F67BE1B009CE9BC /* YSVoteOptionTableViewCell.xib in Resources */,
+				EC8407881F6A7003009E6721 /* YSRoomCollectionViewCell.xib in Resources */,
 				184352611F5CF54200BB86CA /* Assets.xcassets in Resources */,
+				EC8407821F6A5D86009E6721 /* YSInterCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -975,6 +998,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework",
 				"${BUILT_PRODUCTS_DIR}/HanekeSwift/Haneke.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
@@ -1003,6 +1027,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyTipView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
@@ -1112,6 +1137,7 @@
 				1843521C1F5CF54200BB86CA /* AppDelegate.swift in Sources */,
 				ECACE2B11F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift in Sources */,
 				1843526B1F5CF54200BB86CA /* UIColor+Ex.swift in Sources */,
+				EC84078A1F6A75BB009E6721 /* YSRoomListViewController.swift in Sources */,
 				184352481F5CF54200BB86CA /* LoadingViewController.swift in Sources */,
 				ECACE2A71F62256500A6207C /* YSEditMeImageTableViewCell.swift in Sources */,
 				184352681F5CF54200BB86CA /* Date+Ex.swift in Sources */,
@@ -1121,14 +1147,17 @@
 				18884E4C1F62CF7300D285F7 /* YSPactViewController.swift in Sources */,
 				EC16612B1F666D0400B0982A /* YSPersonCollectionViewCell.swift in Sources */,
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
+				EC84078C1F6A7FFE009E6721 /* YSUserListView.swift in Sources */,
 				EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */,
 				1843521F1F5CF54200BB86CA /* UrlsConstant.swift in Sources */,
 				184352231F5CF54200BB86CA /* HomeApi.swift in Sources */,
+				EC8407871F6A7003009E6721 /* YSRoomCollectionViewCell.swift in Sources */,
 				184352731F5CF54200BB86CA /* WXActivityIndicatorView.swift in Sources */,
 				1843526E1F5CF54200BB86CA /* CommentToolView.swift in Sources */,
 				18D7883C1F5D359D00312DF4 /* YSInterViewController.swift in Sources */,
 				18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */,
 				EC7CB94E1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift in Sources */,
+				EC8407811F6A5D86009E6721 /* YSInterCollectionViewCell.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
 				EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
@@ -1174,6 +1203,7 @@
 				18884E3D1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.swift in Sources */,
 				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
 				EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */,
+				EC8407841F6A6220009E6721 /* Floor.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,
 				EC7CB9561F6786A2009CE9BC /* YSCommentTableViewCell.swift in Sources */,
 				18884E401F62CB1500D285F7 /* YSAnnounceViewController.swift in Sources */,

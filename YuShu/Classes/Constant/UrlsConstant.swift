@@ -13,11 +13,11 @@ let ServiceUrlStr = "interface/public/yushuapp/"
 let ImageUrl = IpAddress + "88/"
 
 //web
-let webViewUrl = BaseUrlStr + "admin/webview/"
+let WebViewUrl = BaseUrlStr + "admin/webview/"
 
 
 //轮播图
-let WebUrl = webViewUrl + "slide_display/slide_id/"
+let WebUrl = WebViewUrl + "slide_display/slide_id/"
 //群主公告webview：
-let AnnounceUrl = webViewUrl + "adminnotice_display/adminnotice_id/"
+let AnnounceUrl = WebViewUrl + "adminnotice_display/adminnotice_id/"
 

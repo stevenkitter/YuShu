@@ -52,7 +52,7 @@ class RefreshFooter: MJRefreshAutoFooter {
                 label.text = "-- 更多 --"
                 self.activityView.stopAnimating()
             case .noMoreData:
-                label.text = "-- 结束 --"
+                label.text = "-- 尾部 --"
                 self.activityView.stopAnimating()
             case .refreshing:
                 label.text = ""

@@ -27,7 +27,7 @@ class YSWebViewController: RootViewController {
         view.addSubview(progressView)
         progressView.snp.makeConstraints { (make) in
             make.left.right.equalTo(self.view)
-            make.top.equalTo(self.view).offset(64)
+            make.top.equalTo(self.view).offset(0)
             make.height.equalTo(3)
         }
         webView.snp.makeConstraints { (make) in

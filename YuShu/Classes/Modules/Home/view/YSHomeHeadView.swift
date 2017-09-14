@@ -90,6 +90,7 @@ class YSHomeHeadView: UIView {
         adView.autoScrollTimeInterval = 4.0
         adView.customPageControlStyle = .snake
         adView.titleBackgroundColor = UIColor.clear
+        
         ys_adsuperView.addSubview(adView)
         
         broadView.layer.borderColor = UIColor.groupTableViewBackground.cgColor
@@ -200,6 +201,8 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
             vc = YSPersonViewController()
         case "民意投票":
             vc = YSVoteViewController()
+        case "小区公约":
+            vc = YSPactViewController()
         default:
             return
         }

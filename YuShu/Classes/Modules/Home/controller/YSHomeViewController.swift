@@ -25,6 +25,12 @@ class YSHomeViewController: RootViewController {
         tableView.mj_header.beginRefreshing()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(KNaviColor.createImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = nil
+    }
+    
     func setupUI() {
         self.tableView.delegate = self
         tableView.dataSource = self
@@ -33,8 +39,11 @@ class YSHomeViewController: RootViewController {
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 48, 0))
         }
         tableView.register(UINib(nibName: "YSHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "YSHomeTableViewCell")
-        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 60 + itemW * 2 + 30 + 30))
+        let headContainer = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: KScreenWidth * ratio + 60 + itemW * 2 + 30 + 20))
         headContainer.addSubview(tableHeader)
+        tableHeader.snp.makeConstraints { (make) in
+            make.edges.equalTo(headContainer)
+        }
         tableView.tableHeaderView = headContainer
         
         automaticallyAdjustsScrollViewInsets = false

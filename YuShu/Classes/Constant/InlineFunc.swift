@@ -20,3 +20,5 @@ let userHeadWidth = { (space: CGFloat, num: CGFloat, cellW: CGFloat)->CGFloat in
     let wi = (num - 1) * (cellW - space) + cellW
     return wi
 }
+
+

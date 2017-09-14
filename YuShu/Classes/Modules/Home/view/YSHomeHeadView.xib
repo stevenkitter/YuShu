@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSHomeHeadView" customModule="YuShu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFC-xb-0EM">
@@ -82,6 +82,7 @@
                 <constraint firstAttribute="trailing" secondItem="F6G-J0-axd" secondAttribute="trailing" constant="10" id="7QR-R8-a4K"/>
                 <constraint firstAttribute="trailing" secondItem="ZFC-xb-0EM" secondAttribute="trailing" id="E9g-IX-Wqh"/>
                 <constraint firstItem="ZFC-xb-0EM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MQi-sE-3Yl"/>
+                <constraint firstAttribute="bottom" secondItem="YJF-eh-5Xl" secondAttribute="bottom" id="MpK-W0-zFm"/>
                 <constraint firstItem="F6G-J0-axd" firstAttribute="top" secondItem="ZFC-xb-0EM" secondAttribute="bottom" constant="10" id="RXP-bW-Ovf"/>
                 <constraint firstItem="YJF-eh-5Xl" firstAttribute="top" secondItem="F6G-J0-axd" secondAttribute="bottom" constant="10" id="TJr-b1-vnO"/>
                 <constraint firstItem="F6G-J0-axd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Thg-aO-IRc"/>
@@ -100,7 +101,7 @@
                 <outlet property="ys_flowLayout" destination="bak-bv-bps" id="458-K2-FVy"/>
                 <outlet property="ys_showView" destination="dnh-q9-Tbh" id="4AJ-nJ-Hzq"/>
             </connections>
-            <point key="canvasLocation" x="22.5" y="-105"/>
+            <point key="canvasLocation" x="22.5" y="-104"/>
         </view>
     </objects>
     <resources>

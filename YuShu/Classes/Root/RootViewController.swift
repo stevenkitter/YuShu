@@ -66,8 +66,11 @@ class RootViewController: UIViewController {
     }
 
     func hideNavigationBar() {
-        
-        self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: true)
+        let offset = min(max(0, self.tableView.mj_offsetY / 150), 1)
+        let color = KNaviColor.alpha(offset)
+        self.navigationController?.navigationBar.setBackgroundImage(color.createImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIColor.clear.createImage()
+//        self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: true)
         
     }
 

@@ -19,7 +19,8 @@ enum HomeApi {
     case getVoteInfo(vote_id: String, user_id: String)
     case doVote(user_id: String, vote_id: String,vote_option_id: String)
     case getCommentList(user_id: String, type: String, item_id: String, page: Int)
-    
+    case doPraise(user_id: String, praise_type: String, praise_item_id: String) //装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
+    case doComment(user_id: String, comment_type: String, comment_item_id: String, comment_desc: String)//其中comment_type:装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
@@ -102,9 +103,6 @@ extension HomeApi: TargetType {
             params["vote_option_id"] = vote_option_id
             params["service"] = "Index.doVote"
             return params
-            
-            
-            
         case let .getCommentList(user_id, type, item_id, page):
             var params: [String: Any] = [:]
             params["user_id"] = user_id
@@ -112,6 +110,21 @@ extension HomeApi: TargetType {
             params["item_id"] = item_id
             params["page"] = page
             params["service"] = "Index.getCommentList"
+            return params
+        case let .doPraise(user_id, praise_type, praise_item_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["praise_type"] = praise_type
+            params["praise_item_id"] = praise_item_id
+            params["service"] = "Index.doPraise"
+            return params
+        case let .doComment(user_id, comment_type, comment_item_id, comment_desc):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["comment_type"] = comment_type
+            params["comment_item_id"] = comment_item_id
+            params["comment_desc"] = comment_desc
+            params["service"] = "Index.doComment"
             return params
             
             

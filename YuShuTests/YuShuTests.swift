@@ -29,6 +29,14 @@ class YuShuTests: XCTestCase {
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
+            let fons = UIFont.familyNames
+            for item in fons {
+                print(item + "-----------------")
+                let fonName = UIFont.fontNames(forFamilyName: item)
+                for name in fonName{
+                    print(name)
+                }
+            }
             // Put the code you want to measure the time of here.
         }
     }
