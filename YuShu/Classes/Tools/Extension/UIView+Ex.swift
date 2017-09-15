@@ -28,6 +28,13 @@ extension UIView {
         self.layer.borderWidth = border
     }
     
+    func cornerRadiusBorder(width: CGFloat,border: CGFloat, selected: Bool) {
+        self.layer.cornerRadius = width / 2
+        self.layer.masksToBounds = true
+        self.layer.borderColor = selected ? UIColor.flatGreen.cgColor : UIColor.lightGray.cgColor
+        self.layer.borderWidth = border
+    }
+    
     func superVc()->UIViewController? {
         var superView = self.superview
         while superView != nil{
@@ -46,6 +53,12 @@ extension UIView {
     func moveX(x: CGFloat) {
         var frame = self.frame
         frame.origin.x += x
+        self.frame = frame
+    }
+    
+    func moveY(y: CGFloat) {
+        var frame = self.frame
+        frame.origin.y += y
         self.frame = frame
     }
     
@@ -78,6 +91,9 @@ extension UIImageView{
     }
     func kfImageVote(_ str: String){
         self.kf.setImage(with: URL(string: str), placeholder: KVotePlaceholderImage)
+    }
+    func kfImageNormal(_ str: String) {
+        self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
     }
 }
 
@@ -129,6 +145,7 @@ extension UIView {
 }
 
 extension UIButton {
+    //横的大按钮
     static func buttonWithTitle(normal ti: String, disable str: String)-> UIButton {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
@@ -145,6 +162,26 @@ extension UIButton {
         btn.layer.cornerRadius = 5
         btn.layer.masksToBounds = true
         return btn
+    }
+    
+    //圆按钮
+    static func buttonWithImage(image: UIImage)-> UIButton {
+        let btn = UIButton(type: .custom)
+        btn.setImage(image, for: .normal)
+        return btn
+    }
+}
+
+// MARK: 截图
+extension UIView {
+    func createImageView()-> UIImageView {
+        UIGraphicsBeginImageContextWithOptions(self.mj_size, false, UIScreen.main.scale)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let imageView = UIImageView(image: image)
+        imageView.frame = self.frame
+        return imageView
     }
 }
 

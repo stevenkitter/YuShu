@@ -64,6 +64,7 @@ extension YSVoteTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let user = vote?.praise_user_list[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YSUserHeadCollectionViewCell", for: indexPath) as! YSUserHeadCollectionViewCell
+        cell.iconImageView.cornerRadius(width: 30)
         cell.iconImageView.kfImage(user?.user_headpic ?? "")
         return cell
     }

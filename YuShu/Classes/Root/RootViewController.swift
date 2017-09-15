@@ -17,6 +17,12 @@ class RootViewController: UIViewController {
         $0.estimatedRowHeight = 50
         $0.tableFooterView = UIView()
     }
+    
+    let tableViewGrouped = UITableView(frame: CGRect.zero, style: .grouped).then {
+        $0.estimatedRowHeight = 50
+        $0.tableFooterView = UIView()
+    }
+    
     var collectionView: UICollectionView! = nil
     var page = 1
     

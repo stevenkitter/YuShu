@@ -197,6 +197,8 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
         switch titleStr {
         case "群主公告":
             vc = YSAnnounceViewController()
+        case "闲置转让":
+            vc = YSTransferViewController()
         case "物业人事":
             vc = YSPersonViewController()
         case "民意投票":

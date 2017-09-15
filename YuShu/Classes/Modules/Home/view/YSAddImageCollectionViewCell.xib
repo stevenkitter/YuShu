@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YSAddImageCollectionViewCell" id="gTV-IL-0wX" customClass="YSAddImageCollectionViewCell" customModule="YuShu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="98" height="88"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="98" height="88"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F6R-Rq-Wkh">
+                        <rect key="frame" x="0.0" y="0.0" width="98" height="88"/>
+                    </imageView>
+                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBc-kd-Csb">
+                        <rect key="frame" x="68" y="0.0" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="Ioj-qZ-mVo"/>
+                            <constraint firstAttribute="height" constant="30" id="WHV-g1-he2"/>
+                        </constraints>
+                        <state key="normal" image="删除"/>
+                        <connections>
+                            <action selector="deleteImage:" destination="gTV-IL-0wX" eventType="touchUpInside" id="mJ4-6w-2PJ"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="F6R-Rq-Wkh" secondAttribute="bottom" id="DP0-Tk-Vue"/>
+                <constraint firstItem="F6R-Rq-Wkh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SjB-Tq-UgS"/>
+                <constraint firstAttribute="trailing" secondItem="F6R-Rq-Wkh" secondAttribute="trailing" id="WbE-4G-7gl"/>
+                <constraint firstItem="tBc-kd-Csb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jWF-9W-BOW"/>
+                <constraint firstItem="F6R-Rq-Wkh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nm2-kY-VWH"/>
+                <constraint firstAttribute="trailing" secondItem="tBc-kd-Csb" secondAttribute="trailing" id="wGR-lb-xhR"/>
+            </constraints>
+            <size key="customSize" width="98" height="88"/>
+            <connections>
+                <outlet property="deleteBtn" destination="tBc-kd-Csb" id="kXX-60-ntP"/>
+                <outlet property="imageView" destination="F6R-Rq-Wkh" id="icn-A8-rRF"/>
+            </connections>
+            <point key="canvasLocation" x="49" y="71"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="删除" width="20" height="20"/>
+    </resources>
+</document>

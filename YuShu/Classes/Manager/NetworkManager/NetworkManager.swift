@@ -22,7 +22,7 @@ class NetworkManager: NSObject {
         
         let url = target.baseURL.absoluteString + target.path
         
-        print("url:\(url)")
+      
         
         
         let endpoint = Endpoint<UserApi>(
@@ -59,6 +59,24 @@ class NetworkManager: NSObject {
         return endpoint.adding(newHTTPHeaderFields: ["iOS": "Platform"])
     }
     
+    static let homeEndpointClosure = { (target: HomeApi) -> Endpoint<HomeApi> in
+        
+        let url = target.baseURL.absoluteString + target.path
+        
+        print("url:\(url)")
+        
+        
+        let endpoint = Endpoint<HomeApi>(
+            url: url,
+            sampleResponseClosure: { .networkResponse(200, target.sampleData) },
+            method: target.method,
+            parameters: target.parameters,
+            parameterEncoding: target.parameterEncoding
+        )
+        
+        return endpoint.adding(newHTTPHeaderFields: ["iOS": "Platform"])
+    }
+    
     static let activityPlugin = NetworkActivityPlugin { (type: NetworkActivityChangeType) in
         switch type{
         case .began:
@@ -70,7 +88,7 @@ class NetworkManager: NSObject {
     
     static let providerUserApi = RxMoyaProvider<UserApi>(endpointClosure: NetworkManager.endpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
     
-    static let providerHomeApi = RxMoyaProvider<HomeApi>(plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
+    static let providerHomeApi = RxMoyaProvider<HomeApi>(endpointClosure: NetworkManager.homeEndpointClosure ,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
     
     static let providerCircleApi = RxMoyaProvider<CircleApi>(endpointClosure: NetworkManager.circleEndpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
 }

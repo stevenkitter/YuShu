@@ -120,6 +120,20 @@
 		EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */; };
 		EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */; };
 		EC89FF7E1F614D1500C43686 /* YSMeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */; };
+		ECA4A31C1F6B590D00F7700E /* YSRoomUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A31A1F6B590D00F7700E /* YSRoomUserCollectionViewCell.swift */; };
+		ECA4A31D1F6B590D00F7700E /* YSRoomUserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4A31B1F6B590D00F7700E /* YSRoomUserCollectionViewCell.xib */; };
+		ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A31E1F6B702600F7700E /* YSTransferAddViewController.swift */; };
+		ECA4A3221F6B71E900F7700E /* AddImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A3201F6B71E900F7700E /* AddImageTableViewCell.swift */; };
+		ECA4A3231F6B71E900F7700E /* AddImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4A3211F6B71E900F7700E /* AddImageTableViewCell.xib */; };
+		ECA4A3261F6B733500F7700E /* YSAddImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A3241F6B733500F7700E /* YSAddImageCollectionViewCell.swift */; };
+		ECA4A3271F6B733500F7700E /* YSAddImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4A3251F6B733500F7700E /* YSAddImageCollectionViewCell.xib */; };
+		ECA4A3291F6B748500F7700E /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A3281F6B748500F7700E /* Transfer.swift */; };
+		ECA4A32C1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A32A1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift */; };
+		ECA4A32D1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4A32B1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib */; };
+		ECA4A32F1F6B7DA600F7700E /* YSTransferDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A32E1F6B7DA600F7700E /* YSTransferDetailViewController.swift */; };
+		ECA4A3321F6B807D00F7700E /* YSTransferTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A3301F6B807D00F7700E /* YSTransferTableViewCell.swift */; };
+		ECA4A3331F6B807D00F7700E /* YSTransferTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */; };
+		ECA4A3351F6BBF7000F7700E /* DVActionSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA4A3341F6BBF7000F7700E /* DVActionSheetVC.swift */; };
 		ECACE29F1F62212D00A6207C /* YSEditMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE29D1F62212D00A6207C /* YSEditMeViewController.swift */; };
 		ECACE2A01F62212D00A6207C /* YSEditMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECACE29E1F62212D00A6207C /* YSEditMeViewController.xib */; };
 		ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACE2A11F62237500A6207C /* YSEditMeTableViewCell.swift */; };
@@ -281,6 +295,20 @@
 		EC89FF781F613E7800C43686 /* YSMoreImageCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMoreImageCollectionReusableView.xib; sourceTree = "<group>"; };
 		EC89FF7B1F614D1500C43686 /* YSMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeTableViewCell.swift; sourceTree = "<group>"; };
 		EC89FF7C1F614D1500C43686 /* YSMeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeTableViewCell.xib; sourceTree = "<group>"; };
+		ECA4A31A1F6B590D00F7700E /* YSRoomUserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSRoomUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECA4A31B1F6B590D00F7700E /* YSRoomUserCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRoomUserCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECA4A31E1F6B702600F7700E /* YSTransferAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSTransferAddViewController.swift; sourceTree = "<group>"; };
+		ECA4A3201F6B71E900F7700E /* AddImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageTableViewCell.swift; sourceTree = "<group>"; };
+		ECA4A3211F6B71E900F7700E /* AddImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddImageTableViewCell.xib; sourceTree = "<group>"; };
+		ECA4A3241F6B733500F7700E /* YSAddImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSAddImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		ECA4A3251F6B733500F7700E /* YSAddImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSAddImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		ECA4A3281F6B748500F7700E /* Transfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		ECA4A32A1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSAddTextTableViewCell.swift; sourceTree = "<group>"; };
+		ECA4A32B1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSAddTextTableViewCell.xib; sourceTree = "<group>"; };
+		ECA4A32E1F6B7DA600F7700E /* YSTransferDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSTransferDetailViewController.swift; sourceTree = "<group>"; };
+		ECA4A3301F6B807D00F7700E /* YSTransferTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSTransferTableViewCell.swift; sourceTree = "<group>"; };
+		ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTransferTableViewCell.xib; sourceTree = "<group>"; };
+		ECA4A3341F6BBF7000F7700E /* DVActionSheetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DVActionSheetVC.swift; sourceTree = "<group>"; };
 		ECACE29D1F62212D00A6207C /* YSEditMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeViewController.swift; sourceTree = "<group>"; };
 		ECACE29E1F62212D00A6207C /* YSEditMeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSEditMeViewController.xib; sourceTree = "<group>"; };
 		ECACE2A11F62237500A6207C /* YSEditMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSEditMeTableViewCell.swift; sourceTree = "<group>"; };
@@ -570,6 +598,7 @@
 		184352111F5CF54200BB86CA /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ECA4A3341F6BBF7000F7700E /* DVActionSheetVC.swift */,
 				184352121F5CF54200BB86CA /* CommentToolView.swift */,
 				184352131F5CF54200BB86CA /* CommentToolView.xib */,
 				184352141F5CF54200BB86CA /* RSKPlaceholderTextView.swift */,
@@ -628,6 +657,8 @@
 				18884E4D1F62CF9300D285F7 /* YSRimViewController.swift */,
 				EC7CB9501F67756C009CE9BC /* YSAnnounceDetailViewController.swift */,
 				EC7CB9581F67BB6D009CE9BC /* YSVoteDetailViewController.swift */,
+				ECA4A31E1F6B702600F7700E /* YSTransferAddViewController.swift */,
+				ECA4A32E1F6B7DA600F7700E /* YSTransferDetailViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -642,6 +673,7 @@
 				EC1661311F667F7600B0982A /* YSVoteMemberLayout.swift */,
 				EC1661331F668B8C00B0982A /* Vote.swift */,
 				EC7CB9521F678633009CE9BC /* Comment.swift */,
+				ECA4A3281F6B748500F7700E /* Transfer.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -675,6 +707,14 @@
 				EC7CB95B1F67BE1B009CE9BC /* YSVoteOptionTableViewCell.xib */,
 				EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */,
 				EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */,
+				ECA4A3201F6B71E900F7700E /* AddImageTableViewCell.swift */,
+				ECA4A3211F6B71E900F7700E /* AddImageTableViewCell.xib */,
+				ECA4A3241F6B733500F7700E /* YSAddImageCollectionViewCell.swift */,
+				ECA4A3251F6B733500F7700E /* YSAddImageCollectionViewCell.xib */,
+				ECA4A32A1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift */,
+				ECA4A32B1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib */,
+				ECA4A3301F6B807D00F7700E /* YSTransferTableViewCell.swift */,
+				ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -718,6 +758,8 @@
 				EC8407851F6A7003009E6721 /* YSRoomCollectionViewCell.swift */,
 				EC8407861F6A7003009E6721 /* YSRoomCollectionViewCell.xib */,
 				EC84078B1F6A7FFE009E6721 /* YSUserListView.swift */,
+				ECA4A31A1F6B590D00F7700E /* YSRoomUserCollectionViewCell.swift */,
+				ECA4A31B1F6B590D00F7700E /* YSRoomUserCollectionViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -873,10 +915,13 @@
 				18884E3E1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib in Resources */,
 				EC89FF7A1F613E7800C43686 /* YSMoreImageCollectionReusableView.xib in Resources */,
 				18E4F6071F66157E0042FE72 /* AnnounceTableViewCell.xib in Resources */,
+				ECA4A3271F6B733500F7700E /* YSAddImageCollectionViewCell.xib in Resources */,
+				ECA4A31D1F6B590D00F7700E /* YSRoomUserCollectionViewCell.xib in Resources */,
 				EC7CB9571F6786A2009CE9BC /* YSCommentTableViewCell.xib in Resources */,
 				EC1661301F66766400B0982A /* YSVoteTableViewCell.xib in Resources */,
 				EC7CB94F1F676D62009CE9BC /* YSUserHeadCollectionViewCell.xib in Resources */,
 				EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */,
+				ECA4A3331F6B807D00F7700E /* YSTransferTableViewCell.xib in Resources */,
 				ECACE2A01F62212D00A6207C /* YSEditMeViewController.xib in Resources */,
 				ECACE2A41F62237500A6207C /* YSEditMeTableViewCell.xib in Resources */,
 				ECACE2AC1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib in Resources */,
@@ -888,6 +933,7 @@
 				ECACE2A81F62256500A6207C /* YSEditMeImageTableViewCell.xib in Resources */,
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
+				ECA4A3231F6B71E900F7700E /* AddImageTableViewCell.xib in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
 				EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */,
 				1843526F1F5CF54200BB86CA /* CommentToolView.xib in Resources */,
@@ -897,6 +943,7 @@
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
 				EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */,
 				EC7CB95D1F67BE1B009CE9BC /* YSVoteOptionTableViewCell.xib in Resources */,
+				ECA4A32D1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib in Resources */,
 				EC8407881F6A7003009E6721 /* YSRoomCollectionViewCell.xib in Resources */,
 				184352611F5CF54200BB86CA /* Assets.xcassets in Resources */,
 				EC8407821F6A5D86009E6721 /* YSInterCollectionViewCell.xib in Resources */,
@@ -1126,6 +1173,7 @@
 			files = (
 				1843522C1F5CF54200BB86CA /* WXMessage.swift in Sources */,
 				184352691F5CF54200BB86CA /* RootViewController+Ex.swift in Sources */,
+				ECA4A32F1F6B7DA600F7700E /* YSTransferDetailViewController.swift in Sources */,
 				ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */,
 				184352261F5CF54200BB86CA /* Observable+ObjectMapper.swift in Sources */,
 				1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */,
@@ -1149,6 +1197,8 @@
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
 				EC84078C1F6A7FFE009E6721 /* YSUserListView.swift in Sources */,
 				EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */,
+				ECA4A3221F6B71E900F7700E /* AddImageTableViewCell.swift in Sources */,
+				ECA4A3261F6B733500F7700E /* YSAddImageCollectionViewCell.swift in Sources */,
 				1843521F1F5CF54200BB86CA /* UrlsConstant.swift in Sources */,
 				184352231F5CF54200BB86CA /* HomeApi.swift in Sources */,
 				EC8407871F6A7003009E6721 /* YSRoomCollectionViewCell.swift in Sources */,
@@ -1158,6 +1208,7 @@
 				18EF427A1F5CFC08008280F3 /* YSHomeTableViewCell.swift in Sources */,
 				EC7CB94E1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift in Sources */,
 				EC8407811F6A5D86009E6721 /* YSInterCollectionViewCell.swift in Sources */,
+				ECA4A3291F6B748500F7700E /* Transfer.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
 				EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
@@ -1172,9 +1223,11 @@
 				18884E461F62CF0400D285F7 /* YSVoteViewController.swift in Sources */,
 				ECACE2AE1F628EE600A6207C /* YSEditPrivacySettingViewController.swift in Sources */,
 				ECACE29F1F62212D00A6207C /* YSEditMeViewController.swift in Sources */,
+				ECA4A31C1F6B590D00F7700E /* YSRoomUserCollectionViewCell.swift in Sources */,
 				184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */,
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
+				ECA4A3351F6BBF7000F7700E /* DVActionSheetVC.swift in Sources */,
 				EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */,
 				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
 				EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */,
@@ -1194,6 +1247,8 @@
 				184352281F5CF54200BB86CA /* UserInfo.swift in Sources */,
 				ECACE2B41F629B4E00A6207C /* YSWebViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
+				ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */,
+				ECA4A32C1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift in Sources */,
 				18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */,
 				18D788371F5D33FE00312DF4 /* YSMeViewController.swift in Sources */,
 				18EF427D1F5CFC33008280F3 /* YSHomeHeadView.swift in Sources */,
@@ -1202,6 +1257,7 @@
 				ECACE2AB1F623B4F00A6207C /* YSEditMeTextFieldViewController.swift in Sources */,
 				18884E3D1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.swift in Sources */,
 				18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */,
+				ECA4A3321F6B807D00F7700E /* YSTransferTableViewCell.swift in Sources */,
 				EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */,
 				EC8407841F6A6220009E6721 /* Floor.swift in Sources */,
 				1843524D1F5CF54200BB86CA /* RegisterXViewController.swift in Sources */,

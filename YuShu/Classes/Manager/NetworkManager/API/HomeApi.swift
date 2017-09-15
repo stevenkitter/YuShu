@@ -22,6 +22,11 @@ enum HomeApi {
     case doPraise(user_id: String, praise_type: String, praise_item_id: String) //装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     case doComment(user_id: String, comment_type: String, comment_item_id: String, comment_desc: String)//其中comment_type:装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     
+    case getTransferList(page: Int)
+    case doTransfer(user_id: String, transfer_title: String, transfer_desc: String, transfer_type: String,images: [UIImage]) //1:馈赠2：置换
+    
+    
+    
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
     case setCollect(article_id: String, user_id: String)
@@ -42,6 +47,8 @@ extension HomeApi: TargetType {
             return ServiceUrlStr
         case .getVideoList:
             return ServiceUrlStr
+        case .doTransfer:
+            return ServiceUrlStr + "?service=Index.doTransfer"
         default:
             return ServiceUrlStr
         }
@@ -52,6 +59,8 @@ extension HomeApi: TargetType {
             return .get
         case .getVideoList:
             return .get
+        case .doTransfer:
+            return .post
         default:
             return .get
         }
@@ -126,7 +135,18 @@ extension HomeApi: TargetType {
             params["comment_desc"] = comment_desc
             params["service"] = "Index.doComment"
             return params
-            
+        case let .getTransferList(page):
+            var params: [String: Any] = [:]
+            params["page"] = page
+            params["service"] = "Index.getTransferInfo"
+            return params
+        case let .doTransfer(user_id, transfer_title, transfer_desc, transfer_type,_):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["transfer_title"] = transfer_title
+            params["transfer_desc"] = transfer_desc
+            params["transfer_type"] = transfer_type
+            return params
             
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]
@@ -162,6 +182,8 @@ extension HomeApi: TargetType {
             params["comment_id"] = comment_id
             params["service"] = "User.send_comment"
             return params
+            
+        
         }
     }
     var sampleData: Data {
@@ -171,7 +193,21 @@ extension HomeApi: TargetType {
         
     }
     var task: Task{
-        return .request
+        switch self {
+        case let .doTransfer(_,_, _, _,images):
+            var postImg: [MultipartFormData] = []
+            for (_,item) in images.enumerated() {
+                let imageData = UIImageJPEGRepresentation(item, 0.5)
+                let name = Int(Date().timeIntervalSince1970 * 1000)
+                let formData = MultipartFormData(provider: .data(imageData!), name: "filelist[]", fileName: "\(name).png", mimeType: "image/png")
+                postImg.append(formData)
+            }
+            return .upload(.multipart(postImg))
+            
+        default:
+            return .request
+        }
+        
     }
     
     var validate: Bool {
