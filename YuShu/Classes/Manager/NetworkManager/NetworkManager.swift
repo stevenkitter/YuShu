@@ -86,11 +86,11 @@ class NetworkManager: NSObject {
         }
     }
     
-    static let providerUserApi = RxMoyaProvider<UserApi>(endpointClosure: NetworkManager.endpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
+    static let providerUserApi = RxMoyaProvider<UserApi>(endpointClosure: NetworkManager.endpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin, RequestPlugin()])
     
-    static let providerHomeApi = RxMoyaProvider<HomeApi>(endpointClosure: NetworkManager.homeEndpointClosure ,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
+    static let providerHomeApi = RxMoyaProvider<HomeApi>(endpointClosure: NetworkManager.homeEndpointClosure ,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin, RequestPlugin()])
     
-    static let providerCircleApi = RxMoyaProvider<CircleApi>(endpointClosure: NetworkManager.circleEndpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin])
+    static let providerCircleApi = RxMoyaProvider<CircleApi>(endpointClosure: NetworkManager.circleEndpointClosure,plugins: [NetworkLoggerPlugin(verbose: true),NetworkManager.activityPlugin, RequestPlugin()])
 }
 
 
@@ -113,6 +113,7 @@ final class RequestPlugin: PluginType {
             
           
         case .failure(_):
+            WXAlertController.alertWithMessageOK(message: "服务器错误", okClosure: nil)
             print("")
         }
     }

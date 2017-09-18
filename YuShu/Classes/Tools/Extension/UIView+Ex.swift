@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import ChameleonFramework
+import SKPhotoBrowser
 extension UIView {
     
     func corner() {
@@ -36,14 +37,17 @@ extension UIView {
     }
     
     func superVc()->UIViewController? {
-        var superView = self.superview
-        while superView != nil{
-            let respon = superView?.next
-            if respon is UIViewController {
-                return respon as? UIViewController
+        var n = self.next
+        
+        repeat{
+            if (n is UIViewController) {
+                
+                return n as? UIViewController
             }
-            superView = superView?.superview
-        }
+            n = n?.next
+            
+        }while n != nil
+        
         return nil
     }
     
@@ -85,6 +89,7 @@ extension UICollectionView{
     }
 }
 
+//图片设置
 extension UIImageView{
     func kfImage(_ str: String) {
         self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
@@ -94,6 +99,18 @@ extension UIImageView{
     }
     func kfImageNormal(_ str: String) {
         self.kf.setImage(with: URL(string: str), placeholder: KPlaceholderImage)
+    }
+}
+
+extension UIView {
+    func iconClick(superVc: RootViewController,tag: Int){
+        self.tag = tag
+        if self.gestureRecognizers?.count == nil {
+            self.isUserInteractionEnabled = true
+            let tapG = UITapGestureRecognizer(target: superVc, action: #selector(RootViewController.goPersonal(tapG:)))
+            self.addGestureRecognizer(tapG)
+        }
+        
     }
 }
 
@@ -182,6 +199,26 @@ extension UIView {
         let imageView = UIImageView(image: image)
         imageView.frame = self.frame
         return imageView
+    }
+}
+
+extension UIView {
+    func showImages(index: Int, imageUrls: [String]) {
+        // 1. create URL Array
+        var images = [SKPhoto]()
+        for url in imageUrls{
+            let photo = SKPhoto.photoWithImageURL(url)
+            photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+            images.append(photo)
+        }
+        
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(index)
+        
+        guard let superVc = self.superVc() else {
+            return
+        }
+        superVc.present(browser, animated: true, completion: {})
     }
 }
 

@@ -33,6 +33,7 @@ target 'YuShu' do
   pod 'ActionSheetPicker-3.0'
   pod 'pop', '~> 1.0'
   pod 'EasyTipView', '~> 1.0.2'
+  pod 'SKPhotoBrowser'
   # Pods for YuShu
 
   target 'YuShuTests' do

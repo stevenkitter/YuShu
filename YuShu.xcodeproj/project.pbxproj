@@ -102,6 +102,9 @@
 		EC7CB95F1F67C0DE009CE9BC /* YSVoteDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */; };
 		EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */; };
 		EC7CB9631F67DDA7009CE9BC /* FootFuncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */; };
+		EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81AF4D1F6F716D006BD086 /* YSPersonalViewController.swift */; };
+		EC81AF511F6F72A5006BD086 /* YSPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81AF4F1F6F72A5006BD086 /* YSPersonalTableViewCell.swift */; };
+		EC81AF521F6F72A5006BD086 /* YSPersonalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC81AF501F6F72A5006BD086 /* YSPersonalTableViewCell.xib */; };
 		EC8407811F6A5D86009E6721 /* YSInterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC84077F1F6A5D86009E6721 /* YSInterCollectionViewCell.swift */; };
 		EC8407821F6A5D86009E6721 /* YSInterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC8407801F6A5D86009E6721 /* YSInterCollectionViewCell.xib */; };
 		EC8407841F6A6220009E6721 /* Floor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8407831F6A6220009E6721 /* Floor.swift */; };
@@ -279,6 +282,9 @@
 		EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSVoteDetailHeader.swift; sourceTree = "<group>"; };
 		EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSVoteDetailHeader.xib; sourceTree = "<group>"; };
 		EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootFuncButton.swift; sourceTree = "<group>"; };
+		EC81AF4D1F6F716D006BD086 /* YSPersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPersonalViewController.swift; sourceTree = "<group>"; };
+		EC81AF4F1F6F72A5006BD086 /* YSPersonalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPersonalTableViewCell.swift; sourceTree = "<group>"; };
+		EC81AF501F6F72A5006BD086 /* YSPersonalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPersonalTableViewCell.xib; sourceTree = "<group>"; };
 		EC84077F1F6A5D86009E6721 /* YSInterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSInterCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC8407801F6A5D86009E6721 /* YSInterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSInterCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC8407831F6A6220009E6721 /* Floor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Floor.swift; sourceTree = "<group>"; };
@@ -633,6 +639,7 @@
 				ECACE2A91F623B4F00A6207C /* YSEditMeTextFieldViewController.swift */,
 				ECACE2AA1F623B4F00A6207C /* YSEditMeTextFieldViewController.xib */,
 				ECACE2AD1F628EE600A6207C /* YSEditPrivacySettingViewController.swift */,
+				EC81AF4D1F6F716D006BD086 /* YSPersonalViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -785,6 +792,8 @@
 				ECACE2A61F62256500A6207C /* YSEditMeImageTableViewCell.xib */,
 				ECACE2AF1F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift */,
 				ECACE2B01F628F5C00A6207C /* YSEditPrivacyTableViewCell.xib */,
+				EC81AF4F1F6F72A5006BD086 /* YSPersonalTableViewCell.swift */,
+				EC81AF501F6F72A5006BD086 /* YSPersonalTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -948,6 +957,7 @@
 				18D788401F5D36B600312DF4 /* YSHomeCollectionViewCell.xib in Resources */,
 				EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */,
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
+				EC81AF521F6F72A5006BD086 /* YSPersonalTableViewCell.xib in Resources */,
 				EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */,
 				EC7CB95D1F67BE1B009CE9BC /* YSVoteOptionTableViewCell.xib in Resources */,
 				ECA4A32D1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib in Resources */,
@@ -1069,6 +1079,7 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
@@ -1098,6 +1109,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
@@ -1239,6 +1251,7 @@
 				EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */,
 				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
 				EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */,
+				EC81AF511F6F72A5006BD086 /* YSPersonalTableViewCell.swift in Sources */,
 				184352671F5CF54200BB86CA /* RootViewController.swift in Sources */,
 				EC7CB9631F67DDA7009CE9BC /* FootFuncButton.swift in Sources */,
 				184352211F5CF54200BB86CA /* BaseApiModel.swift in Sources */,
@@ -1254,6 +1267,7 @@
 				184352721F5CF54200BB86CA /* RefreshHeader.swift in Sources */,
 				184352281F5CF54200BB86CA /* UserInfo.swift in Sources */,
 				ECACE2B41F629B4E00A6207C /* YSWebViewController.swift in Sources */,
+				EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
 				ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */,
 				ECA4A32C1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift in Sources */,
@@ -1444,7 +1458,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/YuShu/Classes/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderX.YuShu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.ys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1459,7 +1473,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/YuShu/Classes/Other/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderX.YuShu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xuer.ys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

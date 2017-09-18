@@ -117,3 +117,12 @@ extension RootViewController {
     }
 
 }
+extension RootViewController {
+    func goPersonal(tapG: UITapGestureRecognizer) {
+        
+        guard let tag = tapG.view?.tag else {return}
+        let vc = YSPersonalViewController()
+        vc.userId = "\(tag)"
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+}

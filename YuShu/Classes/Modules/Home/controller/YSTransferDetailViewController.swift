@@ -87,6 +87,7 @@ class YSTransferDetailViewController: RootViewController {
     func setupRx() {
         
     }
+    
     override func loadServerData() {
         super.loadServerData()
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}

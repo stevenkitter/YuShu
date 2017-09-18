@@ -50,6 +50,7 @@ extension AppDelegate {
             }
             let main = RootTabBarController()
             self.window?.rootViewController = main
+            NotificationCenter.default.post(name: UserInfoChanged, object: nil)
         }
     }
 }

@@ -69,30 +69,17 @@ extension YSTransferTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        showImages(index: indexPath.item)
+        guard let imags = transfer?.images else {return}
+        var imageUrls: [String] = []
+        for item in imags{
+            imageUrls.append(item.uploadimage_path ?? "")
+        }
+        showImages(index: indexPath.item,imageUrls: imageUrls)
         
     }
     
 }
 
-extension YSTransferTableViewCell {
-    func showImages(index: Int) {
-        guard let ims = transfer?.images else {return}
-        var paths: [LightboxImage] = []
-        for item in ims {
-            if let path = item.uploadimage_path {
-                let box = LightboxImage(imageURL: URL(string: path)!)
-                paths.append(box)
-            }
-        }
-     
-        let boxV = LightboxController(images: paths, startIndex: index)
-        guard let superVc = self.superVc() else {
-            return
-        }
-        superVc.present(boxV, animated: true, completion: nil)
-    }
-}
+
 
 

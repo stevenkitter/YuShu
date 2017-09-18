@@ -38,6 +38,7 @@ class YSRoomListViewController: RootViewController {
         collectionView.register(str: "YSRoomCollectionViewCell")
         collectionView.register(UINib(nibName: "YSMoreImageCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "YSMoreImageCollectionReusableView")
         view.addSubview(collectionView)
+        
     }
     
     override func setupRefresh() {
@@ -122,7 +123,7 @@ extension YSRoomListViewController : UICollectionViewDataSource,UICollectionView
         NetworkManager.providerCircleApi.request(.getUserList(user_floor: user_floor, user_room: room.user_room ?? "")).mapArray(PraiseUser.self).subscribe(onNext: { (list) in
             WXActivityIndicatorView.stop()
             self.popView.users = list
-            
+            self.view.addSubview(self.popView)
             self.popView.show(point: CGPoint(x: x, y: y),cell: cell)
         }, onError: { (err) in
             WXActivityIndicatorView.stop()

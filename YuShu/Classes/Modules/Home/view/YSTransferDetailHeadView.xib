@@ -12,17 +12,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSTransferDetailHeadView" customModule="YuShu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afQ-6I-hzO">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="536"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xjB-gj-fNX">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="键盘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qy-Ia-KIt">
-                                    <rect key="frame" x="10" y="10" width="355" height="21"/>
+                                    <rect key="frame" x="10" y="10" width="37" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -41,12 +41,13 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3og-fy-fEE">
-                                    <rect key="frame" x="10" y="81" width="70" height="29"/>
+                                    <rect key="frame" x="57" y="10.5" width="60" height="20"/>
                                     <color key="backgroundColor" red="0.21829453109999999" green="0.62829780580000005" blue="0.51431775089999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="qrI-eT-EZy"/>
+                                        <constraint firstAttribute="width" constant="60" id="UJM-NU-olA"/>
+                                        <constraint firstAttribute="height" constant="20" id="UzW-d8-KRN"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <state key="normal" title="置换" image="类型">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -54,36 +55,40 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="3og-fy-fEE" firstAttribute="leading" secondItem="xjB-gj-fNX" secondAttribute="leading" constant="10" id="F13-eJ-4jg"/>
                                 <constraint firstItem="OAq-rh-vjB" firstAttribute="centerY" secondItem="OMX-JF-EJk" secondAttribute="centerY" id="GVJ-CO-oIL"/>
-                                <constraint firstAttribute="height" constant="120" id="Kd0-7r-YbL"/>
-                                <constraint firstItem="3og-fy-fEE" firstAttribute="top" secondItem="OMX-JF-EJk" secondAttribute="bottom" constant="10" id="MBE-1f-gL4"/>
+                                <constraint firstAttribute="height" constant="80" id="Kd0-7r-YbL"/>
                                 <constraint firstItem="OMX-JF-EJk" firstAttribute="top" secondItem="5Qy-Ia-KIt" secondAttribute="bottom" constant="10" id="MsE-Cq-wP3"/>
                                 <constraint firstItem="OAq-rh-vjB" firstAttribute="leading" secondItem="OMX-JF-EJk" secondAttribute="trailing" constant="10" id="YYL-pY-YK8"/>
-                                <constraint firstAttribute="trailing" secondItem="5Qy-Ia-KIt" secondAttribute="trailing" constant="10" id="aJN-Dg-d4x"/>
+                                <constraint firstItem="3og-fy-fEE" firstAttribute="centerY" secondItem="5Qy-Ia-KIt" secondAttribute="centerY" id="cCp-FT-Jsl"/>
+                                <constraint firstItem="3og-fy-fEE" firstAttribute="leading" secondItem="5Qy-Ia-KIt" secondAttribute="trailing" constant="10" id="d9C-mm-1ZO"/>
                                 <constraint firstItem="5Qy-Ia-KIt" firstAttribute="leading" secondItem="xjB-gj-fNX" secondAttribute="leading" constant="10" id="jBo-Y4-R9y"/>
                                 <constraint firstItem="5Qy-Ia-KIt" firstAttribute="top" secondItem="xjB-gj-fNX" secondAttribute="top" constant="10" id="krw-63-bFE"/>
-                                <constraint firstAttribute="bottom" secondItem="3og-fy-fEE" secondAttribute="bottom" constant="10" id="nYF-s9-tUF"/>
                                 <constraint firstItem="OMX-JF-EJk" firstAttribute="leading" secondItem="xjB-gj-fNX" secondAttribute="leading" constant="10" id="zOg-T7-a6L"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFg-0Z-4GP">
-                            <rect key="frame" x="0.0" y="130" width="375" height="343"/>
+                            <rect key="frame" x="0.0" y="90" width="375" height="446"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syW-V9-lNp">
                                     <rect key="frame" x="10" y="10" width="355" height="19.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="19.5" id="APg-yA-Zb0"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="悬浮按钮，没有背光，新的 低价处理 需要的密我好了 欢迎问价" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpY-aa-Eav">
-                                    <rect key="frame" x="10" y="39.5" width="355" height="33.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="悬浮按钮，没有背光，新的 低价处理 需要的密我好了 欢迎问价 悬浮按钮，没有背光，新的 低价处理 需要的密我好了 欢迎问价悬浮按钮，没有背光，新的 低价处理 需要的密我好了 欢迎问价悬浮按钮，没有背光，新的 低价处理 需要的密我好了 欢迎问价" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpY-aa-Eav">
+                                    <rect key="frame" x="10" y="39.5" width="355" height="136.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33.5" id="GZN-Lf-PVM"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-rC-XhF">
-                                    <rect key="frame" x="10" y="83" width="355" height="250"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-rC-XhF">
+                                    <rect key="frame" x="10" y="186" width="355" height="250"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="250" id="8NU-Yv-sGO"/>
@@ -146,7 +151,7 @@
                 <outlet property="userIconImageView" destination="OMX-JF-EJk" id="GRS-xO-6AQ"/>
                 <outlet property="usernameLabel" destination="OAq-rh-vjB" id="JdT-xj-Thh"/>
             </connections>
-            <point key="canvasLocation" x="33.5" y="175"/>
+            <point key="canvasLocation" x="31.5" y="265"/>
         </view>
     </objects>
     <resources>

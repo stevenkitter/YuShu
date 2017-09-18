@@ -25,10 +25,24 @@ class YSCommentTableViewCell: UITableViewCell {
         iconImageView.kfImage(item.user_headpic ?? "")
         nameLabel.text = item.user_name
         
+       
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let superv = self.superVc() as? RootViewController else {return}
+        if let tag = Int(comment?.user_id ?? "") {
+            iconImageView.iconClick(superVc: superv,tag: tag)
+            nameLabel.iconClick(superVc: superv,tag: tag)
+        }
+        
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 

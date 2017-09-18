@@ -63,6 +63,7 @@ class YSHomeViewController: RootViewController {
             
             self.tableView.mj_header.endRefreshing()
             }, onError: { [unowned self] (err) in
+                
             self.tableView.mj_header.endRefreshing()
         }).addDisposableTo(disposeBag)
         

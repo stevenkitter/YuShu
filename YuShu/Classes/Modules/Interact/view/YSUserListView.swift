@@ -9,12 +9,15 @@
 import UIKit
 import pop
 let YSUserListViewCellW: CGFloat = 65
+
 class YSUserListView: UIView {
+    
     var users: [PraiseUser] = [] {
         didSet{
             collectionView.reloadData()
         }
     }
+    
     
     var bg: UIView!
     var collectionView: UICollectionView!
@@ -31,6 +34,7 @@ class YSUserListView: UIView {
         bg = UIView(frame: self.bounds)
         bg.backgroundColor = UIColor.flatGray.alpha(0.6)
         let tap = UITapGestureRecognizer(target: self, action: #selector(hide))
+        tap.delegate = self
         bg.addGestureRecognizer(tap)
         self.addSubview(bg)
     }
@@ -43,14 +47,17 @@ class YSUserListView: UIView {
         layout.itemSize = CGSize(width: YSUserListViewCellW, height: YSUserListViewCellW)
         let rect = CGRect(x: 0, y: 0, width: KScreenWidth - 40, height: YSUserListViewCellW)
         collectionView = UICollectionView(frame: rect, collectionViewLayout: layout)
+        collectionView.isUserInteractionEnabled = true
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.register(str: "YSRoomUserCollectionViewCell")
         collectionView.corner()
+        
         bg.addSubview(collectionView)
         
-        imageView = UIImageView()
+        imageView = UIImageView(frame: CGRect.zero)
+        
         bg.addSubview(imageView)
     }
     
@@ -61,12 +68,12 @@ class YSUserListView: UIView {
     }
     
     func show(point: CGPoint, cell: UICollectionViewCell?) {
-        guard self.superview == nil else {
-            self.removeFromSuperview()
+        guard self.superview != nil else {
+            
             return
         }
         guard users.count > 0 else {return}
-        guard let win = UIApplication.shared.keyWindow else {return}
+        
         guard let cellItem = cell else {return}
         
         let imageV = cellItem.createImageView()
@@ -74,7 +81,7 @@ class YSUserListView: UIView {
         imageView.frame = imageV.frame
         imageView.moveY(y: 64)
         
-        win.addSubview(self)
+        
         
         let wi = min(userHeadWidth(0,CGFloat(users.count),YSUserListViewCellW), KScreenWidth - 40)
         var x: CGFloat = 0
@@ -100,7 +107,14 @@ class YSUserListView: UIView {
     func hide() {
         self.removeFromSuperview()
     }
+    
+}
 
+extension YSUserListView: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let inCol = collectionView.frame.contains(touch.location(in: bg))
+        return !inCol
+    }
 }
 
 extension YSUserListView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -113,7 +127,17 @@ extension YSUserListView: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.user = user
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let superV = self.superVc() as? RootViewController else {
+            return
+        }
+        guard let userId = users[indexPath.item].user_id else {return}
+        self.hide()
+        let vc = YSPersonalViewController()
+        vc.userId = userId
+        superV.navigationController?.pushViewController(vc, animated: true)
         
     }
 }

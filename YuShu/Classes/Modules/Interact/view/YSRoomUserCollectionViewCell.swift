@@ -29,5 +29,6 @@ class YSRoomUserCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         iconImageView.cornerRadius(width: 30)
     }
-
+    
+    
 }
