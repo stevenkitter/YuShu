@@ -55,6 +55,8 @@
 		184352731F5CF54200BB86CA /* WXActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */; };
 		184352741F5CF54200BB86CA /* WXAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184352191F5CF54200BB86CA /* WXAlertController.swift */; };
 		184352751F5CF54200BB86CA /* WXProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843521A1F5CF54200BB86CA /* WXProgressView.swift */; };
+		1848811B1F6E39C300085C63 /* YSTransferDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1848811A1F6E39C300085C63 /* YSTransferDetailHeadView.swift */; };
+		1848811D1F6E39DF00085C63 /* YSTransferDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1848811C1F6E39DF00085C63 /* YSTransferDetailHeadView.xib */; };
 		18884E3D1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18884E3B1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.swift */; };
 		18884E3E1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18884E3C1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib */; };
 		18884E401F62CB1500D285F7 /* YSAnnounceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18884E3F1F62CB1500D285F7 /* YSAnnounceViewController.swift */; };
@@ -224,6 +226,8 @@
 		184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXActivityIndicatorView.swift; sourceTree = "<group>"; };
 		184352191F5CF54200BB86CA /* WXAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXAlertController.swift; sourceTree = "<group>"; };
 		1843521A1F5CF54200BB86CA /* WXProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXProgressView.swift; sourceTree = "<group>"; };
+		1848811A1F6E39C300085C63 /* YSTransferDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSTransferDetailHeadView.swift; sourceTree = "<group>"; };
+		1848811C1F6E39DF00085C63 /* YSTransferDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTransferDetailHeadView.xib; sourceTree = "<group>"; };
 		18884E3B1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeEightCollectionViewCell.swift; sourceTree = "<group>"; };
 		18884E3C1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeEightCollectionViewCell.xib; sourceTree = "<group>"; };
 		18884E3F1F62CB1500D285F7 /* YSAnnounceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSAnnounceViewController.swift; sourceTree = "<group>"; };
@@ -715,6 +719,8 @@
 				ECA4A32B1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib */,
 				ECA4A3301F6B807D00F7700E /* YSTransferTableViewCell.swift */,
 				ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */,
+				1848811A1F6E39C300085C63 /* YSTransferDetailHeadView.swift */,
+				1848811C1F6E39DF00085C63 /* YSTransferDetailHeadView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -934,6 +940,7 @@
 				1843524E1F5CF54200BB86CA /* RegisterXViewController.xib in Resources */,
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
 				ECA4A3231F6B71E900F7700E /* AddImageTableViewCell.xib in Resources */,
+				1848811D1F6E39DF00085C63 /* YSTransferDetailHeadView.xib in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
 				EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */,
 				1843526F1F5CF54200BB86CA /* CommentToolView.xib in Resources */,
@@ -1220,6 +1227,7 @@
 				18884E481F62CF2500D285F7 /* YSForumViewController.swift in Sources */,
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,
 				184352201F5CF54200BB86CA /* UtilsConstant.swift in Sources */,
+				1848811B1F6E39C300085C63 /* YSTransferDetailHeadView.swift in Sources */,
 				18884E461F62CF0400D285F7 /* YSVoteViewController.swift in Sources */,
 				ECACE2AE1F628EE600A6207C /* YSEditPrivacySettingViewController.swift in Sources */,
 				ECACE29F1F62212D00A6207C /* YSEditMeViewController.swift in Sources */,

@@ -44,7 +44,7 @@ class UserInfo: Mappable {
         user_room <- map["user_room"]
         user_no <- map["user_no"]
         user_sex <- map["user_sex"]
-        user_headpic <- map["user_headpic"]
+        user_headpic <- (map["user_headpic"], AvatarTransform())
         user_tel <- map["user_tel"]
         user_tel_set <- map["user_tel_set"]
         user_status <- map["user_status"]

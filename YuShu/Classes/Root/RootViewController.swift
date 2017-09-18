@@ -21,12 +21,14 @@ class RootViewController: UIViewController {
     let tableViewGrouped = UITableView(frame: CGRect.zero, style: .grouped).then {
         $0.estimatedRowHeight = 50
         $0.tableFooterView = UIView()
+        $0.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 0.01))
     }
     
     var collectionView: UICollectionView! = nil
     var page = 1
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
@@ -72,11 +74,14 @@ class RootViewController: UIViewController {
     }
 
     func hideNavigationBar() {
-        let offset = min(max(0, self.tableView.mj_offsetY / 150), 1)
+        
+        self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: false)
+
+        
+        let offset = min(max(0, (self.tableView.mj_offsetY - 150) / 150), 1)
         let color = KNaviColor.alpha(offset)
         self.navigationController?.navigationBar.setBackgroundImage(color.createImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIColor.clear.createImage()
-//        self.navigationController?.setNavigationBarHidden(self.tableView.mj_offsetY <= 150, animated: true)
         
     }
 

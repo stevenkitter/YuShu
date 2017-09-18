@@ -89,4 +89,11 @@ extension YSTransferViewController: UITableViewDataSource, UITableViewDelegate {
         cell.transfer = contents[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tr = contents[indexPath.row]
+        let vc = YSTransferDetailViewController()
+        vc.transfer = tr
+        vc.transferId = tr.transfer_id ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

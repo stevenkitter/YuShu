@@ -12,6 +12,7 @@ import ObjectMapper
 struct Transfer: Mappable{
     var transfer_id: String?
     var transfer_title: String?
+    var transfer_desc: String?
     var transfer_addtime: String?
     var transfer_type: String?
     var user_id: String?
@@ -27,6 +28,7 @@ struct Transfer: Mappable{
     mutating func mapping(map: Map) {
         transfer_id <- map["transfer_id"]
         transfer_title <- map["transfer_title"]
+        transfer_desc <- map["transfer_desc"]
         transfer_addtime <- (map["transfer_addtime"], DateTransform())
         transfer_type <- map["transfer_type"]
         user_id <- map["user_id"]
