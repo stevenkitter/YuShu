@@ -10,6 +10,9 @@ import UIKit
 let pageNum = 10
 class YSAnnounceViewController: RootViewController {
     var contents: [Announce] = []
+    
+    let footer = YSNextPageView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 50))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "群主公告"
@@ -17,27 +20,37 @@ class YSAnnounceViewController: RootViewController {
         setupRefresh()
         loadServerData()
     }
+    override func setupRefresh() {
+        tableView.mj_header = RefreshHeader(refreshingBlock: { [unowned self] in
+            self.loadServerData()
+        })
+    }
     
     override func loadServerData() {
         super.loadServerData()
         guard let user_id = UserManager.shareUserManager.curUserInfo?.user_id else {return}
-        NetworkManager.providerHomeApi.request(.getAnnounceList(user_id: user_id))
-        .mapArray(Announce.self).subscribe(onNext: { (list) in
-            if self.page == 1 {
-                self.contents.removeAll()
-            }
-            self.contents.append(contentsOf: list)
-            self.page += 1
+        NetworkManager.providerHomeApi.request(.getAnnounceList(user_id: user_id,page: page))
+        .mapObject(AnnounceInfo.self).subscribe(onNext: { (info) in
+            
+            self.contents.removeAll()
+            
+            self.contents.append(contentsOf: info.list)
+            
             self.tableView.reloadData()
             self.tableView.mj_header.endRefreshing()
-            if list.count < pageNum {
-                self.tableView.mj_footer.endRefreshingWithNoMoreData()
-            }else{
-                self.tableView.mj_footer.endRefreshing()
+            
+            if let myPage = Int(info.page_count ?? "") {
+                self.footer.page = myPage
             }
+            
+            if let myAllPage = Int(info.total_count ?? "") {
+                self.footer.allPage = myAllPage
+            }
+            
+           
         }, onError: { (err) in
             self.tableView.mj_header.endRefreshing()
-            self.tableView.mj_footer.endRefreshing()
+            
         }).addDisposableTo(disposeBag)
     }
     
@@ -52,12 +65,32 @@ class YSAnnounceViewController: RootViewController {
         tableView.register(str: "AnnounceTableViewCell")
         tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.separatorStyle = .none
+        
+        tableView.tableFooterView = footer
+    
+        footer.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+}
+
+extension YSAnnounceViewController: YSNextPageViewDelegate {
+    func forward() {
+        page -= 1
+        loadServerData()
+    }
+    func nextPage() {
+        page += 1
+        loadServerData()
+    }
+    func go(page: Int) {
+        self.page = page
+        loadServerData()
+    }
+    
 }
 
 extension YSAnnounceViewController: UITableViewDelegate,UITableViewDataSource {

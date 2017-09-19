@@ -29,3 +29,19 @@ struct Announce: Mappable {
         adminnotice_comment_count <- map["adminnotice_comment_count"]
     }
 }
+
+
+struct AnnounceInfo: Mappable {
+    var total_count: String?
+    var page_count: String?
+    var list: [Announce] = []
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        total_count <- map["total_count"]
+        page_count <- map["page_count"]
+        list <- map["list"]
+    }
+}

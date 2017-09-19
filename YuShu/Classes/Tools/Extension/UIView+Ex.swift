@@ -187,6 +187,13 @@ extension UIButton {
         btn.setImage(image, for: .normal)
         return btn
     }
+    
+    static func customButton(title: String)-> UIButton {
+        let btn = UIButton(type: .custom)
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        btn.setTitle(title, for: .normal)
+        return btn
+    }
 }
 
 // MARK: 截图

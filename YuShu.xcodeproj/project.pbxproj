@@ -118,6 +118,7 @@
 		EC895AF71F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */; };
 		EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */; };
 		EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */; };
+		EC89AE7C1F71182800D904EA /* YSNextPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89AE7B1F71182800D904EA /* YSNextPageView.swift */; };
 		EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF6F1F60EF8F00C43686 /* YSMoreViewController.swift */; };
 		EC89FF721F60F28A00C43686 /* YSMoreLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */; };
 		EC89FF761F61242C00C43686 /* InlineFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC89FF751F61242C00C43686 /* InlineFunc.swift */; };
@@ -298,6 +299,7 @@
 		EC895AF51F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC895AF61F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMeHeadCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC895AFB1F5FFC3C00D55EB8 /* HomeInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInfo.swift; sourceTree = "<group>"; };
+		EC89AE7B1F71182800D904EA /* YSNextPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSNextPageView.swift; sourceTree = "<group>"; };
 		EC89FF6F1F60EF8F00C43686 /* YSMoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMoreViewController.swift; sourceTree = "<group>"; };
 		EC89FF711F60F28A00C43686 /* YSMoreLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMoreLayout.swift; sourceTree = "<group>"; };
 		EC89FF751F61242C00C43686 /* InlineFunc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InlineFunc.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				184352131F5CF54200BB86CA /* CommentToolView.xib */,
 				184352141F5CF54200BB86CA /* RSKPlaceholderTextView.swift */,
 				EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */,
+				EC89AE7B1F71182800D904EA /* YSNextPageView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1202,6 +1205,7 @@
 				184352701F5CF54200BB86CA /* RSKPlaceholderTextView.swift in Sources */,
 				1843526C1F5CF54200BB86CA /* UITextField+LeftView.swift in Sources */,
 				1843521C1F5CF54200BB86CA /* AppDelegate.swift in Sources */,
+				EC89AE7C1F71182800D904EA /* YSNextPageView.swift in Sources */,
 				ECACE2B11F628F5C00A6207C /* YSEditPrivacyTableViewCell.swift in Sources */,
 				1843526B1F5CF54200BB86CA /* UIColor+Ex.swift in Sources */,
 				EC84078A1F6A75BB009E6721 /* YSRoomListViewController.swift in Sources */,

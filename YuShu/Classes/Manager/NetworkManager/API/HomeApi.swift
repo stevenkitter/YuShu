@@ -13,7 +13,7 @@ enum HomeApi {
     case homeInfo()
     case getImageList()
     case getVideoList()
-    case getAnnounceList(user_id: String)
+    case getAnnounceList(user_id: String, page: Int)
     case getPersons()
     case getVoteList(user_id: String, page: Int)
     case getVoteInfo(vote_id: String, user_id: String)
@@ -84,9 +84,10 @@ extension HomeApi: TargetType {
             params["service"] = "Index.getAllVideos"
             return params
             
-        case let .getAnnounceList(user_id):
+        case let .getAnnounceList(user_id, page):
             var params: [String: Any] = [:]
             params["user_id"] = user_id
+            params["page"] = page
             params["service"] = "Index.getAdminnoticeInfo"
             return params
         case .getPersons():
