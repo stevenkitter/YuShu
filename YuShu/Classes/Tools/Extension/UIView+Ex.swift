@@ -192,6 +192,8 @@ extension UIButton {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         btn.setTitle(title, for: .normal)
+        btn.setTitleColor(UIColor.flatGreen, for: .normal)
+        btn.setTitleColor(UIColor.gray, for: .disabled)
         return btn
     }
 }

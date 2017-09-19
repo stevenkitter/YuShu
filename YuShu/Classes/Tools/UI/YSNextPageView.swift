@@ -37,6 +37,7 @@ class YSNextPageView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        setupClick()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +45,8 @@ class YSNextPageView: UIView {
     }
     
     func setupUI() {
+        self.backgroundColor = UIColor.white
+        
         self.addSubview(forwardBtn)
         self.addSubview(midBtn)
         self.addSubview(nextBtn)
@@ -53,13 +56,14 @@ class YSNextPageView: UIView {
         goBtn.snp.makeConstraints { (make) in
             make.right.equalTo(self).offset(-10)
             make.centerY.equalTo(self)
-            make.left.equalTo(textField)
+            make.left.equalTo(textField.snp.right)
         }
         
         textField.snp.makeConstraints { (make) in
             make.width.equalTo(40)
             make.left.equalTo(nextBtn.snp.right)
             make.centerY.equalTo(self)
+            
         }
         nextBtn.snp.makeConstraints { (make) in
             make.left.equalTo(midBtn.snp.right)
