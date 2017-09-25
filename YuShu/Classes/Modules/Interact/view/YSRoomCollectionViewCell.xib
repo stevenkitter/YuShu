@@ -48,7 +48,6 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.99917703869999996" green="0.68615108729999996" blue="0.0011212780369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="CcD-a1-wQ8" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="5aK-jk-bFB"/>
                 <constraint firstItem="RTG-xR-Dzs" firstAttribute="leading" secondItem="CcD-a1-wQ8" secondAttribute="trailing" id="DW1-Yd-NWJ"/>

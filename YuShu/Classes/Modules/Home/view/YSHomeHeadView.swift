@@ -15,7 +15,7 @@ let labelSpace: CGFloat = 60
 class YSHomeHeadView: UIView {
     
     var timer: DispatchSourceTimer!
-    let eightTitles = ["群主公告","闲置转让","物业人事","民意投票","御墅论坛","装修指南","小区公约","周边便民"]
+    let eightTitles = ["群主公告", "群聊广场", "邻里发布", "物业人事", "小区公约", "民意投票", "装修指南", "周边便民"]//["群主公告","闲置转让","物业人事","民意投票","御墅论坛","装修指南","小区公约","周边便民"]
     var noticeStr = "" {
         didSet{
             self.setupAnimate()
@@ -196,15 +196,17 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
         var vc:RootViewController? = nil
         switch titleStr {
         case "群主公告":
-            vc = YSAnnounceViewController()
-        case "闲置转让":
-            vc = YSTransferViewController()
+            vc = YSAnnounceMainViewController()
+        case "邻里发布":
+            vc = YSForumViewController()
         case "物业人事":
             vc = YSPersonViewController()
         case "民意投票":
             vc = YSVoteViewController()
         case "小区公约":
             vc = YSPactViewController()
+        case "装修指南":
+            vc = YSFitViewController()
         default:
             return
         }

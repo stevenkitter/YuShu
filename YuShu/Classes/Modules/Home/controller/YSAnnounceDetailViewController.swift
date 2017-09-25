@@ -116,6 +116,9 @@ class YSAnnounceDetailViewController: RootViewController {
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
         }).addDisposableTo(disposeBag)
+        
+//        NetworkManager.providerHomeApi.request(.getPraiseList(user_id: userId, type: "adminnotice", item_id: announceId)).mapArray(<#T##type: BaseMappable.Protocol##BaseMappable.Protocol#>)
+        
     }
     
 

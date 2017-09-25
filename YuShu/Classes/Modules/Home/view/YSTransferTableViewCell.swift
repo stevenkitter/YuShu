@@ -15,6 +15,7 @@ class YSTransferTableViewCell: UITableViewCell {
             setupInit()
         }
     }
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var iconImageView: UIImageView!
     
@@ -38,7 +39,8 @@ class YSTransferTableViewCell: UITableViewCell {
         ys_titleLabel.text = item.transfer_title ?? ""
         commentBtn.setTitle(item.transfer_comment_count ?? "", for: .normal)
         favourBtn.setTitle(item.transfer_praise_count ?? "", for: .normal)
-        
+        let num = transfer?.images.count ?? 0
+        collectionViewHeight.constant = num == 0 ? 0 : 110
         collectionView.reloadData()
     }
     

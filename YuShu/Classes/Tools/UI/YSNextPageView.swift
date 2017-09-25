@@ -77,7 +77,8 @@ class YSNextPageView: UIView {
             make.centerY.equalTo(self)
         }
         
-        
+        textField.borderStyle = .roundedRect
+        textField.keyboardType = .numberPad
     }
     
     func setupInit() {

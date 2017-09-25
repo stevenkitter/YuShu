@@ -102,6 +102,19 @@
 		EC7CB95F1F67C0DE009CE9BC /* YSVoteDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */; };
 		EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */; };
 		EC7CB9631F67DDA7009CE9BC /* FootFuncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */; };
+		EC814D971F789E0A009A110D /* YSAnnounceMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D961F789E0A009A110D /* YSAnnounceMainViewController.swift */; };
+		EC814DA01F78A01D009A110D /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D991F78A01D009A110D /* CAPSPageMenu+Options.swift */; };
+		EC814DA11F78A01D009A110D /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9A1F78A01D009A110D /* CAPSPageMenu+UIConfiguration.swift */; };
+		EC814DA21F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9B1F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		EC814DA31F78A01D009A110D /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9C1F78A01D009A110D /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		EC814DA41F78A01D009A110D /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9D1F78A01D009A110D /* CAPSPageMenu.swift */; };
+		EC814DA51F78A01D009A110D /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9E1F78A01D009A110D /* CAPSPageMenuConfiguration.swift */; };
+		EC814DA61F78A01D009A110D /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814D9F1F78A01D009A110D /* MenuItemView.swift */; };
+		EC814DA81F78DDC0009A110D /* FitmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814DA71F78DDC0009A110D /* FitmentType.swift */; };
+		EC814DAB1F78E4D5009A110D /* YSFitmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814DA91F78E4D5009A110D /* YSFitmentTableViewCell.swift */; };
+		EC814DAC1F78E4D5009A110D /* YSFitmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC814DAA1F78E4D5009A110D /* YSFitmentTableViewCell.xib */; };
+		EC814DAF1F78F97E009A110D /* YSFitmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC814DAD1F78F97E009A110D /* YSFitmentCollectionViewCell.swift */; };
+		EC814DB01F78F97F009A110D /* YSFitmentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC814DAE1F78F97E009A110D /* YSFitmentCollectionViewCell.xib */; };
 		EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81AF4D1F6F716D006BD086 /* YSPersonalViewController.swift */; };
 		EC81AF511F6F72A5006BD086 /* YSPersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC81AF4F1F6F72A5006BD086 /* YSPersonalTableViewCell.swift */; };
 		EC81AF521F6F72A5006BD086 /* YSPersonalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC81AF501F6F72A5006BD086 /* YSPersonalTableViewCell.xib */; };
@@ -283,6 +296,19 @@
 		EC7CB95E1F67C0DE009CE9BC /* YSVoteDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSVoteDetailHeader.swift; sourceTree = "<group>"; };
 		EC7CB9601F67C0F4009CE9BC /* YSVoteDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSVoteDetailHeader.xib; sourceTree = "<group>"; };
 		EC7CB9621F67DDA7009CE9BC /* FootFuncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootFuncButton.swift; sourceTree = "<group>"; };
+		EC814D961F789E0A009A110D /* YSAnnounceMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSAnnounceMainViewController.swift; sourceTree = "<group>"; };
+		EC814D991F78A01D009A110D /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
+		EC814D9A1F78A01D009A110D /* CAPSPageMenu+UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIConfiguration.swift"; sourceTree = "<group>"; };
+		EC814D9B1F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		EC814D9C1F78A01D009A110D /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		EC814D9D1F78A01D009A110D /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		EC814D9E1F78A01D009A110D /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
+		EC814D9F1F78A01D009A110D /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		EC814DA71F78DDC0009A110D /* FitmentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitmentType.swift; sourceTree = "<group>"; };
+		EC814DA91F78E4D5009A110D /* YSFitmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSFitmentTableViewCell.swift; sourceTree = "<group>"; };
+		EC814DAA1F78E4D5009A110D /* YSFitmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSFitmentTableViewCell.xib; sourceTree = "<group>"; };
+		EC814DAD1F78F97E009A110D /* YSFitmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSFitmentCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC814DAE1F78F97E009A110D /* YSFitmentCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSFitmentCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC81AF4D1F6F716D006BD086 /* YSPersonalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPersonalViewController.swift; sourceTree = "<group>"; };
 		EC81AF4F1F6F72A5006BD086 /* YSPersonalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPersonalTableViewCell.swift; sourceTree = "<group>"; };
 		EC81AF501F6F72A5006BD086 /* YSPersonalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPersonalTableViewCell.xib; sourceTree = "<group>"; };
@@ -623,6 +649,7 @@
 		184352151F5CF54200BB86CA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EC814D981F78A01D009A110D /* PageMenu */,
 				184352161F5CF54200BB86CA /* RefreshFooter.swift */,
 				184352171F5CF54200BB86CA /* RefreshHeader.swift */,
 				184352181F5CF54200BB86CA /* WXActivityIndicatorView.swift */,
@@ -673,6 +700,7 @@
 				EC7CB9581F67BB6D009CE9BC /* YSVoteDetailViewController.swift */,
 				ECA4A31E1F6B702600F7700E /* YSTransferAddViewController.swift */,
 				ECA4A32E1F6B7DA600F7700E /* YSTransferDetailViewController.swift */,
+				EC814D961F789E0A009A110D /* YSAnnounceMainViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -688,6 +716,7 @@
 				EC1661331F668B8C00B0982A /* Vote.swift */,
 				EC7CB9521F678633009CE9BC /* Comment.swift */,
 				ECA4A3281F6B748500F7700E /* Transfer.swift */,
+				EC814DA71F78DDC0009A110D /* FitmentType.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -731,6 +760,10 @@
 				ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */,
 				1848811A1F6E39C300085C63 /* YSTransferDetailHeadView.swift */,
 				1848811C1F6E39DF00085C63 /* YSTransferDetailHeadView.xib */,
+				EC814DA91F78E4D5009A110D /* YSFitmentTableViewCell.swift */,
+				EC814DAA1F78E4D5009A110D /* YSFitmentTableViewCell.xib */,
+				EC814DAD1F78F97E009A110D /* YSFitmentCollectionViewCell.swift */,
+				EC814DAE1F78F97E009A110D /* YSFitmentCollectionViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -756,6 +789,20 @@
 				2853244807EDE95540408550 /* Pods-YuShuUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC814D981F78A01D009A110D /* PageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				EC814D991F78A01D009A110D /* CAPSPageMenu+Options.swift */,
+				EC814D9A1F78A01D009A110D /* CAPSPageMenu+UIConfiguration.swift */,
+				EC814D9B1F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */,
+				EC814D9C1F78A01D009A110D /* CAPSPageMenu+UIScrollViewDelegate.swift */,
+				EC814D9D1F78A01D009A110D /* CAPSPageMenu.swift */,
+				EC814D9E1F78A01D009A110D /* CAPSPageMenuConfiguration.swift */,
+				EC814D9F1F78A01D009A110D /* MenuItemView.swift */,
+			);
+			path = PageMenu;
 			sourceTree = "<group>";
 		};
 		EC84077D1F6A5D79009E6721 /* model */ = {
@@ -953,6 +1000,7 @@
 				184352631F5CF54200BB86CA /* Info.plist in Resources */,
 				ECA4A3231F6B71E900F7700E /* AddImageTableViewCell.xib in Resources */,
 				1848811D1F6E39DF00085C63 /* YSTransferDetailHeadView.xib in Resources */,
+				EC814DAC1F78E4D5009A110D /* YSFitmentTableViewCell.xib in Resources */,
 				1843524B1F5CF54200BB86CA /* LoginViewController.strings in Resources */,
 				EC895AF41F5FD0FD00D55EB8 /* YSMeHeadView.xib in Resources */,
 				1843526F1F5CF54200BB86CA /* CommentToolView.xib in Resources */,
@@ -966,6 +1014,7 @@
 				ECA4A32D1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib in Resources */,
 				EC8407881F6A7003009E6721 /* YSRoomCollectionViewCell.xib in Resources */,
 				184352611F5CF54200BB86CA /* Assets.xcassets in Resources */,
+				EC814DB01F78F97F009A110D /* YSFitmentCollectionViewCell.xib in Resources */,
 				EC8407821F6A5D86009E6721 /* YSInterCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1199,6 +1248,7 @@
 				ECACE2A31F62237500A6207C /* YSEditMeTableViewCell.swift in Sources */,
 				184352261F5CF54200BB86CA /* Observable+ObjectMapper.swift in Sources */,
 				1843522B1F5CF54200BB86CA /* UnRead.swift in Sources */,
+				EC814DA51F78A01D009A110D /* CAPSPageMenuConfiguration.swift in Sources */,
 				EC1661321F667F7600B0982A /* YSVoteMemberLayout.swift in Sources */,
 				18E4F6061F66157E0042FE72 /* AnnounceTableViewCell.swift in Sources */,
 				EC1661281F6669AD00B0982A /* Person.swift in Sources */,
@@ -1212,9 +1262,11 @@
 				184352481F5CF54200BB86CA /* LoadingViewController.swift in Sources */,
 				ECACE2A71F62256500A6207C /* YSEditMeImageTableViewCell.swift in Sources */,
 				184352681F5CF54200BB86CA /* Date+Ex.swift in Sources */,
+				EC814DA11F78A01D009A110D /* CAPSPageMenu+UIConfiguration.swift in Sources */,
 				18884E4A1F62CF5100D285F7 /* YSFitViewController.swift in Sources */,
 				184352241F5CF54200BB86CA /* UserApi.swift in Sources */,
 				184352291F5CF54200BB86CA /* UserManager.swift in Sources */,
+				EC814DA61F78A01D009A110D /* MenuItemView.swift in Sources */,
 				18884E4C1F62CF7300D285F7 /* YSPactViewController.swift in Sources */,
 				EC16612B1F666D0400B0982A /* YSPersonCollectionViewCell.swift in Sources */,
 				184352661F5CF54200BB86CA /* RootTabBarController.swift in Sources */,
@@ -1232,17 +1284,22 @@
 				EC7CB94E1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift in Sources */,
 				EC8407811F6A5D86009E6721 /* YSInterCollectionViewCell.swift in Sources */,
 				ECA4A3291F6B748500F7700E /* Transfer.swift in Sources */,
+				EC814DA81F78DDC0009A110D /* FitmentType.swift in Sources */,
 				184352251F5CF54200BB86CA /* NetworkManager.swift in Sources */,
 				EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */,
+				EC814DAB1F78E4D5009A110D /* YSFitmentTableViewCell.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
 				18884E441F62CEDE00D285F7 /* YSPersonViewController.swift in Sources */,
 				EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */,
 				1843521B1F5CF54200BB86CA /* AppDelegate+AppService.swift in Sources */,
+				EC814DA31F78A01D009A110D /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
 				EC1661341F668B8C00B0982A /* Vote.swift in Sources */,
 				18884E4E1F62CF9300D285F7 /* YSRimViewController.swift in Sources */,
 				18884E481F62CF2500D285F7 /* YSForumViewController.swift in Sources */,
 				184352651F5CF54200BB86CA /* RootNavigationController.swift in Sources */,
+				EC814D971F789E0A009A110D /* YSAnnounceMainViewController.swift in Sources */,
 				184352201F5CF54200BB86CA /* UtilsConstant.swift in Sources */,
+				EC814DAF1F78F97E009A110D /* YSFitmentCollectionViewCell.swift in Sources */,
 				1848811B1F6E39C300085C63 /* YSTransferDetailHeadView.swift in Sources */,
 				18884E461F62CF0400D285F7 /* YSVoteViewController.swift in Sources */,
 				ECACE2AE1F628EE600A6207C /* YSEditPrivacySettingViewController.swift in Sources */,
@@ -1252,7 +1309,9 @@
 				1843524C1F5CF54200BB86CA /* LoginViewController.swift in Sources */,
 				1843521D1F5CF54200BB86CA /* CommonConstant.swift in Sources */,
 				ECA4A3351F6BBF7000F7700E /* DVActionSheetVC.swift in Sources */,
+				EC814DA41F78A01D009A110D /* CAPSPageMenu.swift in Sources */,
 				EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */,
+				EC814DA01F78A01D009A110D /* CAPSPageMenu+Options.swift in Sources */,
 				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
 				EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */,
 				EC81AF511F6F72A5006BD086 /* YSPersonalTableViewCell.swift in Sources */,
@@ -1271,6 +1330,7 @@
 				184352721F5CF54200BB86CA /* RefreshHeader.swift in Sources */,
 				184352281F5CF54200BB86CA /* UserInfo.swift in Sources */,
 				ECACE2B41F629B4E00A6207C /* YSWebViewController.swift in Sources */,
+				EC814DA21F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
 				ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */,

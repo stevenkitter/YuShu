@@ -22,9 +22,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHS-mk-bnX">
                         <rect key="frame" x="0.0" y="0.0" width="112" height="113"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmN-5V-RHd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="floorBag" translatesAutoresizingMaskIntoConstraints="NO" id="gmN-5V-RHd">
                                 <rect key="frame" x="0.0" y="0.0" width="112" height="113"/>
-                                <color key="backgroundColor" red="0.95608288050000001" green="0.63061243300000003" blue="0.083456285300000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1号楼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj8-Gh-Vx7">
                                 <rect key="frame" x="10" y="30.5" width="92" height="21"/>
@@ -78,4 +77,7 @@
             <point key="canvasLocation" x="56" y="83.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="floorBag" width="150" height="95"/>
+    </resources>
 </document>

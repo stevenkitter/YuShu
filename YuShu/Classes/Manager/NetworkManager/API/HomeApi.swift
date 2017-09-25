@@ -13,19 +13,20 @@ enum HomeApi {
     case homeInfo()
     case getImageList()
     case getVideoList()
-    case getAnnounceList(user_id: String, page: Int)
+    case getAnnounceList(user_id: String, page: Int,type: Int) //1:群主公告 2：民政汇总
     case getPersons()
     case getVoteList(user_id: String, page: Int)
     case getVoteInfo(vote_id: String, user_id: String)
     case doVote(user_id: String, vote_id: String,vote_option_id: String)
     case getCommentList(user_id: String, type: String, item_id: String, page: Int)
+    case getPraiseList(user_id: String, type: String, item_id: String)
     case doPraise(user_id: String, praise_type: String, praise_item_id: String) //装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     case doComment(user_id: String, comment_type: String, comment_item_id: String, comment_desc: String)//其中comment_type:装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     
     case getTransferList(page: Int)
     case doTransfer(user_id: String, transfer_title: String, transfer_desc: String, transfer_type: String,images: [UIImage]) //1:馈赠2：置换
-    
-    
+    case fitmentTags(category: Int) //1:辅材商店 2：装修配套
+    case fitmentList(page: Int, guide_type_id: String)
     
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
@@ -84,10 +85,11 @@ extension HomeApi: TargetType {
             params["service"] = "Index.getAllVideos"
             return params
             
-        case let .getAnnounceList(user_id, page):
+        case let .getAnnounceList(user_id, page, type):
             var params: [String: Any] = [:]
             params["user_id"] = user_id
             params["page"] = page
+            params["type"] = type
             params["service"] = "Index.getAdminnoticeInfo"
             return params
         case .getPersons():
@@ -128,6 +130,14 @@ extension HomeApi: TargetType {
             params["praise_item_id"] = praise_item_id
             params["service"] = "Index.doPraise"
             return params
+        case let .getPraiseList(user_id, type, item_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["type"] = type
+            params["item_id"] = item_id
+            params["service"] = "Index.getPraiseList"
+            return params
+            
         case let .doComment(user_id, comment_type, comment_item_id, comment_desc):
             var params: [String: Any] = [:]
             params["user_id"] = user_id
@@ -148,6 +158,18 @@ extension HomeApi: TargetType {
             params["transfer_desc"] = transfer_desc
             params["transfer_type"] = transfer_type
             return params
+        case let .fitmentTags(category):
+            var params: [String: Any] = [:]
+            params["category"] = category
+            params["service"] = "Index.getGuideTypeInfo"
+            return params
+        case let .fitmentList(page, guide_type_id):
+            var params: [String: Any] = [:]
+            params["page"] = page
+            params["guide_type_id"] = guide_type_id
+            params["service"] = "Index.getGuideInfo"
+            return params
+            
             
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]

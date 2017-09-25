@@ -8,6 +8,7 @@
 
 import UIKit
 import EasyTipView
+import ChameleonFramework
 class YSRoomListViewController: RootViewController {
 
     var roomList: [Room] = []
@@ -94,6 +95,10 @@ extension YSRoomListViewController : UICollectionViewDataSource,UICollectionView
         cell.statusBtn.isSelected = room.activate_count != "0"
         cell.roomLabel.text = room.user_room ?? ""
         cell.memberBtn.setTitle("\(room.activate_count ?? "0")/\(room.user_count ?? "0")", for: .normal)
+        
+        
+        
+        cell.backgroundColor = GradientColor(.leftToRight, frame: cell.bounds, colors: [#colorLiteral(red: 0.925093472, green: 0.5313415527, blue: 0.5098234415, alpha: 1),#colorLiteral(red: 0.895306766, green: 0.3330187201, blue: 0.2927252352, alpha: 1)])
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

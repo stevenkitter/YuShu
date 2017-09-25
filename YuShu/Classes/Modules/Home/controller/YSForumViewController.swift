@@ -9,27 +9,38 @@
 import UIKit
 
 class YSForumViewController: RootViewController {
-
+    var pageMenu : CAPSPageMenu?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "御墅论坛"
+        self.title = "邻里发布"
+        setupUI()
         // Do any additional setup after loading the view.
     }
 
+    func setupUI() {
+        let vc0 = YSNewCircleViewController()
+        vc0.title = "最新动态"
+        vc0.parentVc = self
+        let vc1 = YSTransferViewController()
+        vc1.title = "闲置转让"
+        vc1.parentVc = self
+        let vc2 = YSSuggestViewController()
+        vc2.title = "公共建议"
+        vc2.parentVc = self
+        
+        let vcs = [vc0, vc1, vc2]
+    
+        pageMenu = CAPSPageMenu(viewControllers: vcs, frame: self.view.bounds, pageMenuOptions: pageParameters)
+        view.addSubview(pageMenu!.view)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }

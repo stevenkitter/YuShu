@@ -89,6 +89,12 @@ extension String {
         let timeStr = time.format(with: "yyyy-MM-dd HH:mm")
         return timeStr
     }
+    func timeAgo()-> String {
+        let time = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
+        let str = time.timeAgoSinceNow
+        return str
+    }
+    
     func strDate()-> Date {
         let da = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
         return da
