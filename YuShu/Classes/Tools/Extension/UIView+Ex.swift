@@ -184,6 +184,7 @@ extension UIButton {
     //圆按钮
     static func buttonWithImage(image: UIImage)-> UIButton {
         let btn = UIButton(type: .custom)
+        btn.setTitleColor(UIColor.darkGray, for: .normal)
         btn.setImage(image, for: .normal)
         return btn
     }

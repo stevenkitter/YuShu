@@ -24,7 +24,8 @@ class YSCommentTableViewCell: UITableViewCell {
         guard let item = comment else {return}
         iconImageView.kfImage(item.user_headpic ?? "")
         nameLabel.text = item.user_name
-        
+        contentLabel.text = item.comment_desc ?? ""
+        timeLabel.text = (item.comment_addtime ?? "").timeAgo()
        
         
     }

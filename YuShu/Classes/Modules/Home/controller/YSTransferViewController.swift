@@ -66,7 +66,7 @@ class YSTransferViewController: RootViewController {
     
     func addTransfer() {
         let vc = YSTransferAddViewController()
-       
+        vc.postWhat = 1
         parentVc?.present(vc, animated: true, completion: nil)
     }
 
@@ -100,7 +100,7 @@ extension YSTransferViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 class YSNewCircleViewController: RootViewController {
-    var contents: [Transfer] = []
+    var contents: [PostSuggest] = []
     var parentVc: RootViewController?
     
     let btn = UIButton.buttonWithImage(image: UIImage(named: "tab_willsell")!)
@@ -120,7 +120,7 @@ class YSNewCircleViewController: RootViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-        tableView.register(str: "YSTransferTableViewCell")
+        tableView.register(str: "YSPostSuggestTableViewCell")
         tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.separatorStyle = .singleLine
         
@@ -135,7 +135,7 @@ class YSNewCircleViewController: RootViewController {
     
     override func loadServerData() {
         super.loadServerData()
-        NetworkManager.providerHomeApi.request(.getTransferList(page: page)).mapArray(Transfer.self).subscribe(onNext: { (list) in
+        NetworkManager.providerHomeApi.request(.postInfo(page: page, post_type: "1")).mapArray(PostSuggest.self).subscribe(onNext: { (list) in
             if self.page == 1 {
                 self.contents.removeAll()
             }
@@ -157,7 +157,7 @@ class YSNewCircleViewController: RootViewController {
     
     func addTransfer() {
         let vc = YSTransferAddViewController()
-        
+        vc.postWhat = 0
         parentVc?.present(vc, animated: true, completion: nil)
     }
     
@@ -177,22 +177,22 @@ extension YSNewCircleViewController: UITableViewDataSource, UITableViewDelegate 
         return contents.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YSTransferTableViewCell", for: indexPath) as! YSTransferTableViewCell
-        cell.transfer = contents[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YSPostSuggestTableViewCell", for: indexPath) as! YSPostSuggestTableViewCell
+        cell.postSuggest = contents[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tr = contents[indexPath.row]
-        let vc = YSTransferDetailViewController()
-        vc.transfer = tr
-        vc.transferId = tr.transfer_id ?? ""
+        let vc = YSPostSuggestDetailViewController()
+        vc.postSuggest = tr
+        vc.transferId = tr.post_id ?? ""
         parentVc?.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 
 class YSSuggestViewController: RootViewController {
-    var contents: [Transfer] = []
+    var contents: [PostSuggest] = []
     var parentVc: RootViewController?
     
     
@@ -213,7 +213,7 @@ class YSSuggestViewController: RootViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-        tableView.register(str: "YSTransferTableViewCell")
+        tableView.register(str: "YSPostSuggestTableViewCell")
         tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.separatorStyle = .singleLine
         
@@ -228,7 +228,7 @@ class YSSuggestViewController: RootViewController {
     
     override func loadServerData() {
         super.loadServerData()
-        NetworkManager.providerHomeApi.request(.getTransferList(page: page)).mapArray(Transfer.self).subscribe(onNext: { (list) in
+        NetworkManager.providerHomeApi.request(.postInfo(page: page, post_type: "2")).mapArray(PostSuggest.self).subscribe(onNext: { (list) in
             if self.page == 1 {
                 self.contents.removeAll()
             }
@@ -250,7 +250,7 @@ class YSSuggestViewController: RootViewController {
     
     func addTransfer() {
         let vc = YSTransferAddViewController()
-        
+        vc.postWhat = 2
         parentVc?.present(vc, animated: true, completion: nil)
     }
     
@@ -270,15 +270,15 @@ extension YSSuggestViewController: UITableViewDataSource, UITableViewDelegate {
         return contents.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YSTransferTableViewCell", for: indexPath) as! YSTransferTableViewCell
-        cell.transfer = contents[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "YSPostSuggestTableViewCell", for: indexPath) as! YSPostSuggestTableViewCell
+        cell.postSuggest = contents[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let tr = contents[indexPath.row]
-        let vc = YSTransferDetailViewController()
-        vc.transfer = tr
-        vc.transferId = tr.transfer_id ?? ""
+        let vc = YSPostSuggestDetailViewController()
+        vc.postSuggest = tr
+        vc.transferId = tr.post_id ?? ""
         parentVc?.navigationController?.pushViewController(vc, animated: true)
     }
 }

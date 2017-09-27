@@ -1,5 +1,5 @@
 //
-//  YSTransferDetailHeadView.swift
+//  YSPostSuggestDetailHeadView.swift
 //  YuShu
 //
 //  Created by apple on 2017/9/17.
@@ -8,9 +8,10 @@
 
 import UIKit
 import Lightbox
-let YSTransferDetailHeadViewCellH: CGFloat = 250
-class YSTransferDetailHeadView: UIView {
-    var transfer: Transfer? {
+
+class YSPostSuggestDetailHeadView: UIView {
+    
+    var transfer: PostSuggest? {
         didSet{
             setupInit()
         }
@@ -22,7 +23,7 @@ class YSTransferDetailHeadView: UIView {
    
     @IBOutlet weak var usernameLabel: UILabel!
 
-    @IBOutlet weak var transferTypeBtn: UIButton!
+   
     
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -33,10 +34,10 @@ class YSTransferDetailHeadView: UIView {
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     //MARK: public
-    static func `default`()-> YSTransferDetailHeadView?{
+    static func `default`()-> YSPostSuggestDetailHeadView?{
         
-        let nibView = Bundle.main.loadNibNamed("YSTransferDetailHeadView", owner: nil, options: nil)
-        if let vi = nibView?.first as? YSTransferDetailHeadView{
+        let nibView = Bundle.main.loadNibNamed("YSPostSuggestDetailHeadView", owner: nil, options: nil)
+        if let vi = nibView?.first as? YSPostSuggestDetailHeadView{
             return vi
         }
         return nil
@@ -56,11 +57,10 @@ class YSTransferDetailHeadView: UIView {
     
     fileprivate func setupInit() {
         guard let item = transfer else {return}
-        titleLabel.text = item.transfer_title
+        titleLabel.text = item.post_title
         userIconImageView.kfImage(item.user_headpic ?? "")
         usernameLabel.text = item.user_name
-        transferTypeBtn.setTitle(item.transfer_type == "2" ? " 置换" : " 馈赠", for: .normal)
-        contentLabel.text = item.transfer_desc
+        contentLabel.text = item.post_desc
         
         let colH = item.images.count == 0 ? 0 : CGFloat(item.images.count) * YSTransferDetailHeadViewCellH + CGFloat(item.images.count - 1) * 10
         
@@ -73,7 +73,7 @@ class YSTransferDetailHeadView: UIView {
     
     
 }
-extension YSTransferDetailHeadView: UICollectionViewDelegate,UICollectionViewDataSource {
+extension YSPostSuggestDetailHeadView: UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return transfer?.images.count ?? 0
     }
@@ -97,11 +97,13 @@ extension YSTransferDetailHeadView: UICollectionViewDelegate,UICollectionViewDat
 
 
 extension UIView{
-    static func transferDetailHeadViewH(transfer: Transfer)-> CGFloat {
+  
+    
+    static func transferDetailHeadViewH(transfer: PostSuggest)-> CGFloat {
         var headH: CGFloat = 80 + 10
         headH += (40 + 20)
         
-        let contentH = (transfer.transfer_desc ?? "").strRectMaxH(KScreenWidth - 20, font: UIFont.systemFont(ofSize: 14))
+        let contentH = (transfer.post_desc ?? "").strRectMaxH(KScreenWidth - 20, font: UIFont.systemFont(ofSize: 14))
         headH += contentH
         
         let colH = transfer.images.count == 0 ? 0 : CGFloat(transfer.images.count) * YSTransferDetailHeadViewCellH + CGFloat(transfer.images.count - 1) * 10
@@ -109,6 +111,4 @@ extension UIView{
         
         return headH
     }
-    
-  
 }

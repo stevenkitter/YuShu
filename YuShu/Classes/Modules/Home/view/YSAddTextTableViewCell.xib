@@ -27,13 +27,13 @@
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="在这里详细描述一下你的宝贝吧"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="在这里详细描述一下吧"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                 <color key="value" red="0.78416603803634644" green="0.78399282693862915" blue="0.80461865663528442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </textView>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" 宝贝标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-zq-v4n">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qtk-zq-v4n">
                         <rect key="frame" x="10" y="10" width="300" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="kra-RS-44b"/>

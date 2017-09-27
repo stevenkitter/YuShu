@@ -21,12 +21,17 @@ enum HomeApi {
     case getCommentList(user_id: String, type: String, item_id: String, page: Int)
     case getPraiseList(user_id: String, type: String, item_id: String)
     case doPraise(user_id: String, praise_type: String, praise_item_id: String) //装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
+    
     case doComment(user_id: String, comment_type: String, comment_item_id: String, comment_desc: String)//其中comment_type:装修指南-guide,民意投票-vote,闲置转让-transfer,御墅论坛-post
     
     case getTransferList(page: Int)
     case doTransfer(user_id: String, transfer_title: String, transfer_desc: String, transfer_type: String,images: [UIImage]) //1:馈赠2：置换
     case fitmentTags(category: Int) //1:辅材商店 2：装修配套
     case fitmentList(page: Int, guide_type_id: String)
+    case doCollection(user_id: String, collection_type: String, collection_item_id: String)
+    case deleteMyDo(type: String, item_id: String)
+    case postInfo(page: Int, post_type: String) //1:最新动态2：公共建议
+    case doPost(post_title: String, post_desc: String, post_type: String, user_id: String, images: [UIImage])
     
     case getComment(article_id: String, user_id: String, page: Int)
     case isCollect(article_id: String, user_id: String)
@@ -50,6 +55,8 @@ extension HomeApi: TargetType {
             return ServiceUrlStr
         case .doTransfer:
             return ServiceUrlStr + "?service=Index.doTransfer"
+        case .doPost:
+            return ServiceUrlStr + "?service=Index.doPost"
         default:
             return ServiceUrlStr
         }
@@ -61,6 +68,8 @@ extension HomeApi: TargetType {
         case .getVideoList:
             return .get
         case .doTransfer:
+            return .post
+        case .doPost:
             return .post
         default:
             return .get
@@ -169,8 +178,32 @@ extension HomeApi: TargetType {
             params["guide_type_id"] = guide_type_id
             params["service"] = "Index.getGuideInfo"
             return params
-            
-            
+        case let .doCollection(user_id, collection_type, collection_item_id):
+            var params: [String: Any] = [:]
+            params["user_id"] = user_id
+            params["collection_type"] = collection_type
+            params["collection_item_id"] = collection_item_id
+            params["service"] = "Index.doCollection"
+            return params
+        case let .deleteMyDo(type, item_id):
+            var params: [String: Any] = [:]
+            params["type"] = type
+            params["item_id"] = item_id
+            params["service"] = "Index.deleteMyDo"
+            return params
+        case let .postInfo(page, post_type):
+            var params: [String: Any] = [:]
+            params["page"] = page
+            params["post_type"] = post_type
+            params["service"] = "Index.getPostInfo"
+            return params
+        case let .doPost(post_title, post_desc, post_type, user_id, _):
+            var params: [String: Any] = [:]
+            params["post_title"] = post_title
+            params["post_desc"] = post_desc
+            params["post_type"] = post_type
+            params["user_id"] = user_id
+            return params
         case let .getComment(article_id, user_id, page):
             var params: [String: Any] = [:]
             params["article_id"] = article_id
@@ -227,6 +260,15 @@ extension HomeApi: TargetType {
             }
             return .upload(.multipart(postImg))
             
+        case let .doPost(_, _, _, _,images):
+            var postImg: [MultipartFormData] = []
+            for (_,item) in images.enumerated() {
+                let imageData = UIImageJPEGRepresentation(item, 0.5)
+                let name = Int(Date().timeIntervalSince1970 * 1000)
+                let formData = MultipartFormData(provider: .data(imageData!), name: "filelist[]", fileName: "\(name).png", mimeType: "image/png")
+                postImg.append(formData)
+            }
+            return .upload(.multipart(postImg))
         default:
             return .request
         }

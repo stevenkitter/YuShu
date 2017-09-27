@@ -90,6 +90,12 @@
 		EC1661341F668B8C00B0982A /* Vote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1661331F668B8C00B0982A /* Vote.swift */; };
 		EC260CBD1F5EA0330046F576 /* YSHomeShowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */; };
 		EC260CBE1F5EA0330046F576 /* YSHomeShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */; };
+		EC70EEC21F7B2E8A0092F7B8 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EEC11F7B2E8A0092F7B8 /* UIImage+Ex.swift */; };
+		EC70EEC41F7B76400092F7B8 /* PostSuggest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EEC31F7B76400092F7B8 /* PostSuggest.swift */; };
+		EC70EEC71F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EEC51F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.swift */; };
+		EC70EEC81F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC70EEC61F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.xib */; };
+		EC70EECB1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70EEC91F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.swift */; };
+		EC70EECC1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC70EECA1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.xib */; };
 		EC7CB94E1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB94C1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift */; };
 		EC7CB94F1F676D62009CE9BC /* YSUserHeadCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC7CB94D1F676D62009CE9BC /* YSUserHeadCollectionViewCell.xib */; };
 		EC7CB9511F67756C009CE9BC /* YSAnnounceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7CB9501F67756C009CE9BC /* YSAnnounceDetailViewController.swift */; };
@@ -284,6 +290,12 @@
 		EC1661331F668B8C00B0982A /* Vote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vote.swift; sourceTree = "<group>"; };
 		EC260CBB1F5EA0330046F576 /* YSHomeShowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeShowTableViewCell.swift; sourceTree = "<group>"; };
 		EC260CBC1F5EA0330046F576 /* YSHomeShowTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHomeShowTableViewCell.xib; sourceTree = "<group>"; };
+		EC70EEC11F7B2E8A0092F7B8 /* UIImage+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		EC70EEC31F7B76400092F7B8 /* PostSuggest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostSuggest.swift; sourceTree = "<group>"; };
+		EC70EEC51F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPostSuggestTableViewCell.swift; sourceTree = "<group>"; };
+		EC70EEC61F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPostSuggestTableViewCell.xib; sourceTree = "<group>"; };
+		EC70EEC91F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPostSuggestDetailHeadView.swift; sourceTree = "<group>"; };
+		EC70EECA1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPostSuggestDetailHeadView.xib; sourceTree = "<group>"; };
 		EC7CB94C1F676D62009CE9BC /* YSUserHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSUserHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC7CB94D1F676D62009CE9BC /* YSUserHeadCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSUserHeadCollectionViewCell.xib; sourceTree = "<group>"; };
 		EC7CB9501F67756C009CE9BC /* YSAnnounceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSAnnounceDetailViewController.swift; sourceTree = "<group>"; };
@@ -629,6 +641,7 @@
 				1843520F1F5CF54200BB86CA /* UITextField+LeftView.swift */,
 				184352101F5CF54200BB86CA /* UIView+Ex.swift */,
 				EC895AEB1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift */,
+				EC70EEC11F7B2E8A0092F7B8 /* UIImage+Ex.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -717,6 +730,7 @@
 				EC7CB9521F678633009CE9BC /* Comment.swift */,
 				ECA4A3281F6B748500F7700E /* Transfer.swift */,
 				EC814DA71F78DDC0009A110D /* FitmentType.swift */,
+				EC70EEC31F7B76400092F7B8 /* PostSuggest.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -758,8 +772,12 @@
 				ECA4A32B1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib */,
 				ECA4A3301F6B807D00F7700E /* YSTransferTableViewCell.swift */,
 				ECA4A3311F6B807D00F7700E /* YSTransferTableViewCell.xib */,
+				EC70EEC51F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.swift */,
+				EC70EEC61F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.xib */,
 				1848811A1F6E39C300085C63 /* YSTransferDetailHeadView.swift */,
 				1848811C1F6E39DF00085C63 /* YSTransferDetailHeadView.xib */,
+				EC70EEC91F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.swift */,
+				EC70EECA1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.xib */,
 				EC814DA91F78E4D5009A110D /* YSFitmentTableViewCell.swift */,
 				EC814DAA1F78E4D5009A110D /* YSFitmentTableViewCell.xib */,
 				EC814DAD1F78F97E009A110D /* YSFitmentCollectionViewCell.swift */,
@@ -1009,7 +1027,9 @@
 				EC895AF81F5FD66000D55EB8 /* YSMeHeadCollectionViewCell.xib in Resources */,
 				184352641F5CF54200BB86CA /* LaunchScreen.storyboard in Resources */,
 				EC81AF521F6F72A5006BD086 /* YSPersonalTableViewCell.xib in Resources */,
+				EC70EEC81F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.xib in Resources */,
 				EC7CB9611F67C0F4009CE9BC /* YSVoteDetailHeader.xib in Resources */,
+				EC70EECC1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.xib in Resources */,
 				EC7CB95D1F67BE1B009CE9BC /* YSVoteOptionTableViewCell.xib in Resources */,
 				ECA4A32D1F6B7B5C00F7700E /* YSAddTextTableViewCell.xib in Resources */,
 				EC8407881F6A7003009E6721 /* YSRoomCollectionViewCell.xib in Resources */,
@@ -1289,6 +1309,7 @@
 				EC16612F1F66766400B0982A /* YSVoteTableViewCell.swift in Sources */,
 				EC814DAB1F78E4D5009A110D /* YSFitmentTableViewCell.swift in Sources */,
 				184352711F5CF54200BB86CA /* RefreshFooter.swift in Sources */,
+				EC70EECB1F7B7D260092F7B8 /* YSPostSuggestDetailHeadView.swift in Sources */,
 				18884E441F62CEDE00D285F7 /* YSPersonViewController.swift in Sources */,
 				EC89FF7D1F614D1500C43686 /* YSMeTableViewCell.swift in Sources */,
 				1843521B1F5CF54200BB86CA /* AppDelegate+AppService.swift in Sources */,
@@ -1312,6 +1333,7 @@
 				EC814DA41F78A01D009A110D /* CAPSPageMenu.swift in Sources */,
 				EC89FF701F60EF8F00C43686 /* YSMoreViewController.swift in Sources */,
 				EC814DA01F78A01D009A110D /* CAPSPageMenu+Options.swift in Sources */,
+				EC70EEC21F7B2E8A0092F7B8 /* UIImage+Ex.swift in Sources */,
 				EC895AEC1F5F7E4B00D55EB8 /* DispatchSource+Ex.swift in Sources */,
 				EC89FF791F613E7800C43686 /* YSMoreImageCollectionReusableView.swift in Sources */,
 				EC81AF511F6F72A5006BD086 /* YSPersonalTableViewCell.swift in Sources */,
@@ -1321,6 +1343,7 @@
 				EC7CB9591F67BB6D009CE9BC /* YSVoteDetailViewController.swift in Sources */,
 				EC895AFC1F5FFC3C00D55EB8 /* HomeInfo.swift in Sources */,
 				1843526D1F5CF54200BB86CA /* UIView+Ex.swift in Sources */,
+				EC70EEC71F7B7AFB0092F7B8 /* YSPostSuggestTableViewCell.swift in Sources */,
 				184352221F5CF54200BB86CA /* CircleApi.swift in Sources */,
 				18884E501F62D04C00D285F7 /* Announce.swift in Sources */,
 				EC7CB9511F67756C009CE9BC /* YSAnnounceDetailViewController.swift in Sources */,
@@ -1333,6 +1356,7 @@
 				EC814DA21F78A01D009A110D /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 				EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
+				EC70EEC41F7B76400092F7B8 /* PostSuggest.swift in Sources */,
 				ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */,
 				ECA4A32C1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift in Sources */,
 				18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */,

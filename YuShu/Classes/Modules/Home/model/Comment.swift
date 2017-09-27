@@ -14,11 +14,15 @@ struct Comment: Mappable{
     var user_id: String?
     var user_name: String?
     var user_headpic: String?
+    var comment_desc: String?
+    var comment_addtime: String?
     init?(map: Map) {
         
     }
     mutating func mapping(map: Map) {
         comment_id <- map["comment_id"]
+        comment_desc <- map["comment_id"]
+        comment_addtime <- map["comment_id"]
         user_id <- map["user_id"]
         user_name <- map["user_name"]
         user_headpic <- (map["user_headpic"], AvatarTransform())

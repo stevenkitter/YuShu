@@ -14,6 +14,8 @@ class YSTransferAddViewController: RootViewController {
     let footBtn = UIButton.buttonWithTitle(normal: "发布", disable: "完整信息")
     var type = "2"
     
+    var postWhat = 0 // 0 1 2 最新 闲置 公共
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = ""
@@ -40,7 +42,7 @@ class YSTransferAddViewController: RootViewController {
         bar.titleTextAttributes = [NSForegroundColorAttributeName:KTintColor]
         bar.setBackgroundImage(KNaviColor.createImage(), for: .default)
         
-        let item = UINavigationItem(title: "发布宝贝")
+        let item = UINavigationItem(title: "发布信息")
         bar.pushItem(item, animated: true)
         item.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancel))
         
@@ -74,7 +76,7 @@ class YSTransferAddViewController: RootViewController {
         let cell0 = tableViewGrouped.cellForRow(at: IndexPath(row: 0, section: 0)) as! AddImageTableViewCell
         let cell1 = tableViewGrouped.cellForRow(at: IndexPath(row: 0, section: 1)) as! YSAddTextTableViewCell
 //        let cell2 = tableViewGrouped.cellForRow(at: IndexPath(row: 0, section: 2)) as! YSEditMeTableViewCell
-        if cell0.images.count == 0 {
+        if cell0.images.count == 0 && postWhat == 2{
             SVProgressHUD.showError(withStatus: "加点图片吧")
             return
         }
@@ -85,29 +87,83 @@ class YSTransferAddViewController: RootViewController {
         let content = cell1.textView.text
         
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
-        WXActivityIndicatorView.start()
-        
-        NetworkManager.providerHomeApi.request(.doTransfer(user_id: userId, transfer_title: thisTitle, transfer_desc: content ?? "", transfer_type: type, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
-            WXActivityIndicatorView.stop()
-            guard let respon = res as? Dictionary<String, Any> else{
-                return
-            }
-            guard let data = respon["data"] as? Dictionary<String, Any> else {
-                return
-            }
-            let msg = data["msg"] as? String
-            let code = data["code"] as? Int
-            if code == 1 {
-                SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
-                self.dismiss(animated: true, completion: nil)
+        switch postWhat {
+        case 1:
+            WXActivityIndicatorView.start()
+            
+            NetworkManager.providerHomeApi.request(.doTransfer(user_id: userId, transfer_title: thisTitle, transfer_desc: content ?? "", transfer_type: type, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
+                WXActivityIndicatorView.stop()
+                guard let respon = res as? Dictionary<String, Any> else{
+                    return
+                }
+                guard let data = respon["data"] as? Dictionary<String, Any> else {
+                    return
+                }
+                let msg = data["msg"] as? String
+                let code = data["code"] as? Int
+                if code == 1 {
+                    SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }else{
+                    SVProgressHUD.showError(withStatus: msg ?? "发布失败")
+                }
                 
-            }else{
-                SVProgressHUD.showError(withStatus: msg ?? "发布失败")
-            }
+            }, onError: { (err) in
+                WXActivityIndicatorView.stop()
+            }).addDisposableTo(disposeBag)
 
-        }, onError: { (err) in
-            WXActivityIndicatorView.stop()
-        }).addDisposableTo(disposeBag)
+        case 0:
+            WXActivityIndicatorView.start()
+            
+            NetworkManager.providerHomeApi.request(.doPost(post_title: thisTitle, post_desc: content ?? "", post_type: "1", user_id: userId, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
+                WXActivityIndicatorView.stop()
+                guard let respon = res as? Dictionary<String, Any> else{
+                    return
+                }
+                guard let data = respon["data"] as? Dictionary<String, Any> else {
+                    return
+                }
+                let msg = data["msg"] as? String
+                let code = data["code"] as? Int
+                if code == 1 {
+                    SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }else{
+                    SVProgressHUD.showError(withStatus: msg ?? "发布失败")
+                }
+                
+            }, onError: { (err) in
+                WXActivityIndicatorView.stop()
+            }).addDisposableTo(disposeBag)
+
+        default:
+            WXActivityIndicatorView.start()
+            
+            NetworkManager.providerHomeApi.request(.doPost(post_title: thisTitle, post_desc: content ?? "", post_type: "2", user_id: userId, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
+                WXActivityIndicatorView.stop()
+                guard let respon = res as? Dictionary<String, Any> else{
+                    return
+                }
+                guard let data = respon["data"] as? Dictionary<String, Any> else {
+                    return
+                }
+                let msg = data["msg"] as? String
+                let code = data["code"] as? Int
+                if code == 1 {
+                    SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }else{
+                    SVProgressHUD.showError(withStatus: msg ?? "发布失败")
+                }
+                
+            }, onError: { (err) in
+                WXActivityIndicatorView.stop()
+            }).addDisposableTo(disposeBag)
+
+        }
         
     }
     
@@ -125,7 +181,7 @@ class YSTransferAddViewController: RootViewController {
 
 extension YSTransferAddViewController: UITableViewDelegate ,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return self.postWhat == 1 ? 3 : 2
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

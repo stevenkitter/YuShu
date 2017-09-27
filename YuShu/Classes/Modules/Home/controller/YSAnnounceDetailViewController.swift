@@ -18,6 +18,7 @@ class YSAnnounceDetailViewController: RootViewController {
     var webUrl = ""
     
     var contents: [Comment] = []
+    var praiseUsers: [PraiseUser] = []
     
     let progressView = UIProgressView(progressViewStyle: .default).then{
         $0.progressTintColor = KNaviColor
@@ -28,6 +29,7 @@ class YSAnnounceDetailViewController: RootViewController {
     }
     let tableViewHeader = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 10))
     let commentView = CommentToolView.default()!
+    let praiseBtn = UIButton.buttonWithImage(image: UIImage(named: "like")!.scaleToSize(size: CGSize(width: 20, height: 20))!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +49,20 @@ class YSAnnounceDetailViewController: RootViewController {
         }
         tableView.register(str: "YSCommentTableViewCell")
         tableView.backgroundColor = UIColor.groupTableViewBackground
-        tableView.separatorStyle = .none
-        
+        tableView.separatorStyle = .singleLine
+        tableViewHeader.backgroundColor = UIColor.white
         tableViewHeader.addSubview(webView)
+        tableViewHeader.addSubview(praiseBtn)
+        
         webView.addSubview(progressView)
         webView.navigationDelegate = self
         webView.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.tableViewHeader).inset(UIEdgeInsetsMake(0, 0, 0, 0))
+            make.edges.equalTo(self.tableViewHeader).inset(UIEdgeInsetsMake(0, 0, 40, 0))
+        }
+        praiseBtn.snp.makeConstraints { (make) in
+            make.left.equalTo(tableViewHeader).offset(10)
+            make.top.equalTo(webView.snp.bottom).offset(5)
+            make.bottom.equalTo(tableViewHeader).offset(-5)
         }
         progressView.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(webView)
@@ -117,7 +126,19 @@ class YSAnnounceDetailViewController: RootViewController {
             self.tableView.mj_footer.endRefreshing()
         }).addDisposableTo(disposeBag)
         
-//        NetworkManager.providerHomeApi.request(.getPraiseList(user_id: userId, type: "adminnotice", item_id: announceId)).mapArray(<#T##type: BaseMappable.Protocol##BaseMappable.Protocol#>)
+        
+        NetworkManager.providerHomeApi.request(.getPraiseList(user_id: userId, type: "adminnotice", item_id: announceId)).mapArray(PraiseUser.self).subscribe(onNext: { (list) in
+            self.praiseBtn.setTitle(" \(list.count)", for: .normal)
+            for user in list {
+                if userId == user.user_id {
+                    self.commentView.likeButton.isSelected = true
+                    return
+                }
+            }
+            self.commentView.likeButton.isSelected = false
+        }, onError: { (err) in
+            self.praiseBtn.setTitle(" 0", for: .normal)
+        }).addDisposableTo(disposeBag)
         
     }
     
@@ -215,7 +236,7 @@ extension YSAnnounceDetailViewController: WKNavigationDelegate {
         webView.evaluateJavaScript("document.body.scrollHeight") { (content, err) in
             
             if let h = content as? CGFloat {
-                self.tableViewHeader.setHeight(h: h)
+                self.tableViewHeader.setHeight(h: h + 40)
                 self.tableView.beginUpdates()
                 self.tableView.tableHeaderView = self.tableViewHeader
                 self.tableView.endUpdates()
