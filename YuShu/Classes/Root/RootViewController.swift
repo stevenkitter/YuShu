@@ -84,6 +84,12 @@ class RootViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIColor.clear.createImage()
         
     }
+    
+    func webDetail(url: String) {
+        let vc = YSWebViewController()
+        vc.url = url
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 

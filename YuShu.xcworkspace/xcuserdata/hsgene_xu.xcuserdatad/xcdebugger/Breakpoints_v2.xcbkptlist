@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YuShu/Classes/Manager/UserManager/UserInfo.swift"
-            timestampString = "528023825.519044"
+            timestampString = "528362377.960944"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "transformFromJSON(_:)"
             landmarkType = "7">
          </BreakpointContent>

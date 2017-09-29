@@ -81,11 +81,16 @@ class YSTransferDetailViewController: RootViewController {
             }
         }
         commentView.actionBlock = block
-        
+        commentView.loadUserInfo(item_id: transferId, type: "transfer")
         
     }
     func setupRx() {
-        
+        NotificationCenter.default.rx.notification(CommentDidNotification).subscribe(onNext: { [unowned self] (_) in
+            self.loadServerData()
+            
+            }, onError: { (err) in
+                
+        }).addDisposableTo(disposeBag)
     }
     
     override func loadServerData() {
@@ -196,7 +201,9 @@ extension YSTransferDetailViewController{
             let code = data["code"] as? Int
             if code == 1 {
                 SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
-                self.tableView.reloadData()
+                self.commentView.textField.text = ""
+                self.view.endEditing(true)
+                self.loadServerData()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
             }
@@ -302,11 +309,19 @@ class YSPostSuggestDetailViewController: RootViewController {
             }
         }
         commentView.actionBlock = block
-        
+        commentView.loadUserInfo(item_id: transferId, type: "post")
         
     }
     func setupRx() {
-        
+        NotificationCenter.default.rx.notification(CommentDidNotification).subscribe(onNext: { [unowned self] (_) in
+            self.loadServerData()
+            
+           
+            
+            
+            }, onError: { (err) in
+                
+        }).addDisposableTo(disposeBag)
     }
     
     override func loadServerData() {
@@ -418,6 +433,8 @@ extension YSPostSuggestDetailViewController{
             let code = data["code"] as? Int
             if code == 1 {
                 SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
+                self.commentView.textField.text = ""
+                self.view.endEditing(true)
                 self.loadServerData()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
@@ -438,6 +455,12 @@ extension YSPostSuggestDetailViewController: UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let container = UIView.tableViewHeaderView(height: 40, title: "评论 \(contents.count)")
         return container
+    }
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .normal, title: "删除") { (_, indexPath) in
+            
+        }
+        return [delete]
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YSCommentTableViewCell", for: indexPath) as! YSCommentTableViewCell

@@ -85,7 +85,7 @@ class YSAnnounceDetailViewController: RootViewController {
             case 0:
                 self.like(btn: btn)
             case 1:
-                self.save()
+                self.save(btn: btn)
             case 2:
                 self.send()
             default:
@@ -93,13 +93,21 @@ class YSAnnounceDetailViewController: RootViewController {
             }
         }
         commentView.actionBlock = block
-        
+        commentView.loadUserInfo(item_id: announceId, type: "adminnotice")
         
     }
     func setupRx() {
+        
         webView.rx.observe(Double.self, "estimatedProgress").subscribe(onNext: { [unowned self] (progress) in
             self.progressView.progress = Float(progress ?? 0)
             self.progressView.isHidden = progress == 1
+        }).addDisposableTo(disposeBag)
+        
+        NotificationCenter.default.rx.notification(CommentDidNotification).subscribe(onNext: { [unowned self] (_) in
+            self.loadServerData()
+           
+            }, onError: { (err) in
+                
         }).addDisposableTo(disposeBag)
     }
     override func loadServerData() {
@@ -127,18 +135,7 @@ class YSAnnounceDetailViewController: RootViewController {
         }).addDisposableTo(disposeBag)
         
         
-        NetworkManager.providerHomeApi.request(.getPraiseList(user_id: userId, type: "adminnotice", item_id: announceId)).mapArray(PraiseUser.self).subscribe(onNext: { (list) in
-            self.praiseBtn.setTitle(" \(list.count)", for: .normal)
-            for user in list {
-                if userId == user.user_id {
-                    self.commentView.likeButton.isSelected = true
-                    return
-                }
-            }
-            self.commentView.likeButton.isSelected = false
-        }, onError: { (err) in
-            self.praiseBtn.setTitle(" 0", for: .normal)
-        }).addDisposableTo(disposeBag)
+     
         
     }
     
@@ -178,8 +175,29 @@ extension YSAnnounceDetailViewController{
             WXActivityIndicatorView.stop()
         }).addDisposableTo(disposeBag)
     }
-    func save() {
-        
+    func save(btn bt: UIButton) {
+        guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
+        WXActivityIndicatorView.start()
+        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "adminnotice", collection_item_id: announceId)).mapJSON().subscribe(onNext: { (res) in
+            WXActivityIndicatorView.stop()
+            guard let respon = res as? Dictionary<String, Any> else{
+                return
+            }
+            guard let data = respon["data"] as? Dictionary<String, Any> else {
+                return
+            }
+            let msg = data["msg"] as? String
+            let code = data["code"] as? Int
+            if code == 1 {
+                SVProgressHUD.showSuccess(withStatus: msg ?? "收藏成功")
+                bt.isSelected = !bt.isSelected
+            }else{
+                SVProgressHUD.showError(withStatus: msg ?? "收藏失败")
+            }
+            
+        }, onError: { (err) in
+            WXActivityIndicatorView.stop()
+        }).addDisposableTo(disposeBag)
     }
     
     func send() {
@@ -197,7 +215,10 @@ extension YSAnnounceDetailViewController{
             let code = data["code"] as? Int
             if code == 1 {
                 SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
-                self.tableView.reloadData()
+                
+                self.commentView.textField.text = ""
+                self.view.endEditing(true)
+                self.loadServerData()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
             }

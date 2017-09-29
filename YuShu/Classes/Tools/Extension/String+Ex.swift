@@ -79,6 +79,40 @@ extension String {
         }
     }
     
+    func categoryStr() ->String {
+        switch self {
+        case "adminnotice":
+            return "群主公告"
+        case "post":
+            return "动态建议"
+        case "transfer":
+            return "闲置转让"
+        case "guide":
+            return "装修指南"
+        case "vote":
+            return "投票"
+        default:
+            return ""
+        }
+    }
+    func categoryColor() ->UIColor {
+        switch self {
+        case "adminnotice":
+            return UIColor.flatRed
+        case "post":
+            return UIColor.flatBlue
+        case "transfer":
+            return UIColor.flatGreen
+        case "guide":
+            return UIColor.flatPlumDark
+        case "vote":
+            return UIColor.flatGray
+        default:
+            return UIColor.flatRed
+        }
+    }
+
+    
     func timeStr()-> String {
         let time = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
         let timeStr = time.format(with: "yyyy-MM-dd")
@@ -90,7 +124,10 @@ extension String {
         return timeStr
     }
     func timeAgo()-> String {
-        let time = Date(timeIntervalSince1970: TimeInterval(self) ?? 0)
+        guard let timeInter = TimeInterval(self) else {
+            return ""
+        }
+        let time = Date(timeIntervalSince1970: timeInter)
         let str = time.timeAgoSinceNow
         return str
     }

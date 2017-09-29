@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YSMoreImageCollectionReusableView" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YSMoreImageCollectionReusableView" id="U6b-Vx-4bR" customClass="YSMoreImageCollectionReusableView" customModule="YuShu" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -21,13 +21,26 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="skyWalker"/>
                     </userDefinedRuntimeAttributes>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5d-le-2fN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                    <connections>
+                        <action selector="clicked:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="Ec3-XS-gxA"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mXF-MB-ZBD" secondAttribute="trailing" id="3sc-Ke-OBv"/>
                 <constraint firstItem="mXF-MB-ZBD" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="MrD-JI-6Qa"/>
+                <constraint firstItem="j5d-le-2fN" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="OQz-rH-EVv"/>
+                <constraint firstAttribute="bottom" secondItem="j5d-le-2fN" secondAttribute="bottom" id="QTl-db-uuM"/>
+                <constraint firstItem="j5d-le-2fN" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="WDn-ZZ-J8B"/>
                 <constraint firstAttribute="bottom" secondItem="mXF-MB-ZBD" secondAttribute="bottom" id="aJe-cN-6td"/>
                 <constraint firstItem="mXF-MB-ZBD" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="mkm-rO-CXt"/>
+                <constraint firstAttribute="trailing" secondItem="j5d-le-2fN" secondAttribute="trailing" id="rR2-kp-RFG"/>
             </constraints>
+            <connections>
+                <outlet property="backImageView" destination="mXF-MB-ZBD" id="Su7-Od-W19"/>
+            </connections>
             <point key="canvasLocation" x="25" y="70.5"/>
         </collectionReusableView>
     </objects>

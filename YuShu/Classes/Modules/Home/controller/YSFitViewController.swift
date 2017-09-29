@@ -202,7 +202,10 @@ extension YSFitmentViewController: UICollectionViewDelegate,UICollectionViewData
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let fit = fitments[indexPath.item]
+        let vc = YSFitDetailViewController()
+        vc.announceId = fit.guide_id ?? ""
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -21,8 +21,8 @@ struct Comment: Mappable{
     }
     mutating func mapping(map: Map) {
         comment_id <- map["comment_id"]
-        comment_desc <- map["comment_id"]
-        comment_addtime <- map["comment_id"]
+        comment_desc <- map["comment_desc"]
+        comment_addtime <- map["comment_addtime"]
         user_id <- map["user_id"]
         user_name <- map["user_name"]
         user_headpic <- (map["user_headpic"], AvatarTransform())

@@ -26,6 +26,12 @@ enum UserApi {
     case myMessage(isComment: Bool,user_id: String, page: Int)
     case getPushedArticles(user_id: String, page: Int)
     case uploadImage(image: UIImage)
+    
+    case getMyPost(type: Int,user_id: String) //type-1:最新动态 2:闲置转让 3:公共建议
+    case getMyCollection(user_id: String, page: Int)
+    
+    case getMyRelationWithItem(item_id: String, user_id: String, type: String)
+    case getHeadInfo(type: String)
 }
 
 extension UserApi: TargetType {
@@ -137,6 +143,31 @@ extension UserApi: TargetType {
         case .uploadImage(_):
             
             return nil
+        case let .getMyPost(type, user_id):
+            var params: [String: Any] = [:]
+            params["type"] = type
+            params["user_id"] = user_id
+            params["service"] = "User.getMyPost"
+            return params
+        case let .getMyCollection(user_id, page):
+            var params: [String: Any] = [:]
+            params["page"] = page
+            params["user_id"] = user_id
+            params["service"] = "User.getMyCollection"
+            return params
+        case let .getMyRelationWithItem(item_id, user_id, type):
+            var params: [String: Any] = [:]
+            params["item_id"] = item_id
+            params["user_id"] = user_id
+            params["type"] = type
+            params["service"] = "Index.getMyRelationWithItem"
+            return params
+        case let .getHeadInfo(type):
+            var params: [String: Any] = [:]
+            params["type"] = type
+            params["service"] = "Index.getHeadInfo" //物业人事：personnel 民意投票：vote 邻里：user 图片：image 视频：video
+            return params
+
         }
     }
     var sampleData: Data {

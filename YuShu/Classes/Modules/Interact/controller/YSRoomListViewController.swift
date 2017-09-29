@@ -14,6 +14,7 @@ class YSRoomListViewController: RootViewController {
     var roomList: [Room] = []
     var user_floor = ""
     
+    var head: HeadModel?
     let popView = YSUserListView(frame: KScreenBounds)
     
     override func viewDidLoad() {
@@ -63,7 +64,12 @@ class YSRoomListViewController: RootViewController {
                     self.collectionView.mj_header.endRefreshing()
             }).addDisposableTo(disposeBag)
         
-        
+        NetworkManager.providerUserApi.request(.getHeadInfo(type: "user")).mapObject(HeadModel.self).subscribe(onNext: { (info) in
+            self.head = info
+            self.collectionView.reloadData()
+        }, onError: { (err) in
+            
+        }).addDisposableTo(disposeBag)
         
         
         
@@ -102,7 +108,13 @@ extension YSRoomListViewController : UICollectionViewDataSource,UICollectionView
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "YSMoreImageCollectionReusableView", for: indexPath)
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "YSMoreImageCollectionReusableView", for: indexPath) as! YSMoreImageCollectionReusableView
+        if let headM = self.head {
+            headView.backImageView.kfImage(headM.head_image ?? "")
+            headView.closure = { [unowned self] in
+                self.webDetail(url: (headM.head_url ?? ""))
+            }
+        }
         return headView
     }
     

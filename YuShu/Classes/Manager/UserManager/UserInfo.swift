@@ -84,6 +84,34 @@ class AvatarTransform : TransformType {
     
 }
 
+class URLTransform : TransformType {
+    
+    
+    
+    public typealias Object = String
+    
+    public typealias JSON = String
+    
+    
+    func transformFromJSON(_ value: Any?) -> String? {
+        guard let valueStr = value as? String else {
+            return nil
+        }
+        return BaseUrlStr + valueStr
+    }
+    
+    func transformToJSON(_ value: String?) -> String? {
+        var result = value
+        guard let rang = value?.range(of: BaseUrlStr) else {
+            return value
+        }
+        result?.removeSubrange(rang)
+        return result
+    }
+    
+}
+
+
 
 class DateTransform : TransformType {
     

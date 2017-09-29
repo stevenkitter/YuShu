@@ -74,6 +74,24 @@ extension YSMeHeadView: UICollectionViewDataSource, UICollectionViewDelegate {
         cell.numLabel.text = model.num
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let superVc = self.superVc() else {return}
+        let cell = cells[indexPath.item]
+        var vc: RootViewController? = nil
+        switch cell.title {
+        case "我发布的":
+            vc = YSMyPostViewController()
+        case "我收藏的":
+            vc = YSMYCollectViewController()
+        case "我评论的":
+            vc = YSMYCommetViewController()
+        case "我点赞的":
+            vc = YSMYFavorViewController()
+        default:
+            print()
+        }
+        superVc.navigationController?.pushViewController(vc!, animated: true)
+    }
 }
 
 

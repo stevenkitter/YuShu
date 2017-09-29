@@ -15,7 +15,7 @@ let pageParameters: [CAPSPageMenuOption] = [
     .bottomMenuHairlineColor(UIColor.white),
     .menuItemFont(UIFont.systemFont(ofSize: 14)),
     .menuHeight(45.0),
-    .menuItemWidthBasedOnTitleTextWidth(true),
+    .menuItemWidth(KScreenWidth / 3),
     .centerMenuItems(true)
 ]
 class YSAnnounceMainViewController: RootViewController {

@@ -20,6 +20,7 @@ class CommentToolView: UIView {
     @IBOutlet weak var textField: UITextView!
 
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var collectBtn: UIButton!
     
     @IBOutlet weak var sendButton: UIButton!
     
@@ -86,14 +87,22 @@ class CommentToolView: UIView {
         shareBtnWidth.constant = 0
     }
     
-    func loadUserInfo() {
+    func loadUserInfo(item_id: String, type: String) {
         guard let userid = UserManager.shareUserManager.curUserInfo?.user_id else {
             return
         }
-        NetworkManager.providerHomeApi.request(.isCollect(article_id: article_id, user_id: userid)).mapJSON().subscribe(onNext: { [unowned self] (res) in
-            let respon = res as! Dictionary<String, Any>
-            let isCollected = (respon["data"] as! Dictionary<String, Any>)["data"] as! String
-            self.likeButton.isSelected = isCollected == "1"
+        NetworkManager.providerUserApi.request(.getMyRelationWithItem(item_id: item_id, user_id: userid, type: type)).mapJSON().subscribe(onNext: { [unowned self] (res) in
+            guard let respon = res as? Dictionary<String, Any> else{
+                return
+            }
+            guard let data = respon["data"] as? Dictionary<String, Any> else {
+                return
+            }
+            guard let info = data["info"] as? [String: String] else {return}
+            
+            self.likeButton.isSelected = info["ispraise"] == "1"
+            self.collectBtn.isSelected = info["iscollecte"] == "1"
+            
         }).addDisposableTo(dispose)
     }
 }

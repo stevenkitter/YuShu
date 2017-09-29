@@ -17,3 +17,5 @@ let NotificationNetWorkStateChange = Notification.Name(rawValue: "NotificationNe
 let NotifyCircleAdded = NSNotification.Name(rawValue:"NotifyCircleAdded")
 
 let UserInfoChanged = NSNotification.Name(rawValue:"UserInfoChanged")
+
+let CommentDidNotification = NSNotification.Name(rawValue:"CommentDidNotification")
