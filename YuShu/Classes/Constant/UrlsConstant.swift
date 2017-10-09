@@ -22,3 +22,5 @@ let WebUrl = WebViewUrl + "slide_display/slide_id/"
 //群主公告webview：
 let AnnounceUrl = WebViewUrl + "adminnotice_display/adminnotice_id/"
 
+let GuideUrl = WebViewUrl + "guide_display/guide_id/"
+

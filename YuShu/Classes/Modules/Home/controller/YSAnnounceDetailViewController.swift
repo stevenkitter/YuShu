@@ -17,6 +17,8 @@ class YSAnnounceDetailViewController: RootViewController {
     }
     var webUrl = ""
     
+    var type = "adminnotice"
+    
     var contents: [Comment] = []
     var praiseUsers: [PraiseUser] = []
     
@@ -93,7 +95,7 @@ class YSAnnounceDetailViewController: RootViewController {
             }
         }
         commentView.actionBlock = block
-        commentView.loadUserInfo(item_id: announceId, type: "adminnotice")
+        commentView.loadUserInfo(item_id: announceId, type: type)
         
     }
     func setupRx() {
@@ -113,7 +115,7 @@ class YSAnnounceDetailViewController: RootViewController {
     override func loadServerData() {
         super.loadServerData()
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
-        NetworkManager.providerHomeApi.request(.getCommentList(user_id: userId, type: "adminnotice", item_id: announceId, page: page))
+        NetworkManager.providerHomeApi.request(.getCommentList(user_id: userId, type: type, item_id: announceId, page: page))
         .mapArray(Comment.self).subscribe(onNext: { (list) in
             
             if self.page == 1 {
@@ -135,7 +137,11 @@ class YSAnnounceDetailViewController: RootViewController {
         }).addDisposableTo(disposeBag)
         
         
-     
+        NetworkManager.providerHomeApi.request(.getPraiseList(user_id: userId, type: type, item_id: announceId)).mapArray(PraiseUser.self).subscribe(onNext: { (list) in
+            self.praiseBtn.setTitle("\(list.count)", for: .normal)
+        }, onError: { (err) in
+            
+        }).addDisposableTo(disposeBag)
         
     }
     
@@ -154,7 +160,7 @@ extension YSAnnounceDetailViewController{
     func like(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "adminnotice", praise_item_id: announceId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: type, praise_item_id: announceId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -167,6 +173,7 @@ extension YSAnnounceDetailViewController{
             if code == 1 {
                 SVProgressHUD.showSuccess(withStatus: msg ?? "点赞成功")
                 bt.isSelected = !bt.isSelected
+                self.tableView.mj_header.beginRefreshing()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "点赞失败")
             }
@@ -178,7 +185,7 @@ extension YSAnnounceDetailViewController{
     func save(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "adminnotice", collection_item_id: announceId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: type, collection_item_id: announceId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -191,6 +198,7 @@ extension YSAnnounceDetailViewController{
             if code == 1 {
                 SVProgressHUD.showSuccess(withStatus: msg ?? "收藏成功")
                 bt.isSelected = !bt.isSelected
+                self.tableView.mj_header.beginRefreshing()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "收藏失败")
             }
@@ -203,7 +211,7 @@ extension YSAnnounceDetailViewController{
     func send() {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doComment(user_id: userId, comment_type: "adminnotice", comment_item_id: announceId, comment_desc: commentView.textField.text)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doComment(user_id: userId, comment_type: type, comment_item_id: announceId, comment_desc: commentView.textField.text)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -218,7 +226,7 @@ extension YSAnnounceDetailViewController{
                 
                 self.commentView.textField.text = ""
                 self.view.endEditing(true)
-                self.loadServerData()
+                self.tableView.mj_header.beginRefreshing()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
             }

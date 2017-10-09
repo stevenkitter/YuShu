@@ -20,6 +20,7 @@ class YSTransferViewController: RootViewController {
         setupUI()
         setupRefresh()
         loadServerData()
+        setupRx()
     }
     
     func setupUI() {
@@ -69,6 +70,15 @@ class YSTransferViewController: RootViewController {
         vc.postWhat = 1
         parentVc?.present(vc, animated: true, completion: nil)
     }
+    
+    func setupRx() {
+        NotificationCenter.default.rx.notification(NotifyCircleAdded).subscribe(onNext: { [unowned self] (_) in
+            self.tableView.mj_header.beginRefreshing()
+            
+            }, onError: { (err) in
+                
+        }).addDisposableTo(disposeBag)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -111,6 +121,7 @@ class YSNewCircleViewController: RootViewController {
         setupUI()
         setupRefresh()
         loadServerData()
+        setupRx()
     }
     
     func setupUI() {
@@ -152,6 +163,14 @@ class YSNewCircleViewController: RootViewController {
         }, onError: { (err) in
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
+        }).addDisposableTo(disposeBag)
+    }
+    func setupRx() {
+        NotificationCenter.default.rx.notification(NotifyCircleAdded).subscribe(onNext: { [unowned self] (_) in
+            self.tableView.mj_header.beginRefreshing()
+            
+            }, onError: { (err) in
+                
         }).addDisposableTo(disposeBag)
     }
     
@@ -204,6 +223,7 @@ class YSSuggestViewController: RootViewController {
         setupUI()
         setupRefresh()
         loadServerData()
+        setupRx()
     }
     
     func setupUI() {
@@ -252,6 +272,15 @@ class YSSuggestViewController: RootViewController {
         let vc = YSTransferAddViewController()
         vc.postWhat = 2
         parentVc?.present(vc, animated: true, completion: nil)
+    }
+    
+    func setupRx() {
+        NotificationCenter.default.rx.notification(NotifyCircleAdded).subscribe(onNext: { [unowned self] (_) in
+            self.tableView.mj_header.beginRefreshing()
+            
+            }, onError: { (err) in
+                
+        }).addDisposableTo(disposeBag)
     }
     
     override func didReceiveMemoryWarning() {

@@ -25,6 +25,7 @@ class YSTransferDetailViewController: RootViewController {
     let tableViewHeader = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 10))
     let commentView = CommentToolView.default()!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -140,7 +141,7 @@ extension YSTransferDetailViewController{
     func like(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "transfer", praise_item_id: transferId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "transfer", praise_item_id: transferId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -164,7 +165,7 @@ extension YSTransferDetailViewController{
     func save(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "post", collection_item_id: transferId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "post", collection_item_id: transferId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -203,7 +204,7 @@ extension YSTransferDetailViewController{
                 SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
                 self.commentView.textField.text = ""
                 self.view.endEditing(true)
-                self.loadServerData()
+                self.tableView.mj_header.beginRefreshing()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
             }
@@ -371,7 +372,7 @@ extension YSPostSuggestDetailViewController{
     func like(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "post", praise_item_id: transferId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doPraise(user_id: userId, praise_type: "post", praise_item_id: transferId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -395,7 +396,7 @@ extension YSPostSuggestDetailViewController{
     func save(btn bt: UIButton) {
         guard let userId = UserManager.shareUserManager.curUserInfo?.user_id else {return}
         WXActivityIndicatorView.start()
-        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "post", collection_item_id: transferId)).mapJSON().subscribe(onNext: { (res) in
+        NetworkManager.providerHomeApi.request(.doCollection(user_id: userId, collection_type: "post", collection_item_id: transferId, cancle: bt.isSelected ? 1 : 0)).mapJSON().subscribe(onNext: { (res) in
             WXActivityIndicatorView.stop()
             guard let respon = res as? Dictionary<String, Any> else{
                 return
@@ -435,7 +436,7 @@ extension YSPostSuggestDetailViewController{
                 SVProgressHUD.showSuccess(withStatus: msg ?? "评论成功")
                 self.commentView.textField.text = ""
                 self.view.endEditing(true)
-                self.loadServerData()
+                self.tableView.mj_header.beginRefreshing()
             }else{
                 SVProgressHUD.showError(withStatus: msg ?? "评论失败")
             }

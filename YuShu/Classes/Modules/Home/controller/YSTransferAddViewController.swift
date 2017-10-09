@@ -103,6 +103,7 @@ class YSTransferAddViewController: RootViewController {
                 let code = data["code"] as? Int
                 if code == 1 {
                     SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    NotificationCenter.default.post(name: NotifyCircleAdded, object: nil)
                     self.dismiss(animated: true, completion: nil)
                     
                 }else{
@@ -128,6 +129,7 @@ class YSTransferAddViewController: RootViewController {
                 let code = data["code"] as? Int
                 if code == 1 {
                     SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    NotificationCenter.default.post(name: NotifyCircleAdded, object: nil)
                     self.dismiss(animated: true, completion: nil)
                     
                 }else{
@@ -153,6 +155,7 @@ class YSTransferAddViewController: RootViewController {
                 let code = data["code"] as? Int
                 if code == 1 {
                     SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    NotificationCenter.default.post(name: NotifyCircleAdded, object: nil)
                     self.dismiss(animated: true, completion: nil)
                     
                 }else{

@@ -203,9 +203,12 @@ extension YSFitmentViewController: UICollectionViewDelegate,UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let fit = fitments[indexPath.item]
-        let vc = YSFitDetailViewController()
+        let vc = YSAnnounceDetailViewController()
         vc.announceId = fit.guide_id ?? ""
-        self.navigationController?.pushViewController(vc, animated: true)
+        vc.webUrl = GuideUrl + (fit.guide_id ?? "")
+        vc.type = "guide"
+        parentVc?.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
