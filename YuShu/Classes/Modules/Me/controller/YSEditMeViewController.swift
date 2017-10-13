@@ -36,6 +36,7 @@ class YSEditMeViewController: RootViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 50, 0))
         }
+        
         tableView.register(str: "YSEditMeImageTableViewCell")
         tableView.register(str: "YSEditMeTableViewCell")
     }
@@ -109,6 +110,7 @@ extension YSEditMeViewController: UITableViewDelegate, UITableViewDataSource {
         switch model.title {
         case "头像":
             let cell = tableView.dequeueReusableCell(withIdentifier: "YSEditMeImageTableViewCell", for: indexPath) as! YSEditMeImageTableViewCell
+            
             cell.ys_titleLabel.text = model.title
             cell.ys_imageView.kfImage(model.num)
             return cell
