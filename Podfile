@@ -24,7 +24,7 @@ target 'YuShu' do
 #  pod 'AMapLocation'        # 高德地图
   pod 'IQKeyboardManagerSwift'    #键盘
   pod 'NVActivityIndicatorView'   #转圈
-  pod 'CryptoSwift'             #加密算法
+  pod 'CryptoSwift', '~> 0.7.0'             #加密算法
   pod 'SVProgressHUD'           #提示
   pod 'LLCycleScrollView'       #轮播
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'    #颜色

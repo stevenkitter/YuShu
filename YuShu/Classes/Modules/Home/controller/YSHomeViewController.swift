@@ -45,8 +45,13 @@ class YSHomeViewController: RootViewController {
             make.edges.equalTo(headContainer)
         }
         tableView.tableHeaderView = headContainer
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }else{
+            automaticallyAdjustsScrollViewInsets = false
+        }
         
-        automaticallyAdjustsScrollViewInsets = false
+        
     }
     
     override func setupRefresh() {
