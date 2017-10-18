@@ -7,16 +7,24 @@
 //
 
 import UIKit
-
+import LLCycleScrollView
 class YSFitViewController: RootViewController {
-
-    var contents: [YSMeHeadViewCellM] = [YSMeHeadViewCellM(image: "辅材商店", title: "辅材商店", num: "装修辅材 泥沙 砖瓦"), YSMeHeadViewCellM(image: "装修配套", title: "装修配套", num: "配套材料 吊灯 沙发")]
+    var contents: [PostSuggest] = []
+//    var contents: [YSMeHeadViewCellM] = [YSMeHeadViewCellM(image: "辅材商店", title: "辅材商店", num: "装修辅材 泥沙 砖瓦"), YSMeHeadViewCellM(image: "装修配套", title: "装修配套", num: "配套材料 吊灯 沙发")]
+    var slides: [Slide] = []
+    let footer = YSNextPageView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 50))
+    
+    let btn = UIButton.buttonWithImage(image: UIImage(named: "tab_willsell")!)
+    let btns = YSThreeBtns.default()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "全部分类"
+        self.title = "装修指南"
         
         setupUI()
+        setupRefresh()
+        setupRx()
+        tableView.mj_header.beginRefreshing()
     }
 
     func setupUI() {
@@ -26,10 +34,102 @@ class YSFitViewController: RootViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
-        tableView.register(str: "YSFitmentTableViewCell")
+        tableView.register(str: "AnnounceTableViewCell")
         tableView.backgroundColor = UIColor.groupTableViewBackground
         tableView.separatorStyle = .singleLine
+        tableView.tableFooterView = footer
+        
+        footer.delegate = self
+        
+        view.addSubview(btn)
+        btn.addTarget(self, action: #selector(addTransfer), for: .touchUpInside)
+        btn.snp.makeConstraints { (make) in
+            make.right.equalTo(self.view).offset(-20)
+            make.bottom.equalTo(self.view).offset(-50)
+            
+        }
+        
+        setupHeader()
+        
+        btns.closure = {btn in
+            if btn.tag == 0 {
+                let vc = YSFitmentMainViewController()
+                vc.type = 1
+                vc.title = "辅材商店"
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                let vc = YSFitmentMainViewController()
+                vc.type = 2
+                vc.title = "装修配套"
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
     
+    func addTransfer() {
+        let vc = YSTransferAddViewController()
+        vc.postWhat = 3
+        self.present(vc, animated: true, completion: nil)
+    }
+    func setupRx() {
+        NotificationCenter.default.rx.notification(NotifyCircleAdded).subscribe(onNext: { [unowned self] (_) in
+            self.tableView.mj_header.beginRefreshing()
+            
+            }, onError: { (err) in
+                
+        }).addDisposableTo(disposeBag)
+    }
+    
+    
+    
+    func setupHeader() {
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: KScreenWidth, height: 160+50))
+        let adView = LLCycleScrollView.llCycleScrollViewWithFrame(CGRect(x: 0, y: 0, width: KScreenWidth, height: 160), didSelectItemAtIndex: { [unowned self] (index) in
+            
+            let ad = self.slides[index]
+            let vc = YSWebViewController()
+            vc.url = WebUrl + (ad.slide_id ?? "")
+            vc.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+        adView.autoScroll = true
+        adView.autoScrollTimeInterval = 4.0
+        adView.customPageControlStyle = .snake
+        adView.titleBackgroundColor = UIColor.clear
+        
+        container.addSubview(adView)
+        
+        btns.frame = CGRect(x: 0, y: 160, width: KScreenWidth, height: 50)
+        container.addSubview(btns)
+        
+        tableView.tableHeaderView = container
+    }
+    override func setupRefresh() {
+        tableView.mj_header = RefreshHeader(refreshingBlock: { [unowned self] in
+            self.loadServerData()
+        })
+    }
+    
+    override func loadServerData() {
+        NetworkManager.providerHomeApi.request(.postInfo(page: page, post_type: "3")).mapObject(PostSuggestInfo.self).subscribe(onNext: { (info) in
+            self.contents.removeAll()
+            
+            self.contents.append(contentsOf: info.list)
+            
+            self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            
+            if let myPage = Int(info.page_count ?? "") {
+                self.footer.allPage = myPage
+            }
+            
+            
+            self.footer.page = self.page
+            
+        }, onError: { (err) in
+            self.tableView.mj_header.endRefreshing()
+            
+        }).addDisposableTo(disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,36 +140,42 @@ class YSFitViewController: RootViewController {
 
   
 }
+
+extension YSFitViewController: YSNextPageViewDelegate {
+    func forward() {
+        page -= 1
+        loadServerData()
+    }
+    func nextPage() {
+        page += 1
+        loadServerData()
+    }
+    func go(page: Int) {
+        self.page = page
+        loadServerData()
+    }
+    
+}
+
 extension YSFitViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let con = contents[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YSFitmentTableViewCell", for: indexPath) as! YSFitmentTableViewCell
-        cell.iconImageView.image = UIImage(named: con.image)
-        cell.ys_titleLabel.text = con.title
-        cell.contentLabel.text = con.num
-        
+        let mo = contents[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnnounceTableViewCell", for: indexPath) as! AnnounceTableViewCell
+        cell.ys_titleLabel.text = mo.post_title
+        cell.timeLabel.text = (mo.post_addtime ?? "").timeStr()
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = YSFitmentMainViewController()
-        switch contents[indexPath.row].title {
-        case "辅材商店":
-            vc.type = 1
-        case "装修配套":
-            vc.type = 2
-        default:
-            vc.type = 1
-        }
-        vc.title = contents[indexPath.row].title
+        let tr = contents[indexPath.row]
+        let vc = YSPostSuggestDetailViewController()
+        vc.postSuggest = tr
+        vc.transferId = tr.post_id ?? ""
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 }
 
@@ -170,6 +276,7 @@ class YSFitmentViewController: RootViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.groupTableViewBackground
+        collectionView.contentInset = UIEdgeInsetsMake(5, 0, 0, 0)
         collectionView.register(str: "YSFitmentCollectionViewCell")
         collectionView.corner()
         

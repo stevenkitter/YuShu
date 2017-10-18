@@ -68,6 +68,9 @@
 		18884E4C1F62CF7300D285F7 /* YSPactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18884E4B1F62CF7300D285F7 /* YSPactViewController.swift */; };
 		18884E4E1F62CF9300D285F7 /* YSRimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18884E4D1F62CF9300D285F7 /* YSRimViewController.swift */; };
 		18884E501F62D04C00D285F7 /* Announce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18884E4F1F62D04C00D285F7 /* Announce.swift */; };
+		1899EE881F9722EA00CE4607 /* AroundInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1899EE871F9722EA00CE4607 /* AroundInfo.swift */; };
+		18C842271F9749990029C8B8 /* YSThreeBtns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C842261F9749990029C8B8 /* YSThreeBtns.swift */; };
+		18C842291F9749AE0029C8B8 /* YSThreeBtns.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18C842281F9749AE0029C8B8 /* YSThreeBtns.xib */; };
 		18D788371F5D33FE00312DF4 /* YSMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D788361F5D33FE00312DF4 /* YSMeViewController.swift */; };
 		18D7883C1F5D359D00312DF4 /* YSInterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */; };
 		18D7883F1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D7883D1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift */; };
@@ -271,6 +274,9 @@
 		18884E4B1F62CF7300D285F7 /* YSPactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSPactViewController.swift; sourceTree = "<group>"; };
 		18884E4D1F62CF9300D285F7 /* YSRimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSRimViewController.swift; sourceTree = "<group>"; };
 		18884E4F1F62D04C00D285F7 /* Announce.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announce.swift; sourceTree = "<group>"; };
+		1899EE871F9722EA00CE4607 /* AroundInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundInfo.swift; sourceTree = "<group>"; };
+		18C842261F9749990029C8B8 /* YSThreeBtns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YSThreeBtns.swift; sourceTree = "<group>"; };
+		18C842281F9749AE0029C8B8 /* YSThreeBtns.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YSThreeBtns.xib; sourceTree = "<group>"; };
 		18D788361F5D33FE00312DF4 /* YSMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSMeViewController.swift; sourceTree = "<group>"; };
 		18D7883B1F5D359D00312DF4 /* YSInterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSInterViewController.swift; sourceTree = "<group>"; };
 		18D7883D1F5D36B600312DF4 /* YSHomeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YSHomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -755,6 +761,7 @@
 				EC814DA71F78DDC0009A110D /* FitmentType.swift */,
 				EC70EEC31F7B76400092F7B8 /* PostSuggest.swift */,
 				ECAE659F1F7E25810013549E /* HeadModel.swift */,
+				1899EE871F9722EA00CE4607 /* AroundInfo.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -806,6 +813,8 @@
 				EC814DAA1F78E4D5009A110D /* YSFitmentTableViewCell.xib */,
 				EC814DAD1F78F97E009A110D /* YSFitmentCollectionViewCell.swift */,
 				EC814DAE1F78F97E009A110D /* YSFitmentCollectionViewCell.xib */,
+				18C842261F9749990029C8B8 /* YSThreeBtns.swift */,
+				18C842281F9749AE0029C8B8 /* YSThreeBtns.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1020,6 +1029,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C842291F9749AE0029C8B8 /* YSThreeBtns.xib in Resources */,
 				18EF427B1F5CFC08008280F3 /* YSHomeTableViewCell.xib in Resources */,
 				18EF427F1F5CFC42008280F3 /* YSHomeHeadView.xib in Resources */,
 				18884E3E1F62BC2100D285F7 /* YSHomeEightCollectionViewCell.xib in Resources */,
@@ -1290,6 +1300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1899EE881F9722EA00CE4607 /* AroundInfo.swift in Sources */,
 				1843522C1F5CF54200BB86CA /* WXMessage.swift in Sources */,
 				184352691F5CF54200BB86CA /* RootViewController+Ex.swift in Sources */,
 				ECA4A32F1F6B7DA600F7700E /* YSTransferDetailViewController.swift in Sources */,
@@ -1392,6 +1403,7 @@
 				EC81AF4E1F6F716D006BD086 /* YSPersonalViewController.swift in Sources */,
 				1843522A1F5CF54200BB86CA /* UserProfileManager.swift in Sources */,
 				EC70EEC41F7B76400092F7B8 /* PostSuggest.swift in Sources */,
+				18C842271F9749990029C8B8 /* YSThreeBtns.swift in Sources */,
 				ECA4A31F1F6B702600F7700E /* YSTransferAddViewController.swift in Sources */,
 				ECA4A32C1F6B7B5C00F7700E /* YSAddTextTableViewCell.swift in Sources */,
 				18EF42771F5CFBC4008280F3 /* YSHomeViewController.swift in Sources */,

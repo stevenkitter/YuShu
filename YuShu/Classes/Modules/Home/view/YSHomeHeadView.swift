@@ -207,6 +207,8 @@ extension YSHomeHeadView: UICollectionViewDelegate, UICollectionViewDataSource {
             vc = YSPactViewController()
         case "装修指南":
             vc = YSFitViewController()
+        case "周边便民":
+            vc = YSRimViewController()
         default:
             return
         }

@@ -14,7 +14,7 @@ import UIKit
     @objc optional func numberOfColsInWaterfallLayout(_ layout : YSMoreLayout) -> Int
 }
 
-let headH: CGFloat = 120 + 10
+let headH: CGFloat = 200 + 10
 
 class YSMoreLayout: UICollectionViewFlowLayout {
     
@@ -45,7 +45,7 @@ extension YSMoreLayout {
         
         let indexPath = IndexPath(item: 0, section: 0)
         let attr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: indexPath)
-        attr.frame = CGRect(x: 0, y: 0, width: KScreenWidth, height: 120)
+        attr.frame = CGRect(x: 0, y: 0, width: KScreenWidth, height: 200)
         attrsArray.append(attr)
         
         // 0.获取item的个数

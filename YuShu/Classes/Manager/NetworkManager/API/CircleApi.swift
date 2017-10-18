@@ -17,6 +17,9 @@ enum CircleApi {
     case getRoomList(user_floor: String)
     case getUserList(user_floor: String, user_room: String)
 //    case newCircle(content: String, user_id: String, images: [WXPostImage])
+    case getAroundTypes()
+    case getAroundSlids()
+    case getAroundInfo(page: Int, around_type_id: String)
 }
 
 extension CircleApi: TargetType {
@@ -58,7 +61,22 @@ extension CircleApi: TargetType {
             params["page"] = page
             params["service"] = "Friend.get_friendlist"
             return params
+        case .getAroundTypes:
+            var params: [String: Any] = [:]
+            params["service"] = "Index.getAroundTypeInfo"
+            return params
+        
+        case .getAroundSlids:
+            var params: [String: Any] = [:]
+            params["service"] = "Index.getAroundSlideInfo"
+            return params
             
+        case let .getAroundInfo(page, around_type_id):
+            var params: [String: Any] = [:]
+            params["page"] = page
+            params["around_type_id"] = around_type_id
+            params["service"] = "Index.getAroundInfo"
+            return params
         case let .sendComment(content, user_id, friend_id, about_user_id):
             var params: [String: Any] = [:]
             params["friend_id"] = friend_id

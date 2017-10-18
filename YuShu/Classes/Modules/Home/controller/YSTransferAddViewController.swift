@@ -14,7 +14,7 @@ class YSTransferAddViewController: RootViewController {
     let footBtn = UIButton.buttonWithTitle(normal: "发布", disable: "完整信息")
     var type = "2"
     
-    var postWhat = 0 // 0 1 2 最新 闲置 公共
+    var postWhat = 0 // 0 1 2 3 最新 闲置 公共 装修杂谈
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,9 @@ class YSTransferAddViewController: RootViewController {
         tableViewGrouped.dataSource = self
         
         self.view.addSubview(self.tableViewGrouped)
+        let h = UIApplication.shared.statusBarFrame.height
         tableViewGrouped.snp.makeConstraints { (make) in
-            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(64, 0, 50, 0))
+            make.edges.equalTo(self.view).inset(UIEdgeInsetsMake(h + 44, 0, 50, 0))
         }
         tableViewGrouped.register(str: "AddImageTableViewCell")
         tableViewGrouped.register(str: "YSAddTextTableViewCell")
@@ -47,6 +48,7 @@ class YSTransferAddViewController: RootViewController {
         item.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(cancel))
         
         view.addSubview(bar)
+        
         bar.snp.makeConstraints { (make) in
             make.left.right.equalTo(view)
             make.top.equalTo(view).offset(0)
@@ -118,6 +120,31 @@ class YSTransferAddViewController: RootViewController {
             WXActivityIndicatorView.start()
             
             NetworkManager.providerHomeApi.request(.doPost(post_title: thisTitle, post_desc: content ?? "", post_type: "1", user_id: userId, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
+                WXActivityIndicatorView.stop()
+                guard let respon = res as? Dictionary<String, Any> else{
+                    return
+                }
+                guard let data = respon["data"] as? Dictionary<String, Any> else {
+                    return
+                }
+                let msg = data["msg"] as? String
+                let code = data["code"] as? Int
+                if code == 1 {
+                    SVProgressHUD.showSuccess(withStatus: msg ?? "发布成功")
+                    NotificationCenter.default.post(name: NotifyCircleAdded, object: nil)
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }else{
+                    SVProgressHUD.showError(withStatus: msg ?? "发布失败")
+                }
+                
+            }, onError: { (err) in
+                WXActivityIndicatorView.stop()
+            }).addDisposableTo(disposeBag)
+        case 3:
+            WXActivityIndicatorView.start()
+            
+            NetworkManager.providerHomeApi.request(.doPost(post_title: thisTitle, post_desc: content ?? "", post_type: "3", user_id: userId, images: cell0.images)).mapJSON().subscribe(onNext: { (res) in
                 WXActivityIndicatorView.stop()
                 guard let respon = res as? Dictionary<String, Any> else{
                     return

@@ -19,13 +19,13 @@ class YSForumViewController: RootViewController {
     }
 
     func setupUI() {
-        let vc0 = YSNewCircleViewController()
+        let vc0 = YSNewCirclesViewController()
         vc0.title = "最新动态"
         vc0.parentVc = self
         let vc1 = YSTransferViewController()
         vc1.title = "闲置转让"
         vc1.parentVc = self
-        let vc2 = YSSuggestViewController()
+        let vc2 = YSSuggestsViewController()
         vc2.title = "公共建议"
         vc2.parentVc = self
         

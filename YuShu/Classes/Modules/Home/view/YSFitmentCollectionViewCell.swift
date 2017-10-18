@@ -27,6 +27,7 @@ class YSFitmentCollectionViewCell: UICollectionViewCell {
         iconImageView.kfImageNormal(fitment?.guide_image_path ?? "")
         contentLabel.text = fitment?.guide_title ?? ""
         addTimeLabel.text = (fitment?.guide_addtime ?? "").timeAgo()
+        favourBtn.setTitle(fitment?.guide_praise_count ?? "", for: .normal)
     }
     
     override func awakeFromNib() {

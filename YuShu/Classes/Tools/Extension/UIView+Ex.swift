@@ -219,6 +219,26 @@ extension UIView {
         for url in imageUrls{
             let photo = SKPhoto.photoWithImageURL(url)
             photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+           
+            images.append(photo)
+        }
+        
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(index)
+        
+        guard let superVc = self.superVc() else {
+            return
+        }
+        superVc.present(browser, animated: true, completion: {})
+    }
+    
+    func showImagesTitle(index: Int, imageUrls: [String],title: String) {
+        // 1. create URL Array
+        var images = [SKPhoto]()
+        for url in imageUrls{
+            let photo = SKPhoto.photoWithImageURL(url)
+            photo.shouldCachePhotoURLImage = true // you can use image cache by true(NSCache)
+            photo.caption = title
             images.append(photo)
         }
         
@@ -231,4 +251,6 @@ extension UIView {
         superVc.present(browser, animated: true, completion: {})
     }
 }
+
+
 

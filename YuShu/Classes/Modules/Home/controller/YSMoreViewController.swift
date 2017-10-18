@@ -12,6 +12,7 @@ import Hero
 class YSMoreViewController: RootViewController {
     var imageList: [ImageFile] = []
     var head: HeadModel?
+//    var image_package_id = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,7 @@ class YSMoreViewController: RootViewController {
         // 2.创建UICollectionView
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         collectionView.register(str: "YSHomeCollectionViewCell")
         collectionView.register(UINib(nibName: "YSMoreImageCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "YSMoreImageCollectionReusableView")
@@ -80,7 +82,7 @@ class YSMoreViewController: RootViewController {
 }
 
 
-extension YSMoreViewController : UICollectionViewDataSource {
+extension YSMoreViewController : UICollectionViewDataSource,UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageList.count
     }
@@ -102,6 +104,22 @@ extension YSMoreViewController : UICollectionViewDataSource {
             }
         }
         return headView
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+       let mo = imageList[indexPath.item]
+   
+   NetworkManager.providerHomeApi.request(.getImagesByPackageId(image_package_id: mo.image_package_id ?? "")).mapArray(ImageFile.self).subscribe(onNext: { (list) in
+            if list.count > 0 {
+                var urls: [String] = []
+                for item in list {
+                    urls.append(item.image_file_path ?? "")
+                }
+                self.view.showImagesTitle(index: 0, imageUrls: urls, title: list[0].image_title ?? "")
+            }
+        }, onError: { (err) in
+            
+        }).addDisposableTo(disposeBag)
     }
 }
 

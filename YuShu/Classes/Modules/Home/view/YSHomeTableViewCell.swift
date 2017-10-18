@@ -8,6 +8,7 @@
 
 import UIKit
 import Lightbox
+import RxSwift
 let homeCellNum: CGFloat = 3
 let homeCellSpace: CGFloat = 10
 let homeCellW = (KScreenWidth - (homeCellNum + 1) * homeCellSpace) / homeCellNum
@@ -18,7 +19,8 @@ class YSHomeTableViewCell: UITableViewCell {
             reSetupUI()
         }
     }
-
+    let disposeBag = DisposeBag()
+    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -64,8 +66,8 @@ extension YSHomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YSHomeCollectionViewCell", for: indexPath) as! YSHomeCollectionViewCell
         if let imageM = model as? ImageFile  {
-            cell.ys_imageView.kfImage(imageM.image_file_path ?? "")
-            cell.ys_titleLabel.text = imageM.image_title
+            cell.ys_imageView.kfImage(imageM.image_file_path_small ?? "")
+            cell.ys_titleLabel.text = imageM.image_package_title
 
         }
         if let imageM = model as? VideoFile  {
@@ -80,20 +82,20 @@ extension YSHomeTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let model = models[indexPath.item]
         guard let imageM = model as? VideoFile  else{
-            var paths: [LightboxImage] = []
-            for model in models {
-                if let imageM = model as? ImageFile  {
-                    
-                    if let url = imageM.image_file_path {
-                        let box = LightboxImage(imageURL: URL(string: url)!)
-                        paths.append(box)
+           
+            if let mo = model as? ImageFile {
+                NetworkManager.providerHomeApi.request(.getImagesByPackageId(image_package_id: mo.image_package_id ?? "")).mapArray(ImageFile.self).subscribe(onNext: { (list) in
+                    if list.count > 0 {
+                        var urls: [String] = []
+                        for item in list {
+                            urls.append(item.image_file_path ?? "")
+                        }
+                        self.showImagesTitle(index: 0, imageUrls: urls, title: list[0].image_title ?? "")
                     }
+                }, onError: { (err) in
                     
-                }
+                }).addDisposableTo(disposeBag)
             }
-            let lightBox = LightboxController(images: paths, startIndex: indexPath.item)
-            guard let vc = self.superVc() else {return}
-            vc.present(lightBox, animated: true, completion: nil)
             return
         }
         

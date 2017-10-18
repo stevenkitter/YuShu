@@ -129,7 +129,7 @@ extension YSHomeViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YSHomeTableViewCell", for: indexPath) as! YSHomeTableViewCell
         if indexPath.section == 0 {
             cell.titleLabel.text = "图片分享"
-            cell.models = homeInfo?.imageList ?? []
+            cell.models = homeInfo?.imagepackageList ?? []
         }else{
             cell.titleLabel.text = "视频分享"
             cell.models = homeInfo?.videoList ?? []

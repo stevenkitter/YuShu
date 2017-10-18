@@ -11,7 +11,7 @@ import ObjectMapper
 struct HomeInfo: Mappable {
     var broadcastlist: [BroadCast] = []
     var slidelist: [Slide] = []
-    var imageList: [ImageFile] = []
+    var imagepackageList: [ImageFile] = []
     var videoList: [VideoFile] = []
     init?(map: Map) {
         
@@ -19,7 +19,7 @@ struct HomeInfo: Mappable {
     mutating func mapping(map: Map) {
         broadcastlist <- map["broadcastlist"]
         slidelist <- map["slidelist"]
-        imageList <- map["imageList"]
+        imagepackageList <- map["imagepackageList"]
         videoList <- map["videoList"]
     }
 }
@@ -64,11 +64,16 @@ struct ImageFile: Mappable {
     var image_file_path: String?
     var image_file_path_small: String?
    
+    var image_package_id: String?
+    var image_package_title: String?
+    
     init?(map: Map) {
         
     }
     mutating func mapping(map: Map) {
         image_id <- map["image_id"]
+        image_package_id <- map["image_package_id"]
+        image_package_title <- map["image_package_title"]
         image_title <- map["image_title"]
         image_file_path <- (map["image_file_path"], AvatarTransform())
         image_file_path_small <- (map["image_file_path_small"], AvatarTransform())
@@ -91,3 +96,26 @@ struct VideoFile: Mappable {
         video_logo_path_small <- (map["video_logo_path_small"], AvatarTransform())
     }
 }
+
+struct ImagePackage: Mappable {
+    var image_id: String?
+    var image_title: String?
+    var image_file_path: String?
+    var image_file_path_small: String?
+    
+    var image_package_id: String?
+    var image_package_title: String?
+    
+    init?(map: Map) {
+        
+    }
+    mutating func mapping(map: Map) {
+        image_id <- map["image_id"]
+        image_package_id <- map["image_package_id"]
+        image_package_title <- map["image_package_title"]
+        image_title <- map["image_title"]
+        image_file_path <- (map["image_file_path"], AvatarTransform())
+        image_file_path_small <- (map["image_file_path_small"], AvatarTransform())
+    }
+}
+

@@ -12,6 +12,7 @@ import Moya
 enum HomeApi {
     case homeInfo()
     case getImageList()
+    case getImagesByPackageId(image_package_id: String)
     case getVideoList()
     case getAnnounceList(user_id: String, page: Int,type: Int) //1:群主公告 2：民政汇总
     case getPersons()
@@ -87,7 +88,14 @@ extension HomeApi: TargetType {
             return params
         case .getImageList():
             var params: [String: Any] = [:]
-            params["service"] = "Index.getAllImages"
+            params["service"] = "Index.getAllImagepackages"
+            
+            return params
+        case let .getImagesByPackageId(image_package_id):
+            var params: [String: Any] = [:]
+            params["image_package_id"] = image_package_id
+            params["service"] = "Index.getImagesByImagepackage"
+            
             return params
         case .getVideoList():
             var params: [String: Any] = [:]

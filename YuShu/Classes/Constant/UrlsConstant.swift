@@ -23,4 +23,4 @@ let WebUrl = WebViewUrl + "slide_display/slide_id/"
 let AnnounceUrl = WebViewUrl + "adminnotice_display/adminnotice_id/"
 
 let GuideUrl = WebViewUrl + "guide_display/guide_id/"
-
+let AroundUrl = WebViewUrl + "around_display/around_id/"
